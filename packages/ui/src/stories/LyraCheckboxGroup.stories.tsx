@@ -224,7 +224,9 @@ export const ParentCheckbox: Story = {
 
 export const NestedParentCheckbox: Story = {
   render: () => {
-    const [selectedPermissions, setSelectedPermissions] = React.useState<string[]>([]);
+    const [allSelected, setAllSelected] = React.useState<string[]>([]);
+    const [userSelected, setUserSelected] = React.useState<string[]>([]);
+    const [contentSelected, setContentSelected] = React.useState<string[]>([]);
 
     const allUserPermissions = ['users-view', 'users-edit', 'users-delete'];
     const allContentPermissions = ['content-view', 'content-edit', 'content-delete'];
@@ -235,9 +237,11 @@ export const NestedParentCheckbox: Story = {
         <h3 style={{ marginBottom: '16px', fontSize: '16px', fontWeight: 600 }}>
           상세 권한 설정
         </h3>
+
+        {/* 최상위 CheckboxGroup */}
         <CheckboxGroup
-          value={selectedPermissions}
-          onValueChange={setSelectedPermissions}
+          value={allSelected}
+          onValueChange={setAllSelected}
           allValues={allPermissions}
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -251,78 +255,84 @@ export const NestedParentCheckbox: Story = {
               모든 권한
             </label>
 
-            {/* User Permissions Group */}
-            <div style={{
-              marginLeft: '24px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px'
-            }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
-                <Checkbox
-                  parent
-                  name="user-permissions"
-                  id="nested-user-all"
-                />
-                사용자 관리
-              </label>
+            {/* 사용자 관리 CheckboxGroup */}
+            <div style={{ marginLeft: '24px' }}>
+              <CheckboxGroup
+                value={userSelected}
+                onValueChange={setUserSelected}
+                allValues={allUserPermissions}
+              >
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
+                    <Checkbox
+                      parent
+                      name="user-permissions"
+                      id="nested-user-all"
+                    />
+                    사용자 관리
+                  </label>
 
-              <div style={{
-                marginLeft: '24px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Checkbox value="users-view" id="users-view" />
-                  <label htmlFor="users-view">사용자 조회</label>
+                  <div style={{
+                    marginLeft: '24px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '8px'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Checkbox value="users-view" id="users-view" />
+                      <label htmlFor="users-view">사용자 조회</label>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Checkbox value="users-edit" id="users-edit" />
+                      <label htmlFor="users-edit">사용자 수정</label>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Checkbox value="users-delete" id="users-delete" />
+                      <label htmlFor="users-delete">사용자 삭제</label>
+                    </div>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Checkbox value="users-edit" id="users-edit" />
-                  <label htmlFor="users-edit">사용자 수정</label>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Checkbox value="users-delete" id="users-delete" />
-                  <label htmlFor="users-delete">사용자 삭제</label>
-                </div>
-              </div>
+              </CheckboxGroup>
             </div>
 
-            {/* Content Permissions Group */}
-            <div style={{
-              marginLeft: '24px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px'
-            }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
-                <Checkbox
-                  parent
-                  name="content-permissions"
-                  id="nested-content-all"
-                />
-                콘텐츠 관리
-              </label>
+            {/* 콘텐츠 관리 CheckboxGroup */}
+            <div style={{ marginLeft: '24px' }}>
+              <CheckboxGroup
+                value={contentSelected}
+                onValueChange={setContentSelected}
+                allValues={allContentPermissions}
+              >
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
+                    <Checkbox
+                      parent
+                      name="content-permissions"
+                      id="nested-content-all"
+                    />
+                    콘텐츠 관리
+                  </label>
 
-              <div style={{
-                marginLeft: '24px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Checkbox value="content-view" id="content-view" />
-                  <label htmlFor="content-view">콘텐츠 조회</label>
+                  <div style={{
+                    marginLeft: '24px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '8px'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Checkbox value="content-view" id="content-view" />
+                      <label htmlFor="content-view">콘텐츠 조회</label>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Checkbox value="content-edit" id="content-edit" />
+                      <label htmlFor="content-edit">콘텐츠 수정</label>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Checkbox value="content-delete" id="content-delete" />
+                      <label htmlFor="content-delete">콘텐츠 삭제</label>
+                    </div>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Checkbox value="content-edit" id="content-edit" />
-                  <label htmlFor="content-edit">콘텐츠 수정</label>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Checkbox value="content-delete" id="content-delete" />
-                  <label htmlFor="content-delete">콘텐츠 삭제</label>
-                </div>
-              </div>
+              </CheckboxGroup>
             </div>
           </div>
         </CheckboxGroup>
@@ -333,17 +343,17 @@ export const NestedParentCheckbox: Story = {
           backgroundColor: '#f5f5f5',
           borderRadius: '4px'
         }}>
-          <strong>선택된 권한:</strong>{' '}
-          <div style={{ marginTop: '8px', fontSize: '0.875rem' }}>
-            {selectedPermissions.length > 0 ? (
-              <ul style={{ margin: 0, paddingLeft: '20px' }}>
-                {selectedPermissions.map((perm) => (
-                  <li key={perm}>{perm}</li>
-                ))}
-              </ul>
-            ) : (
-              '없음'
-            )}
+          <strong>선택된 권한:</strong>
+          <div style={{ marginTop: '8px', fontSize: '0.875rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div>
+              <strong>전체:</strong> {allSelected.length > 0 ? allSelected.join(', ') : '없음'}
+            </div>
+            <div>
+              <strong>사용자:</strong> {userSelected.length > 0 ? userSelected.join(', ') : '없음'}
+            </div>
+            <div>
+              <strong>콘텐츠:</strong> {contentSelected.length > 0 ? contentSelected.join(', ') : '없음'}
+            </div>
           </div>
         </div>
       </div>
