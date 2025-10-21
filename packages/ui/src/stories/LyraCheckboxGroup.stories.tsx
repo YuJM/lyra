@@ -173,19 +173,17 @@ export const ParentCheckbox: Story = {
         <h3 style={{ marginBottom: '16px', fontSize: '16px', fontWeight: 600 }}>
           사용자 권한 설정
         </h3>
-        <CheckboxGroup value={selectedPermissions} onValueChange={setSelectedPermissions}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <CheckboxGroup value={selectedPermissions} onValueChange={setSelectedPermissions} allValues={allPermissions}>
+         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {/* Parent Checkbox */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Checkbox
                 parent
-                allValues={allPermissions}
+               name="all-permissions"
                 id="parent-all-permissions"
               />
-              <label htmlFor="parent-all-permissions" style={{ fontWeight: 600 }}>
                 모든 권한
-              </label>
-            </div>
+            </label>
 
             {/* Child Checkboxes */}
             <div style={{
@@ -237,19 +235,21 @@ export const NestedParentCheckbox: Story = {
         <h3 style={{ marginBottom: '16px', fontSize: '16px', fontWeight: 600 }}>
           상세 권한 설정
         </h3>
-        <CheckboxGroup value={selectedPermissions} onValueChange={setSelectedPermissions}>
+        <CheckboxGroup
+          value={selectedPermissions}
+          onValueChange={setSelectedPermissions}
+          allValues={allPermissions}
+        >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {/* Root Parent Checkbox */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700 }}>
               <Checkbox
                 parent
-                allValues={allPermissions}
+                name="all-permissions"
                 id="nested-all"
               />
-              <label htmlFor="nested-all" style={{ fontWeight: 700 }}>
-                모든 권한
-              </label>
-            </div>
+              모든 권한
+            </label>
 
             {/* User Permissions Group */}
             <div style={{
@@ -258,16 +258,14 @@ export const NestedParentCheckbox: Story = {
               flexDirection: 'column',
               gap: '12px'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                 <Checkbox
                   parent
-                  allValues={allUserPermissions}
+                  name="user-permissions"
                   id="nested-user-all"
                 />
-                <label htmlFor="nested-user-all" style={{ fontWeight: 600 }}>
-                  사용자 관리
-                </label>
-              </div>
+                사용자 관리
+              </label>
 
               <div style={{
                 marginLeft: '24px',
@@ -297,16 +295,14 @@ export const NestedParentCheckbox: Story = {
               flexDirection: 'column',
               gap: '12px'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                 <Checkbox
                   parent
-                  allValues={allContentPermissions}
+                  name="content-permissions"
                   id="nested-content-all"
                 />
-                <label htmlFor="nested-content-all" style={{ fontWeight: 600 }}>
-                  콘텐츠 관리
-                </label>
-              </div>
+                콘텐츠 관리
+              </label>
 
               <div style={{
                 marginLeft: '24px',
