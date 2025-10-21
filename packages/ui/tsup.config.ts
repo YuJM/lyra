@@ -1,16 +1,20 @@
 import { defineConfig } from "tsup";
+import { cssModulesPlugin } from "./scripts/esbuild-css-modules-plugin";
 
 export default defineConfig((options) => {
   // dev 모드일 때는 watch 옵션이 true
-  const isDev = options.watch;
+  const isDev = Boolean(options.watch);
 
   return {
-    entryPoints: ["src/button.tsx", "src/global.css"],
+    entry: {
+      index: "src/index.tsx",
+    },
     format: ["cjs", "esm"],
     dts: true,
     external: ["react"],
-    clean: !isDev, // dev: false, production: true
-    sourcemap: isDev, // dev: true, production: false
+    clean: !isDev,
+    sourcemap: isDev,
+    esbuildPlugins: [cssModulesPlugin(isDev)],
     ...options,
   };
 });

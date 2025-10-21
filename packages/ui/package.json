@@ -6,32 +6,44 @@
   ],
   "license": "MIT",
   "exports": {
-    "./button": {
-      "types": "./src/button.tsx",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     },
-    "./styles": "./dist/global.css"
+    "./styles": "./dist/index.css"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "NODE_ENV=production tsup",
     "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo node_modules dist"
   },
   "devDependencies": {
+    "@csstools/postcss-cascade-layers": "^5.0.2",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@shopify/postcss-plugin": "^5.0.4",
+    "@types/node": "^24.9.1",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.1",
+    "esbuild": "^0.25.11",
     "eslint": "^8.57.0",
     "postcss": "^8.5.6",
+    "postcss-custom-media": "^11.0.6",
+    "postcss-discard-comments": "^7.0.4",
     "postcss-import": "^16.1.1",
+    "postcss-mixins": "^12.1.2",
+    "postcss-modules": "^6.0.1",
+    "postcss-nesting": "^13.0.2",
+    "postcss-pxtorem": "^6.1.0",
     "tsup": "^8.0.2",
     "typescript": "5.5.4"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "modern-normalize": "^3.0.1",
     "react": "catalog:"
   },

@@ -1,14 +1,19 @@
 import * as React from "react";
-import "./global.css";
+import { clsx } from "clsx";
+import styles from "./button.module.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export function Button({ children, ...other }: ButtonProps): React.ReactElement {
+export function Button({
+  children,
+  className,
+  ...other
+}: ButtonProps): React.ReactElement {
   return (
-    <button type="button" {...other}>
+    <button type="button" className={clsx(styles.button, className)} {...other}>
       {children}
     </button>
   );

@@ -1,0 +1,36 @@
+/* Button Component Styles - CSS Module */
+
+@layer components {
+  .button {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    padding: 8px 16px; /* pxtorem will convert to rem */
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 6px; /* pxtorem will convert to rem */
+    background-color: var(--button-bg, #3b82f6);
+    color: white;
+    transition: all 0.2s ease-in-out;
+
+    /* Nesting: hover state */
+    &:hover {
+      background-color: var(--button-bg-hover, #2563eb);
+    }
+
+    /* Mixin: focus-ring */
+    @mixin focus-ring;
+
+    /* Nesting: active state */
+    &:active {
+      transform: scale(0.98);
+    }
+
+    /* Nesting: disabled state */
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
