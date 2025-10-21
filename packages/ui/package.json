@@ -14,8 +14,8 @@
     "./styles": "./dist/esm/index.css"
   },
   "scripts": {
-    "build": "NODE_ENV=production pnpm run build:js && pnpm run build:types",
-    "build:js": "rollup -c",
+    "build": "pnpm run build:js && pnpm run build:types",
+    "build:js": "NODE_ENV=production rollup -c",
     "build:types": "tsc -b",
     "dev": "rollup -c --watch",
     "dev:types": "tsc -b --watch",
