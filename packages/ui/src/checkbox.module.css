@@ -1,69 +1,79 @@
-.CheckboxGroup {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 0.25rem;
+/* Checkbox Component Styles */
+
+.Checkbox {
+  box-sizing: border-box;
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  /* Unchecked state */
+  &[data-unchecked] {
+    border: 1px solid var(--color-gray-300);
+    background-color: transparent;
+  }
+
+  /* Checked state */
+  &[data-checked] {
+    background-color: var(--color-gray-900);
+    border: 1px solid var(--color-gray-900);
+  }
+
+  /* Indeterminate state */
+  &[data-indeterminate] {
+    border: 1px solid var(--color-gray-300);
+    background-color: canvas;
+  }
+
+  /* Hover states */
+  &[data-unchecked]:hover:not([data-disabled]) {
+    border-color: var(--color-gray-400);
+  }
+
+  &[data-checked]:hover:not([data-disabled]) {
+    background-color: var(--color-gray-800);
+    border-color: var(--color-gray-800);
+  }
+
+  /* Disabled state */
+  &[data-disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* Focus state */
+  &:focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+  }
+}
+
+.Indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-50);
+
+  /* Hide when unchecked */
+  &[data-unchecked] {
+    display: none;
+  }
+
+  /* Indeterminate state color */
+  &[data-indeterminate] {
     color: var(--color-gray-900);
   }
-  
-  .Caption {
-    font-weight: 500;
-  }
-  
-  .Item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .Checkbox {
-    box-sizing: border-box;
-    display: flex;
-    width: 1.25rem;
-    height: 1.25rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.25rem;
-    outline: 0;
-    padding: 0;
-    margin: 0;
-    border: none;
-  
-    &[data-unchecked] {
-      border: 1px solid var(--color-gray-300);
-      background-color: transparent;
-    }
-  
-    &[data-checked] {
-      background-color: var(--color-gray-900);
-    }
-  
-    &[data-indeterminate] {
-      border: 1px solid var(--color-gray-300);
-      background-color: canvas;
-    }
-  
-    &:focus-visible {
-      outline: 2px solid var(--color-blue);
-      outline-offset: 2px;
-    }
-  }
-  
-  .Indicator {
-    display: flex;
-    color: var(--color-gray-50);
-  
-    &[data-unchecked] {
-      display: none;
-    }
-  
-    &[data-indeterminate] {
-      color: var(--color-gray-900);
-    }
-  }
-  
-  .Icon {
-    width: 0.75rem;
-    height: 0.75rem;
-  }
-  
+}
+
+.Icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
