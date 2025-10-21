@@ -1,2 +1,22 @@
 # CSS Modules - 빌드마다 자동 생성
 *.module.css.json
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+*.log
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
