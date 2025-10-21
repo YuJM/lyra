@@ -241,7 +241,27 @@ export const NestedParentCheckbox: Story = {
         {/* 최상위 CheckboxGroup */}
         <CheckboxGroup
           value={allSelected}
-          onValueChange={setAllSelected}
+          onValueChange={(value) => {
+            // 전체 권한 변경 처리
+            const hasAllUserPerms = allUserPermissions.every(p => value.includes(p));
+            const hasAllContentPerms = allContentPermissions.every(p => value.includes(p));
+
+            // 사용자 권한이 모두 선택/해제되면 하위 그룹 동기화
+            if (hasAllUserPerms && userSelected.length !== allUserPermissions.length) {
+              setUserSelected(allUserPermissions);
+            } else if (!hasAllUserPerms && userSelected.length === allUserPermissions.length) {
+              setUserSelected([]);
+            }
+
+            // 콘텐츠 권한이 모두 선택/해제되면 하위 그룹 동기화
+            if (hasAllContentPerms && contentSelected.length !== allContentPermissions.length) {
+              setContentSelected(allContentPermissions);
+            } else if (!hasAllContentPerms && contentSelected.length === allContentPermissions.length) {
+              setContentSelected([]);
+            }
+
+            setAllSelected(value);
+          }}
           allValues={allPermissions}
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -249,8 +269,10 @@ export const NestedParentCheckbox: Story = {
             <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700 }}>
               <Checkbox
                 parent
-                name="all-permissions"
                 id="nested-all"
+                indeterminate={
+                  allSelected.length > 0 && allSelected.length !== allPermissions.length
+                }
               />
               모든 권한
             </label>
@@ -259,15 +281,31 @@ export const NestedParentCheckbox: Story = {
             <div style={{ marginLeft: '24px' }}>
               <CheckboxGroup
                 value={userSelected}
-                onValueChange={setUserSelected}
+                onValueChange={(value) => {
+                  // 모든 사용자 권한이 선택되면 상위 그룹에 추가
+                  if (value.length === allUserPermissions.length) {
+                    setAllSelected((prev) =>
+                      Array.from(new Set([...prev, ...allUserPermissions]))
+                    );
+                  } else {
+                    // 일부만 선택되면 상위 그룹에서 모든 사용자 권한 제거
+                    setAllSelected((prev) =>
+                      prev.filter(v => !allUserPermissions.includes(v))
+                    );
+                  }
+                  setUserSelected(value);
+                }}
                 allValues={allUserPermissions}
               >
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                     <Checkbox
                       parent
-                      name="user-permissions"
                       id="nested-user-all"
+                      indeterminate={
+                        userSelected.length > 0 &&
+                        userSelected.length !== allUserPermissions.length
+                      }
                     />
                     사용자 관리
                   </label>
@@ -299,15 +337,31 @@ export const NestedParentCheckbox: Story = {
             <div style={{ marginLeft: '24px' }}>
               <CheckboxGroup
                 value={contentSelected}
-                onValueChange={setContentSelected}
+                onValueChange={(value) => {
+                  // 모든 콘텐츠 권한이 선택되면 상위 그룹에 추가
+                  if (value.length === allContentPermissions.length) {
+                    setAllSelected((prev) =>
+                      Array.from(new Set([...prev, ...allContentPermissions]))
+                    );
+                  } else {
+                    // 일부만 선택되면 상위 그룹에서 모든 콘텐츠 권한 제거
+                    setAllSelected((prev) =>
+                      prev.filter(v => !allContentPermissions.includes(v))
+                    );
+                  }
+                  setContentSelected(value);
+                }}
                 allValues={allContentPermissions}
               >
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                     <Checkbox
                       parent
-                      name="content-permissions"
                       id="nested-content-all"
+                      indeterminate={
+                        contentSelected.length > 0 &&
+                        contentSelected.length !== allContentPermissions.length
+                      }
                     />
                     콘텐츠 관리
                   </label>
