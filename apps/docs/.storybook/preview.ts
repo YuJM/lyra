@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "@lyra/ui/styles";
+import "./utilities.css";
 
 const preview: Preview = {
   parameters: {
