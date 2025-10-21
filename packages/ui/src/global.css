@@ -1,3 +1,6 @@
+/* Modern Normalize */
+@import "modern-normalize/modern-normalize.css";
+
 /* Reset & Base Styles */
 *,
 *::before,
