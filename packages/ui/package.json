@@ -14,10 +14,13 @@
     "./styles": "./dist/esm/index.css"
   },
   "scripts": {
-    "build": "NODE_ENV=production rollup -c && tsc -b",
+    "build": "NODE_ENV=production pnpm run build:js && pnpm run build:types",
+    "build:js": "rollup -c",
+    "build:types": "tsc -b",
     "dev": "rollup -c --watch",
+    "dev:types": "tsc -b --watch",
     "lint": "eslint . --max-warnings 0",
-    "clean": "rm -rf .turbo node_modules dist"
+    "clean": "rm -rf .turbo dist"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
