@@ -9,6 +9,7 @@ import "./components/dialog/dialog.module.css";
 import "./components/tooltip/tooltip.module.css";
 import "./components/popover/popover.module.css";
 import "./components/menu/menu.module.css";
+import "./components/tabs/tabs.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -98,3 +99,11 @@ export {
   type MenuSubmenuRootProps,
   type MenuSubmenuTriggerProps,
 } from "./components/menu/menu";
+export {
+  Tabs,
+  type TabsRootProps,
+  type TabsListProps,
+  type TabsTabProps,
+  type TabsIndicatorProps,
+  type TabsPanelProps,
+} from "./components/tabs/tabs";
