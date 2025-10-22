@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 import * as React from 'react';
-import { Switch } from '../switch';
+import { Switch } from '../components/switch/switch';
 
 const meta = {
   title: 'Design System/Components/Switch',

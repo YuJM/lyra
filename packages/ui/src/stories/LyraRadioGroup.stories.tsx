@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 import * as React from 'react';
-import { Radio } from '../radio';
-import { RadioGroup } from '../radio-group';
+import { Radio } from '../components/radio/radio';
+import { RadioGroup } from '../components/radio/radio-group';
 
 const meta = {
   title: 'Design System/Components/RadioGroup',
