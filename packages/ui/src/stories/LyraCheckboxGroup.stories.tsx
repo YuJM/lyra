@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
+import * as React from 'react';
 import { CheckboxGroup } from '../checkbox-group';
 import { Checkbox } from '../checkbox';
-import * as React from 'react';
 
 const meta = {
   title: 'Design System/Components/CheckboxGroup',
@@ -30,15 +30,15 @@ export const Default: Story = {
     <CheckboxGroup {...args}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="apple" id="apple" />
+          <Checkbox id="apple" value="apple" />
           <label htmlFor="apple">사과</label>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="banana" id="banana" />
+          <Checkbox id="banana" value="banana" />
           <label htmlFor="banana">바나나</label>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="orange" id="orange" />
+          <Checkbox id="orange" value="orange" />
           <label htmlFor="orange">오렌지</label>
         </div>
       </div>
@@ -51,15 +51,15 @@ export const WithDefaultValue: Story = {
     <CheckboxGroup {...args} defaultValue={['apple', 'orange']}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="apple" id="default-apple" />
+          <Checkbox id="default-apple" value="apple" />
           <label htmlFor="default-apple">사과</label>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="banana" id="default-banana" />
+          <Checkbox id="default-banana" value="banana" />
           <label htmlFor="default-banana">바나나</label>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="orange" id="default-orange" />
+          <Checkbox id="default-orange" value="orange" />
           <label htmlFor="default-orange">오렌지</label>
         </div>
       </div>
@@ -72,15 +72,15 @@ export const DisabledGroup: Story = {
     <CheckboxGroup {...args} disabled>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="apple" id="disabled-apple" />
+          <Checkbox id="disabled-apple" value="apple" />
           <label htmlFor="disabled-apple">사과</label>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="banana" id="disabled-banana" />
+          <Checkbox id="disabled-banana" value="banana" />
           <label htmlFor="disabled-banana">바나나</label>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Checkbox value="orange" id="disabled-orange" />
+          <Checkbox id="disabled-orange" value="orange" />
           <label htmlFor="disabled-orange">오렌지</label>
         </div>
       </div>
@@ -97,19 +97,19 @@ export const WithTitle: Story = {
       <CheckboxGroup {...args}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Checkbox value="apple" id="title-apple" />
+            <Checkbox id="title-apple" value="apple" />
             <label htmlFor="title-apple">사과</label>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Checkbox value="banana" id="title-banana" />
+            <Checkbox id="title-banana" value="banana" />
             <label htmlFor="title-banana">바나나</label>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Checkbox value="orange" id="title-orange" />
+            <Checkbox id="title-orange" value="orange" />
             <label htmlFor="title-orange">오렌지</label>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Checkbox value="grape" id="title-grape" />
+            <Checkbox id="title-grape" value="grape" />
             <label htmlFor="title-grape">포도</label>
           </div>
         </div>
@@ -127,22 +127,22 @@ export const InteractiveExample: Story = {
         <h3 style={{ marginBottom: '16px', fontSize: '16px', fontWeight: 600 }}>
           좋아하는 과일을 선택하세요
         </h3>
-        <CheckboxGroup value={selectedFruits} onValueChange={setSelectedFruits}>
+        <CheckboxGroup onValueChange={setSelectedFruits} value={selectedFruits}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Checkbox value="apple" id="interactive-apple" />
+              <Checkbox id="interactive-apple" value="apple" />
               <label htmlFor="interactive-apple">사과</label>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Checkbox value="banana" id="interactive-banana" />
+              <Checkbox id="interactive-banana" value="banana" />
               <label htmlFor="interactive-banana">바나나</label>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Checkbox value="orange" id="interactive-orange" />
+              <Checkbox id="interactive-orange" value="orange" />
               <label htmlFor="interactive-orange">오렌지</label>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Checkbox value="grape" id="interactive-grape" />
+              <Checkbox id="interactive-grape" value="grape" />
               <label htmlFor="interactive-grape">포도</label>
             </div>
           </div>
@@ -173,14 +173,14 @@ export const ParentCheckbox: Story = {
         <h3 style={{ marginBottom: '16px', fontSize: '16px', fontWeight: 600 }}>
           사용자 권한 설정
         </h3>
-        <CheckboxGroup value={selectedPermissions} onValueChange={setSelectedPermissions} allValues={allPermissions}>
+        <CheckboxGroup allValues={allPermissions} onValueChange={setSelectedPermissions} value={selectedPermissions}>
          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {/* Parent Checkbox */}
             <label style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Checkbox
-                parent
-               name="all-permissions"
                 id="parent-all-permissions"
+               name="all-permissions"
+                parent
               />
                 모든 권한
             </label>
@@ -193,15 +193,15 @@ export const ParentCheckbox: Story = {
               gap: '12px'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Checkbox value="read" id="permission-read" />
+                <Checkbox id="permission-read" value="read" />
                 <label htmlFor="permission-read">읽기 권한</label>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Checkbox value="write" id="permission-write" />
+                <Checkbox id="permission-write" value="write" />
                 <label htmlFor="permission-write">쓰기 권한</label>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Checkbox value="delete" id="permission-delete" />
+                <Checkbox id="permission-delete" value="delete" />
                 <label htmlFor="permission-delete">삭제 권한</label>
               </div>
             </div>
@@ -240,7 +240,7 @@ export const NestedParentCheckbox: Story = {
 
         {/* 최상위 CheckboxGroup */}
         <CheckboxGroup
-          value={allSelected}
+          allValues={allPermissions}
           onValueChange={(value) => {
             // 전체 권한 변경 처리
             const hasAllUserPerms = allUserPermissions.every(p => value.includes(p));
@@ -262,17 +262,17 @@ export const NestedParentCheckbox: Story = {
 
             setAllSelected(value);
           }}
-          allValues={allPermissions}
+          value={allSelected}
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {/* Root Parent Checkbox */}
             <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700 }}>
               <Checkbox
-                parent
                 id="nested-all"
                 indeterminate={
                   allSelected.length > 0 && allSelected.length !== allPermissions.length
                 }
+                parent
               />
               모든 권한
             </label>
@@ -280,7 +280,7 @@ export const NestedParentCheckbox: Story = {
             {/* 사용자 관리 CheckboxGroup */}
             <div style={{ marginLeft: '24px' }}>
               <CheckboxGroup
-                value={userSelected}
+                allValues={allUserPermissions}
                 onValueChange={(value) => {
                   // 모든 사용자 권한이 선택되면 상위 그룹에 추가
                   if (value.length === allUserPermissions.length) {
@@ -295,17 +295,17 @@ export const NestedParentCheckbox: Story = {
                   }
                   setUserSelected(value);
                 }}
-                allValues={allUserPermissions}
+                value={userSelected}
               >
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                     <Checkbox
-                      parent
                       id="nested-user-all"
                       indeterminate={
                         userSelected.length > 0 &&
                         userSelected.length !== allUserPermissions.length
                       }
+                      parent
                     />
                     사용자 관리
                   </label>
@@ -317,15 +317,15 @@ export const NestedParentCheckbox: Story = {
                     gap: '8px'
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <Checkbox value="users-view" id="users-view" />
+                      <Checkbox id="users-view" value="users-view" />
                       <label htmlFor="users-view">사용자 조회</label>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <Checkbox value="users-edit" id="users-edit" />
+                      <Checkbox id="users-edit" value="users-edit" />
                       <label htmlFor="users-edit">사용자 수정</label>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <Checkbox value="users-delete" id="users-delete" />
+                      <Checkbox id="users-delete" value="users-delete" />
                       <label htmlFor="users-delete">사용자 삭제</label>
                     </div>
                   </div>
@@ -336,7 +336,7 @@ export const NestedParentCheckbox: Story = {
             {/* 콘텐츠 관리 CheckboxGroup */}
             <div style={{ marginLeft: '24px' }}>
               <CheckboxGroup
-                value={contentSelected}
+                allValues={allContentPermissions}
                 onValueChange={(value) => {
                   // 모든 콘텐츠 권한이 선택되면 상위 그룹에 추가
                   if (value.length === allContentPermissions.length) {
@@ -351,13 +351,13 @@ export const NestedParentCheckbox: Story = {
                   }
                   setContentSelected(value);
                 }}
-                allValues={allContentPermissions}
+                value={contentSelected}
               >
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                     <Checkbox
-                      parent
                       id="nested-content-all"
+                      parent
                       value="content-all"
                     />
                     콘텐츠 관리
@@ -370,15 +370,15 @@ export const NestedParentCheckbox: Story = {
                     gap: '8px'
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <Checkbox value="content-view" id="content-view" />
+                      <Checkbox id="content-view" value="content-view" />
                       <label htmlFor="content-view">콘텐츠 조회</label>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <Checkbox value="content-edit" id="content-edit" />
+                      <Checkbox id="content-edit" value="content-edit" />
                       <label htmlFor="content-edit">콘텐츠 수정</label>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <Checkbox value="content-delete" id="content-delete" />
+                      <Checkbox id="content-delete" value="content-delete" />
                       <label htmlFor="content-delete">콘텐츠 삭제</label>
                     </div>
                   </div>

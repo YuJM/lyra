@@ -13,7 +13,7 @@ export function Button({
   ...other
 }: ButtonProps): React.ReactElement {
   return (
-    <button type="button" className={clsx(styles.button, className)} {...other}>
+    <button className={clsx(styles.button, className)} type="button" {...other}>
       {children}
     </button>
   );

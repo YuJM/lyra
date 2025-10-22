@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "src/stories/**/*.tsx",
+    "src/stories/**/*.ts",
+    "src/stories/**/*.mdx"
+  ],
+  "exclude": ["node_modules"]
+}

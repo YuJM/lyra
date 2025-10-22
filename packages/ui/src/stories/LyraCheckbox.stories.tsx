@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { Checkbox } from '../checkbox';
 import * as React from 'react';
+import { Checkbox } from '../checkbox';
 
 const meta = {
   title: 'Design System/Components/Checkbox',
@@ -87,7 +87,7 @@ export const MultipleStates: Story = {
         <label htmlFor="unchecked">미선택 상태</label>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <Checkbox id="checked" defaultChecked />
+        <Checkbox defaultChecked id="checked" />
         <label htmlFor="checked">선택 상태</label>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -95,7 +95,7 @@ export const MultipleStates: Story = {
         <label htmlFor="indeterminate">불확정 상태</label>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <Checkbox id="disabled" disabled />
+        <Checkbox disabled id="disabled" />
         <label htmlFor="disabled">비활성화 상태</label>
       </div>
     </div>
