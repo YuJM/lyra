@@ -5,7 +5,7 @@ import { Radio } from '../components/radio/radio';
 import { RadioGroup } from '../components/radio/radio-group';
 
 const meta = {
-  title: 'Design System/Components/RadioGroup',
+  title: 'Components/RadioGroup',
   component: RadioGroup,
   parameters: {
     layout: 'centered',

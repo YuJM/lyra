@@ -3,7 +3,7 @@ import { Dialog } from "../components/dialog/dialog";
 import * as React from "react";
 
 const meta: Meta<typeof Dialog.Root> = {
-  title: "Design System/Components/Dialog",
+  title: "Components/Dialog",
   component: Dialog.Root,
   parameters: {
     layout: "centered",

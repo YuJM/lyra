@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Switch } from '../components/switch/switch';
 
 const meta = {
-  title: 'Design System/Components/Switch',
+  title: 'Components/Switch',
   component: Switch,
   parameters: {
     layout: 'centered',

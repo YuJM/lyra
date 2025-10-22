@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Field } from '../components/field/field';
 
 const meta = {
-  title: 'Design System/Components/Field',
+  title: 'Components/Field',
   component: Field.Root,
   parameters: {
     layout: 'centered',

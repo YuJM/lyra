@@ -53,20 +53,27 @@ module.exports = [
     noIsPseudoSelector: true, // SASS 호환성
   }),
 
-  // 5. postcss-custom-media - Custom media query 지원
+  // 5. @csstools/postcss-global-data - @custom-media 정의를 모든 CSS 파일에서 사용 가능하게
+  require('@csstools/postcss-global-data')({
+    files: [
+      path.join(__dirname, '../../design-tokens/dist/css/media-queries.css'),
+    ],
+  }),
+
+  // 6. postcss-custom-media - Custom media query 지원
   require('postcss-custom-media')(),
 
-  // 6. @shopify/postcss-plugin - Shopify PostCSS 통합 플러그인
+  // 7. @shopify/postcss-plugin - Shopify PostCSS 통합 플러그인
   // (postcss-calc, postcss-flexbugs-fixes, postcss-will-change, autoprefixer 포함)
   require('@shopify/postcss-plugin')(),
 
-  // 7. postcss-pxtorem - px를 rem으로 자동 변환 (접근성 향상)
+  // 8. postcss-pxtorem - px를 rem으로 자동 변환 (접근성 향상)
   require('postcss-pxtorem')({
     rootValue: 16, // 1rem = 16px
     replace: true, // 원본 px를 rem으로 교체
     propList: ['*'], // 모든 속성에 적용
   }),
 
-  // 8. postcss-discard-comments - 주석 제거 (Production only)
+  // 9. postcss-discard-comments - 주석 제거 (Production only)
   process.env.NODE_ENV === 'production' && require('postcss-discard-comments')(),
 ].filter(Boolean);
