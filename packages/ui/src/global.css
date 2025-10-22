@@ -7,12 +7,8 @@
 /* Design Tokens */
 @import "@lyra/design-tokens/css" layer(base);
 
-/* Custom Media Queries - Breakpoints */
-@custom-media --sm (max-width: 640px);
-@custom-media --md (max-width: 768px);
-@custom-media --lg (max-width: 1024px);
-@custom-media --xl (max-width: 1280px);
-@custom-media --2xl (max-width: 1536px);
+/* Custom Media Queries - Auto-generated from design tokens */
+@import "@lyra/design-tokens/css/breakpoints";
 
 /* Base Layer - CSS Variables & Reset */
 @layer base {
