@@ -18,11 +18,10 @@ Lyra는 접근성과 사용성을 최우선으로 하는 현대적인 React 기�
 ```
 lyra/
 ├── apps/
-│   ├── docs/          # Storybook 문서화 앱
 │   └── web/           # 웹 애플리케이션 (Vite)
 ├── packages/
 │   ├── design-tokens/ # 디자인 토큰 시스템
-│   ├── ui/            # UI 컴포넌트 라이브러리
+│   ├── ui/            # UI 컴포넌트 라이브러리 (Storybook 포함)
 │   ├── eslint-config/ # ESLint 공유 설정
 │   └── typescript-config/ # TypeScript 공유 설정
 └── docs/              # 프로젝트 문서
@@ -53,7 +52,7 @@ pnpm install
 pnpm dev
 
 # Storybook 문서 서버 실행 (localhost:6006)
-pnpm dev --filter=docs
+pnpm dev --filter=@lyra/ui
 ```
 
 ### 빌드
@@ -170,8 +169,8 @@ pnpm dev --filter=@lyra/ui  # 특정 패키지만 실행
 
 #### 빌드
 ```bash
-pnpm build                  # 모든 패키지 빌드
-pnpm build --filter=docs    # Storybook 빌드
+pnpm build                     # 모든 패키지 빌드
+pnpm build --filter=@lyra/ui   # UI 패키지 및 Storybook 빌드
 ```
 
 #### 테스트
@@ -356,13 +355,13 @@ export const InteractionTest: Story = {
 
 ```bash
 # 개발 모드
-pnpm dev --filter=docs
+pnpm dev --filter=@lyra/ui
 
 # 빌드
-pnpm build --filter=docs
+pnpm build --filter=@lyra/ui
 
-# 프리뷰
-pnpm preview-storybook
+# Storybook만 실행
+cd packages/ui && pnpm storybook
 ```
 
 Storybook은 http://localhost:6006 에서 실행됩니다.
