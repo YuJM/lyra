@@ -127,7 +127,7 @@
 }
 
 /* 반응형 */
-@media (max-width: 640px) {
+@media (--sm) {
   .DialogPopup {
     max-width: calc(100vw - var(--spacing-2, 16px));
     padding: var(--spacing-4, 32px);

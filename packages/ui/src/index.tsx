@@ -6,6 +6,7 @@ import "./components/radio/radio.module.css";
 import "./components/field/field.module.css";
 import "./components/select/select.module.css";
 import "./components/dialog/dialog.module.css";
+import "./components/tooltip/tooltip.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -51,3 +52,13 @@ export {
   type DialogDescriptionProps,
   type DialogCloseProps,
 } from "./components/dialog/dialog";
+export {
+  Tooltip,
+  type TooltipProviderProps,
+  type TooltipRootProps,
+  type TooltipTriggerProps,
+  type TooltipPortalProps,
+  type TooltipPositionerProps,
+  type TooltipPopupProps,
+  type TooltipArrowProps,
+} from "./components/tooltip/tooltip";

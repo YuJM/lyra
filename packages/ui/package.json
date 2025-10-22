@@ -25,7 +25,8 @@
     "build-storybook": "storybook build",
     "test": "vitest run --project=unit",
     "test:watch": "vitest --project=unit",
-    "test:coverage": "vitest run --project=unit --coverage"
+    "test:coverage": "vitest run --project=unit --coverage",
+    "chromatic": "npx chromatic --project-token=chpt_1516c7d20937301"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
