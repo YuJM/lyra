@@ -1,0 +1,29 @@
+{
+  "breakpoint": {
+    "sm": {
+      "$value": "640px",
+      "$type": "dimension",
+      "$description": "Small devices (mobile landscape)"
+    },
+    "md": {
+      "$value": "768px",
+      "$type": "dimension",
+      "$description": "Medium devices (tablets)"
+    },
+    "lg": {
+      "$value": "1024px",
+      "$type": "dimension",
+      "$description": "Large devices (desktops)"
+    },
+    "xl": {
+      "$value": "1280px",
+      "$type": "dimension",
+      "$description": "Extra large devices (large desktops)"
+    },
+    "2xl": {
+      "$value": "1536px",
+      "$type": "dimension",
+      "$description": "2X large devices (ultra-wide)"
+    }
+  }
+}

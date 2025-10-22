@@ -72,6 +72,7 @@
   },
   "dependencies": {
     "@base-ui-components/react": "1.0.0-beta.4",
+    "@lyra/design-tokens": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "modern-normalize": "^3.0.1",

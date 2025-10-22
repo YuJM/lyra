@@ -1,0 +1,48 @@
+{
+  "border": {
+    "width": {
+      "0": {
+        "$value": "{size.0}",
+        "$type": "dimension",
+        "$description": "0px - 선 없음"
+      },
+      "1": {
+        "$value": "{size.px}",
+        "$type": "dimension",
+        "$description": "1px - 기본 선"
+      },
+      "2": {
+        "$value": "{size.1}",
+        "$type": "dimension",
+        "$description": "2px - 강조 선"
+      },
+      "4": {
+        "$value": "{size.2}",
+        "$type": "dimension",
+        "$description": "4px - 굵은 선"
+      }
+    },
+    "radius": {
+      "none": {
+        "$value": "{size.0}",
+        "$type": "dimension",
+        "$description": "0px - sharp corners"
+      },
+      "sm": {
+        "$value": "{size.2}",
+        "$type": "dimension",
+        "$description": "4px - 약간 둥글게"
+      },
+      "md": {
+        "$value": "{size.4}",
+        "$type": "dimension",
+        "$description": "8px - 둥글게"
+      },
+      "full": {
+        "$value": "9999px",
+        "$type": "dimension",
+        "$description": "pill/circle"
+      }
+    }
+  }
+}

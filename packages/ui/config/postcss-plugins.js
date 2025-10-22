@@ -6,7 +6,39 @@ const path = require('path');
  */
 module.exports = [
   // 1. postcss-import - @import를 인라인으로 번들 (반드시 첫 번째!)
-  require('postcss-import')(),
+  require('postcss-import')({
+    // workspace 패키지 exports 필드 지원을 위한 커스텀 resolver
+    resolve: (id, basedir, importOptions) => {
+      // @lyra/* workspace 패키지 처리
+      if (id.startsWith('@lyra/design-tokens')) {
+        try {
+          const pkgDir = path.join(__dirname, '../../design-tokens');
+          const pkg = require(path.join(pkgDir, 'package.json'));
+
+          // package.json exports 필드에서 경로 찾기
+          let exportPath = id.replace('@lyra/design-tokens', '');
+          // /css -> ./css로 정규화
+          if (exportPath.startsWith('/')) {
+            exportPath = '.' + exportPath;
+          }
+
+          if (pkg.exports && pkg.exports[exportPath]) {
+            return path.join(pkgDir, pkg.exports[exportPath]);
+          }
+        } catch (e) {
+          // fallback to default resolve
+        }
+      }
+
+      // 기본 postcss-import resolve 로직 사용
+      return id;
+    },
+    path: [
+      path.join(__dirname, '../src'),
+      path.join(__dirname, '../../../node_modules'),
+      path.join(__dirname, '../../design-tokens/dist'),
+    ],
+  }),
 
   // 2. @csstools/postcss-cascade-layers - CSS Cascade Layers 지원
   require('@csstools/postcss-cascade-layers')(),

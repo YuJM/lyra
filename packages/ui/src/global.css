@@ -4,6 +4,9 @@
 /* Modern Normalize */
 @import "modern-normalize/modern-normalize.css" layer(reset);
 
+/* Design Tokens */
+@import "@lyra/design-tokens/css";
+
 /* Custom Media Queries */
 @custom-media --viewport-sm (min-width: 30em);    /* 480px */
 @custom-media --viewport-md (min-width: 48em);    /* 768px */
@@ -12,28 +15,11 @@
 
 /* Base Layer - CSS Variables & Reset */
 @layer base {
-  /* CSS Variables */
+  /* Semantic tokens (optional - define per project) */
   :root {
-    /* Colors - Gray Scale */
-    --color-gray-50: #f9fafb;
-    --color-gray-100: #f3f4f6;
-    --color-gray-200: #e5e7eb;
-    --color-gray-300: #d1d5db;
-    --color-gray-400: #9ca3af;
-    --color-gray-500: #6b7280;
-    --color-gray-600: #4b5563;
-    --color-gray-700: #374151;
-    --color-gray-800: #1f2937;
-    --color-gray-900: #111827;
-
-    /* Colors - Primary */
-    --color-blue: #3b82f6;
-    --color-blue-hover: #2563eb;
-
-    /* Legacy Variables (deprecated) */
-    --focus-color: var(--color-blue);
-    --button-bg: var(--color-blue);
-    --button-bg-hover: var(--color-blue-hover);
+    --focus-color: var(--color-blue-500);
+    --button-bg: var(--color-blue-500);
+    --button-bg-hover: var(--color-blue-600);
   }
 
   /* Reset & Base Styles */

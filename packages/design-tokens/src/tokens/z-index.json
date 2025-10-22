@@ -1,0 +1,44 @@
+{
+  "zIndex": {
+    "base": {
+      "$value": "0",
+      "$type": "number",
+      "$description": "기본 레이어"
+    },
+    "dropdown": {
+      "$value": "1000",
+      "$type": "number",
+      "$description": "드롭다운, 팝오버"
+    },
+    "sticky": {
+      "$value": "1100",
+      "$type": "number",
+      "$description": "Sticky 요소"
+    },
+    "overlay": {
+      "$value": "1200",
+      "$type": "number",
+      "$description": "오버레이 배경"
+    },
+    "modal": {
+      "$value": "1300",
+      "$type": "number",
+      "$description": "모달, 다이얼로그"
+    },
+    "popover": {
+      "$value": "1400",
+      "$type": "number",
+      "$description": "팝오버 (모달 위)"
+    },
+    "tooltip": {
+      "$value": "1500",
+      "$type": "number",
+      "$description": "툴팁"
+    },
+    "notification": {
+      "$value": "1600",
+      "$type": "number",
+      "$description": "토스트, 알림"
+    }
+  }
+}
