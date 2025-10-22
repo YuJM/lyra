@@ -1,0 +1,597 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design System/Design Tokens/Colors" />
+
+# Colors
+
+7개의 컬러 팔레트, 각 11개의 shade (50-950). OKLCH 색공간으로 지각적으로 균일한 그라데이션을 제공합니다.
+
+## 사용 방법
+
+```css
+@import "@lyra/design-tokens/css";
+
+.my-component {
+  background: var(--color-blue-500);
+  color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-300);
+}
+```
+
+---
+
+## Gray Scale
+
+중립 색상으로 텍스트, 배경, 테두리 등에 사용됩니다.
+
+<div className="color-palette">
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-50)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-50</div>
+      <div className="token-value">oklch(0.984 0.003 247.858)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-100)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-100</div>
+      <div className="token-value">oklch(0.968 0.006 264.542)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-200)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-200</div>
+      <div className="token-value">oklch(0.929 0.013 264.531)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-300)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-300</div>
+      <div className="token-value">oklch(0.870 0.023 261.325)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-400)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-400</div>
+      <div className="token-value">oklch(0.709 0.043 256.788)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-500)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-500</div>
+      <div className="token-value">oklch(0.554 0.046 257.417)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-600)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-600</div>
+      <div className="token-value">oklch(0.434 0.047 257.281)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-700)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-700</div>
+      <div className="token-value">oklch(0.362 0.044 257.287)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-800)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-800</div>
+      <div className="token-value">oklch(0.270 0.041 260.031)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-900)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-900</div>
+      <div className="token-value">oklch(0.214 0.044 265.755)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-gray-950)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-gray-950</div>
+      <div className="token-value">oklch(0.129 0.042 264.695)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Blue (Primary Brand)
+
+Primary 브랜드 컬러입니다. 버튼, 링크, 주요 액션에 사용됩니다.
+
+<div className="color-palette">
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-50)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-50</div>
+      <div className="token-value">oklch(0.970 0.014 254.604)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-100)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-100</div>
+      <div className="token-value">oklch(0.929 0.039 251.326)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-200)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-200</div>
+      <div className="token-value">oklch(0.866 0.065 252.375)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-300)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-300</div>
+      <div className="token-value">oklch(0.779 0.108 248.582)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-400)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-400</div>
+      <div className="token-value">oklch(0.702 0.155 248.007)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-500)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-500</div>
+      <div className="token-value">oklch(0.623 0.214 249.816) - Primary</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-600)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-600</div>
+      <div className="token-value">oklch(0.513 0.234 256.288)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-700)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-700</div>
+      <div className="token-value">oklch(0.438 0.214 260.147)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-800)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-800</div>
+      <div className="token-value">oklch(0.384 0.170 262.881)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-900)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-900</div>
+      <div className="token-value">oklch(0.343 0.125 265.866)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-blue-950)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-blue-950</div>
+      <div className="token-value">oklch(0.239 0.079 268.679)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Red (Error/Danger)
+
+에러, 위험 상태를 나타냅니다.
+
+<div className="color-palette">
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-50)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-50</div>
+      <div className="token-value">oklch(0.971 0.013 17.379)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-100)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-100</div>
+      <div className="token-value">oklch(0.936 0.032 17.717)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-200)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-200</div>
+      <div className="token-value">oklch(0.885 0.062 19.542)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-300)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-300</div>
+      <div className="token-value">oklch(0.808 0.120 23.542)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-400)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-400</div>
+      <div className="token-value">oklch(0.704 0.191 27.325)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-500)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-500</div>
+      <div className="token-value">oklch(0.637 0.237 25.331) - Error</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-600)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-600</div>
+      <div className="token-value">oklch(0.577 0.249 22.182)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-700)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-700</div>
+      <div className="token-value">oklch(0.505 0.214 21.302)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-800)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-800</div>
+      <div className="token-value">oklch(0.444 0.177 21.538)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-900)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-900</div>
+      <div className="token-value">oklch(0.399 0.141 22.781)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-red-950)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-red-950</div>
+      <div className="token-value">oklch(0.258 0.092 27.513)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Green (Success)
+
+성공, 완료 상태를 나타냅니다.
+
+<div className="color-palette">
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-50)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-50</div>
+      <div className="token-value">oklch(0.982 0.018 155.826)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-100)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-100</div>
+      <div className="token-value">oklch(0.962 0.044 156.743)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-200)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-200</div>
+      <div className="token-value">oklch(0.925 0.084 155.995)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-300)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-300</div>
+      <div className="token-value">oklch(0.871 0.150 154.449)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-400)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-400</div>
+      <div className="token-value">oklch(0.788 0.184 149.579)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-500)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-500</div>
+      <div className="token-value">oklch(0.696 0.178 149.579) - Success</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-600)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-600</div>
+      <div className="token-value">oklch(0.593 0.158 152.584)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-700)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-700</div>
+      <div className="token-value">oklch(0.496 0.130 153.027)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-800)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-800</div>
+      <div className="token-value">oklch(0.420 0.105 153.588)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-900)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-900</div>
+      <div className="token-value">oklch(0.368 0.087 155.409)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-green-950)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-green-950</div>
+      <div className="token-value">oklch(0.250 0.070 158.090)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Yellow (Warning)
+
+경고, 주의 상태를 나타냅니다.
+
+<div className="color-palette">
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-50)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-50</div>
+      <div className="token-value">oklch(0.987 0.024 102.212)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-100)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-100</div>
+      <div className="token-value">oklch(0.973 0.069 101.372)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-200)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-200</div>
+      <div className="token-value">oklch(0.945 0.129 99.526)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-300)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-300</div>
+      <div className="token-value">oklch(0.902 0.182 96.868)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-400)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-400</div>
+      <div className="token-value">oklch(0.847 0.184 91.720)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-500)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-500</div>
+      <div className="token-value">oklch(0.780 0.160 86.047) - Warning</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-600)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-600</div>
+      <div className="token-value">oklch(0.664 0.139 74.492)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-700)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-700</div>
+      <div className="token-value">oklch(0.548 0.123 63.427)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-800)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-800</div>
+      <div className="token-value">oklch(0.473 0.109 56.288)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-900)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-900</div>
+      <div className="token-value">oklch(0.422 0.095 52.449)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-yellow-950)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-yellow-950</div>
+      <div className="token-value">oklch(0.292 0.066 46.512)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Orange (Accent)
+
+<div className="color-palette">
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-orange-50)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-orange-50</div>
+      <div className="token-value">oklch(0.980 0.021 75.656)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-orange-500)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-orange-500</div>
+      <div className="token-value">oklch(0.705 0.190 41.656)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-orange-950)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-orange-950</div>
+      <div className="token-value">oklch(0.285 0.074 33.365)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Purple (Secondary Brand)
+
+<div className="color-palette">
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-purple-50)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-purple-50</div>
+      <div className="token-value">oklch(0.977 0.014 293.756)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-purple-500)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-purple-500</div>
+      <div className="token-value">oklch(0.691 0.241 292.717)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-purple-950)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-purple-950</div>
+      <div className="token-value">oklch(0.307 0.158 288.866)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Pink (Accent)
+
+<div className="color-palette">
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-pink-50)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-pink-50</div>
+      <div className="token-value">oklch(0.971 0.014 343.198)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-pink-500)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-pink-500</div>
+      <div className="token-value">oklch(0.656 0.219 354.308)</div>
+    </div>
+  </div>
+  <div className="color-swatch">
+    <div className="color-box" style={{ backgroundColor: 'var(--color-pink-950)' }} />
+    <div className="color-info">
+      <div className="token-name">--color-pink-950</div>
+      <div className="token-value">oklch(0.294 0.114 3.566)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Semantic Layer 예시
+
+Primitive 토큰을 기반으로 프로젝트별 Semantic 레이어를 정의하세요:
+
+<div className="code-block">{`:root {
+  /* Surface */
+  --color-bg-surface-default: var(--color-gray-50);
+  --color-bg-surface-subdued: var(--color-gray-100);
+
+  /* Brand */
+  --color-bg-primary-default: var(--color-blue-500);
+  --color-bg-primary-hover: var(--color-blue-600);
+
+  /* Text */
+  --color-text-default: var(--color-gray-900);
+  --color-text-subdued: var(--color-gray-600);
+
+  /* Border */
+  --color-border-default: var(--color-gray-300);
+  --color-border-hover: var(--color-gray-400);
+  --color-border-focus: var(--color-blue-500);
+
+  /* Status */
+  --color-status-error: var(--color-red-500);
+  --color-status-success: var(--color-green-500);
+  --color-status-warning: var(--color-yellow-500);
+}
+
+[data-theme="dark"] {
+  --color-bg-surface-default: var(--color-gray-900);
+  --color-bg-surface-subdued: var(--color-gray-800);
+  --color-text-default: var(--color-gray-50);
+  --color-text-subdued: var(--color-gray-400);
+}`}</div>
+
+---
+
+## OKLCH 색공간이란?
+
+OKLCH는 지각적으로 균일한 색공간으로, 다음과 같은 장점이 있습니다:
+
+- **L (Lightness)**: 밝기 (0-1)
+- **C (Chroma)**: 채도 (0-0.4)
+- **H (Hue)**: 색상 (0-360도)
+
+동일한 간격으로 변화할 때 시각적으로도 동일한 차이로 인식됩니다.
+
+<div className="code-block">{`/* OKLCH 형식 */
+color: oklch(0.623 0.214 249.816);
+/*      ↑     ↑     ↑
+ *      L     C     H
+ */
+
+/* 밝기만 조정 */
+oklch(0.623 0.214 249.816) → oklch(0.723 0.214 249.816)
+
+/* 채도만 조정 */
+oklch(0.623 0.214 249.816) → oklch(0.623 0.314 249.816)
+
+/* 색상만 회전 */
+oklch(0.623 0.214 249.816) → oklch(0.623 0.214 349.816)`}</div>

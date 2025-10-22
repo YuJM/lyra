@@ -1,0 +1,658 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design System/Design Tokens" />
+
+# Design Tokens
+
+Lyra 디자인 시스템의 Primitive 디자인 토큰입니다. W3C DTCG 표준을 준수하며, 일관된 디자인 언어를 제공합니다.
+
+## 📦 설치 및 사용
+
+```bash
+pnpm add @lyra/design-tokens
+```
+
+### CSS에서 사용
+
+```css
+@import "@lyra/design-tokens/css";
+
+.my-component {
+  padding: var(--size-4);
+  background: var(--color-blue-500);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+```
+
+### JavaScript/TypeScript에서 사용
+
+```typescript
+import tokens from '@lyra/design-tokens/js';
+
+const primaryColor = tokens.ColorBlue500;
+const baseSize = tokens.Size8;
+```
+
+---
+
+## 🎨 토큰 카테고리
+
+디자인 토큰은 8개의 카테고리로 구성되어 있습니다. 각 카테고리를 클릭하여 자세한 내용을 확인하세요.
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--size-8)', marginTop: 'var(--size-8)' }}>
+  <div style={{
+    padding: 'var(--size-8)',
+    borderRadius: 'var(--border-radius-lg)',
+    border: '1px solid var(--color-gray-200)',
+    background: 'linear-gradient(135deg, var(--color-gray-50), white)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.12)';
+    e.currentTarget.style.borderColor = 'var(--color-blue-300)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.borderColor = 'var(--color-gray-200)';
+  }}>
+    <div style={{
+      width: '3rem',
+      height: '3rem',
+      borderRadius: 'var(--border-radius-md)',
+      background: 'linear-gradient(135deg, #ef4444, #f59e0b)',
+      marginBottom: 'var(--size-4)',
+      boxShadow: '0 4px 12px rgba(239, 68, 68, 0.3)'
+    }} />
+    <h3 style={{
+      marginTop: 0,
+      fontSize: 'var(--font-size-lg)',
+      fontWeight: 'var(--font-weight-bold)',
+      background: 'linear-gradient(135deg, var(--color-gray-900), var(--color-gray-700))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      🎨 Colors
+    </h3>
+    <p style={{
+      color: 'var(--color-gray-600)',
+      fontSize: 'var(--font-size-sm)',
+      marginBottom: 'var(--size-6)',
+      lineHeight: '1.6'
+    }}>
+      7개 팔레트, 각 11 shades (50-950)
+    </p>
+    <a href="/?path=/docs/design-system-design-tokens-colors--docs" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 'var(--size-2)',
+      padding: 'var(--size-3) var(--size-5)',
+      background: 'linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600))',
+      color: 'white',
+      borderRadius: 'var(--border-radius-md)',
+      textDecoration: 'none',
+      fontSize: 'var(--font-size-sm)',
+      fontWeight: 'var(--font-weight-semibold)',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+      transition: 'all 0.2s ease'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateX(4px)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateX(0)';
+      e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+    }}>
+      자세히 보기 →
+    </a>
+  </div>
+
+  <div style={{
+    padding: 'var(--size-8)',
+    borderRadius: 'var(--border-radius-lg)',
+    border: '1px solid var(--color-gray-200)',
+    background: 'linear-gradient(135deg, var(--color-gray-50), white)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.12)';
+    e.currentTarget.style.borderColor = 'var(--color-blue-300)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.borderColor = 'var(--color-gray-200)';
+  }}>
+    <div style={{
+      width: '3rem',
+      height: '3rem',
+      borderRadius: 'var(--border-radius-md)',
+      background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+      marginBottom: 'var(--size-4)',
+      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)'
+    }} />
+    <h3 style={{
+      marginTop: 0,
+      fontSize: 'var(--font-size-lg)',
+      fontWeight: 'var(--font-weight-bold)',
+      background: 'linear-gradient(135deg, var(--color-gray-900), var(--color-gray-700))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      📏 Size
+    </h3>
+    <p style={{
+      color: 'var(--color-gray-600)',
+      fontSize: 'var(--font-size-sm)',
+      marginBottom: 'var(--size-6)',
+      lineHeight: '1.6'
+    }}>
+      2px 단위 시스템 (0-64px)
+    </p>
+    <a href="/?path=/docs/design-system-design-tokens-size--docs" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 'var(--size-2)',
+      padding: 'var(--size-3) var(--size-5)',
+      background: 'linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600))',
+      color: 'white',
+      borderRadius: 'var(--border-radius-md)',
+      textDecoration: 'none',
+      fontSize: 'var(--font-size-sm)',
+      fontWeight: 'var(--font-weight-semibold)',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+      transition: 'all 0.2s ease'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateX(4px)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateX(0)';
+      e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+    }}>
+      자세히 보기 →
+    </a>
+  </div>
+
+  <div style={{
+    padding: 'var(--size-8)',
+    borderRadius: 'var(--border-radius-lg)',
+    border: '1px solid var(--color-gray-200)',
+    background: 'linear-gradient(135deg, var(--color-gray-50), white)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.12)';
+    e.currentTarget.style.borderColor = 'var(--color-blue-300)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.borderColor = 'var(--color-gray-200)';
+  }}>
+    <div style={{
+      width: '3rem',
+      height: '3rem',
+      borderRadius: 'var(--border-radius-md)',
+      background: 'linear-gradient(135deg, #a855f7, #7c3aed)',
+      marginBottom: 'var(--size-4)',
+      boxShadow: '0 4px 12px rgba(168, 85, 247, 0.3)'
+    }} />
+    <h3 style={{
+      marginTop: 0,
+      fontSize: 'var(--font-size-lg)',
+      fontWeight: 'var(--font-weight-bold)',
+      background: 'linear-gradient(135deg, var(--color-gray-900), var(--color-gray-700))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      🔤 Typography
+    </h3>
+    <p style={{
+      color: 'var(--color-gray-600)',
+      fontSize: 'var(--font-size-sm)',
+      marginBottom: 'var(--size-6)',
+      lineHeight: '1.6'
+    }}>
+      폰트, 사이즈, 무게, 줄높이
+    </p>
+    <a href="/?path=/docs/design-system-design-tokens-typography--docs" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 'var(--size-2)',
+      padding: 'var(--size-3) var(--size-5)',
+      background: 'linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600))',
+      color: 'white',
+      borderRadius: 'var(--border-radius-md)',
+      textDecoration: 'none',
+      fontSize: 'var(--font-size-sm)',
+      fontWeight: 'var(--font-weight-semibold)',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+      transition: 'all 0.2s ease'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateX(4px)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateX(0)';
+      e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+    }}>
+      자세히 보기 →
+    </a>
+  </div>
+
+  <div style={{
+    padding: 'var(--size-8)',
+    borderRadius: 'var(--border-radius-lg)',
+    border: '1px solid var(--color-gray-200)',
+    background: 'linear-gradient(135deg, var(--color-gray-50), white)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.12)';
+    e.currentTarget.style.borderColor = 'var(--color-blue-300)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.borderColor = 'var(--color-gray-200)';
+  }}>
+    <div style={{
+      width: '3rem',
+      height: '3rem',
+      borderRadius: 'var(--border-radius-md)',
+      background: 'linear-gradient(135deg, #06b6d4, #0891b2)',
+      marginBottom: 'var(--size-4)',
+      boxShadow: '0 4px 12px rgba(6, 182, 212, 0.3)'
+    }} />
+    <h3 style={{
+      marginTop: 0,
+      fontSize: 'var(--font-size-lg)',
+      fontWeight: 'var(--font-weight-bold)',
+      background: 'linear-gradient(135deg, var(--color-gray-900), var(--color-gray-700))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      🔲 Borders
+    </h3>
+    <p style={{
+      color: 'var(--color-gray-600)',
+      fontSize: 'var(--font-size-sm)',
+      marginBottom: 'var(--size-6)',
+      lineHeight: '1.6'
+    }}>
+      테두리 두께 및 둥근 모서리
+    </p>
+    <a href="/?path=/docs/design-system-design-tokens-borders--docs" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 'var(--size-2)',
+      padding: 'var(--size-3) var(--size-5)',
+      background: 'linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600))',
+      color: 'white',
+      borderRadius: 'var(--border-radius-md)',
+      textDecoration: 'none',
+      fontSize: 'var(--font-size-sm)',
+      fontWeight: 'var(--font-weight-semibold)',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+      transition: 'all 0.2s ease'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateX(4px)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateX(0)';
+      e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+    }}>
+      자세히 보기 →
+    </a>
+  </div>
+
+  <div style={{
+    padding: 'var(--size-8)',
+    borderRadius: 'var(--border-radius-lg)',
+    border: '1px solid var(--color-gray-200)',
+    background: 'linear-gradient(135deg, var(--color-gray-50), white)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.12)';
+    e.currentTarget.style.borderColor = 'var(--color-blue-300)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.borderColor = 'var(--color-gray-200)';
+  }}>
+    <div style={{
+      width: '3rem',
+      height: '3rem',
+      borderRadius: 'var(--border-radius-md)',
+      background: 'linear-gradient(135deg, #6b7280, #4b5563)',
+      marginBottom: 'var(--size-4)',
+      boxShadow: '0 4px 12px rgba(107, 114, 128, 0.3)'
+    }} />
+    <h3 style={{
+      marginTop: 0,
+      fontSize: 'var(--font-size-lg)',
+      fontWeight: 'var(--font-weight-bold)',
+      background: 'linear-gradient(135deg, var(--color-gray-900), var(--color-gray-700))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      🌑 Shadows
+    </h3>
+    <p style={{
+      color: 'var(--color-gray-600)',
+      fontSize: 'var(--font-size-sm)',
+      marginBottom: 'var(--size-6)',
+      lineHeight: '1.6'
+    }}>
+      깊이와 계층 표현
+    </p>
+    <a href="/?path=/docs/design-system-design-tokens-shadows--docs" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 'var(--size-2)',
+      padding: 'var(--size-3) var(--size-5)',
+      background: 'linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600))',
+      color: 'white',
+      borderRadius: 'var(--border-radius-md)',
+      textDecoration: 'none',
+      fontSize: 'var(--font-size-sm)',
+      fontWeight: 'var(--font-weight-semibold)',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+      transition: 'all 0.2s ease'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateX(4px)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateX(0)';
+      e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+    }}>
+      자세히 보기 →
+    </a>
+  </div>
+
+  <div style={{
+    padding: 'var(--size-8)',
+    borderRadius: 'var(--border-radius-lg)',
+    border: '1px solid var(--color-gray-200)',
+    background: 'linear-gradient(135deg, var(--color-gray-50), white)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.12)';
+    e.currentTarget.style.borderColor = 'var(--color-blue-300)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.borderColor = 'var(--color-gray-200)';
+  }}>
+    <div style={{
+      width: '3rem',
+      height: '3rem',
+      borderRadius: 'var(--border-radius-md)',
+      background: 'linear-gradient(135deg, #ec4899, #a855f7)',
+      marginBottom: 'var(--size-4)',
+      boxShadow: '0 4px 12px rgba(236, 72, 153, 0.3)'
+    }} />
+    <h3 style={{
+      marginTop: 0,
+      fontSize: 'var(--font-size-lg)',
+      fontWeight: 'var(--font-weight-bold)',
+      background: 'linear-gradient(135deg, var(--color-gray-900), var(--color-gray-700))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      ⏱️ Animation
+    </h3>
+    <p style={{
+      color: 'var(--color-gray-600)',
+      fontSize: 'var(--font-size-sm)',
+      marginBottom: 'var(--size-6)',
+      lineHeight: '1.6'
+    }}>
+      지속 시간 및 이징 함수
+    </p>
+    <a href="/?path=/docs/design-system-design-tokens-animation--docs" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 'var(--size-2)',
+      padding: 'var(--size-3) var(--size-5)',
+      background: 'linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600))',
+      color: 'white',
+      borderRadius: 'var(--border-radius-md)',
+      textDecoration: 'none',
+      fontSize: 'var(--font-size-sm)',
+      fontWeight: 'var(--font-weight-semibold)',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+      transition: 'all 0.2s ease'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateX(4px)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateX(0)';
+      e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+    }}>
+      자세히 보기 →
+    </a>
+  </div>
+
+  <div style={{
+    padding: 'var(--size-8)',
+    borderRadius: 'var(--border-radius-lg)',
+    border: '1px solid var(--color-gray-200)',
+    background: 'linear-gradient(135deg, var(--color-gray-50), white)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.12)';
+    e.currentTarget.style.borderColor = 'var(--color-blue-300)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.borderColor = 'var(--color-gray-200)';
+  }}>
+    <div style={{
+      width: '3rem',
+      height: '3rem',
+      borderRadius: 'var(--border-radius-md)',
+      background: 'linear-gradient(135deg, #4f46e5, #3730a3)',
+      marginBottom: 'var(--size-4)',
+      boxShadow: '0 4px 12px rgba(79, 70, 229, 0.3)'
+    }} />
+    <h3 style={{
+      marginTop: 0,
+      fontSize: 'var(--font-size-lg)',
+      fontWeight: 'var(--font-weight-bold)',
+      background: 'linear-gradient(135deg, var(--color-gray-900), var(--color-gray-700))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      📚 Z-Index
+    </h3>
+    <p style={{
+      color: 'var(--color-gray-600)',
+      fontSize: 'var(--font-size-sm)',
+      marginBottom: 'var(--size-6)',
+      lineHeight: '1.6'
+    }}>
+      레이어 스택 시스템
+    </p>
+    <a href="/?path=/docs/design-system-design-tokens-z-index--docs" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 'var(--size-2)',
+      padding: 'var(--size-3) var(--size-5)',
+      background: 'linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600))',
+      color: 'white',
+      borderRadius: 'var(--border-radius-md)',
+      textDecoration: 'none',
+      fontSize: 'var(--font-size-sm)',
+      fontWeight: 'var(--font-weight-semibold)',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+      transition: 'all 0.2s ease'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateX(4px)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateX(0)';
+      e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+    }}>
+      자세히 보기 →
+    </a>
+  </div>
+
+  <div style={{
+    padding: 'var(--size-8)',
+    borderRadius: 'var(--border-radius-lg)',
+    border: '1px solid var(--color-gray-200)',
+    background: 'linear-gradient(135deg, var(--color-gray-50), white)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.12)';
+    e.currentTarget.style.borderColor = 'var(--color-blue-300)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.borderColor = 'var(--color-gray-200)';
+  }}>
+    <div style={{
+      width: '3rem',
+      height: '3rem',
+      borderRadius: 'var(--border-radius-md)',
+      background: 'linear-gradient(135deg, #10b981, #059669)',
+      marginBottom: 'var(--size-4)',
+      boxShadow: '0 4px 12px rgba(16, 185, 129, 0.3)'
+    }} />
+    <h3 style={{
+      marginTop: 0,
+      fontSize: 'var(--font-size-lg)',
+      fontWeight: 'var(--font-weight-bold)',
+      background: 'linear-gradient(135deg, var(--color-gray-900), var(--color-gray-700))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      📱 Breakpoints
+    </h3>
+    <p style={{
+      color: 'var(--color-gray-600)',
+      fontSize: 'var(--font-size-sm)',
+      marginBottom: 'var(--size-6)',
+      lineHeight: '1.6'
+    }}>
+      반응형 디자인 기준점
+    </p>
+    <a href="/?path=/docs/design-system-design-tokens-breakpoints--docs" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 'var(--size-2)',
+      padding: 'var(--size-3) var(--size-5)',
+      background: 'linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600))',
+      color: 'white',
+      borderRadius: 'var(--border-radius-md)',
+      textDecoration: 'none',
+      fontSize: 'var(--font-size-sm)',
+      fontWeight: 'var(--font-weight-semibold)',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+      transition: 'all 0.2s ease'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateX(4px)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateX(0)';
+      e.currentTarget.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+    }}>
+      자세히 보기 →
+    </a>
+  </div>
+</div>
+
+---
+
+## 🎨 Semantic Layer 만들기
+
+Primitive 토큰을 기반으로 프로젝트별 Semantic 레이어를 정의하세요:
+
+<div className="code-block">{`:root {
+  /* Surface */
+  --color-bg-surface-default: var(--color-gray-50);
+  --color-bg-surface-hover: var(--color-gray-100);
+
+  /* Brand */
+  --color-bg-primary-default: var(--color-blue-500);
+  --color-bg-primary-hover: var(--color-blue-600);
+
+  /* Text */
+  --color-text-default: var(--color-gray-900);
+  --color-text-subdued: var(--color-gray-600);
+  --color-text-inverse: white;
+
+  /* Border */
+  --color-border-default: var(--color-gray-300);
+  --color-border-hover: var(--color-gray-400);
+
+  /* Status */
+  --color-bg-success: var(--color-green-500);
+  --color-bg-error: var(--color-red-500);
+  --color-bg-warning: var(--color-yellow-500);
+}`}</div>
+
+---
+
+## 📖 참고 자료
+
+- **W3C DTCG**: [Design Tokens Community Group](https://github.com/design-tokens/community-group)
+- **Style Dictionary**: [Documentation](https://amzn.github.io/style-dictionary/)
+- **OKLCH**: [Color Picker](https://oklch.com/)
+- **Figma Tokens**: [@lyra/design-tokens/figma/tokens.json](../../design-tokens/figma/tokens.json)

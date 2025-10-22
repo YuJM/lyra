@@ -1,7 +1,10 @@
 import type { Preview } from '@storybook/react-vite'
 
-// Global styles import
+// IMPORTANT: 스타일 적용 순서 보장을 위해 import 순서 유지 필요
+// 1. Global styles - Reset/Normalize 먼저 로드하여 초기화
 import '../src/global.css'
+// 2. Design tokens styles - 커스텀 스타일이 reset을 덮어쓰도록 나중에 로드
+import '../src/stories/design-tokens.css'
 
 const preview: Preview = {
   parameters: {

@@ -64,7 +64,10 @@ export default [
         generateScopedName: generateScopedName({
           includeHash: process.env.NODE_ENV === 'production',
         }),
-        globalModulePaths: [/global\.css$/],
+        globalModulePaths: [
+          /global\.css$/,
+          /design-tokens\.css$/,
+        ],
       },
       plugins: postcssPlugins,
     },
