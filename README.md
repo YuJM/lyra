@@ -1,208 +1,447 @@
-# Turborepo Design System Starter
+# Lyra Design System
 
-This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
+Lyra는 접근성과 사용성을 최우선으로 하는 현대적인 React 기반 디자인 시스템입니다. Base UI Components를 기반으로 구축되었으며, 체계적인 디자인 토큰과 재사용 가능한 컴포넌트를 제공합니다.
 
-This guide explains how to use a React design system starter powered by:
+## ✨ 주요 특징
 
-- 🏎 [Turborepo](https://turborepo.com) — High-performance build system for Monorepos
-- 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
-- 🛠 [Tsup](https://github.com/egoist/tsup) — TypeScript bundler powered by esbuild
-- 📖 [Storybook](https://storybook.js.org/) — UI component environment powered by Vite
+- 🎨 **체계적인 디자인 토큰**: Style Dictionary 기반 토큰 시스템으로 일관된 디자인 언어 제공
+- ♿️ **접근성 우선**: Base UI Components 기반의 ARIA 표준 준수 컴포넌트
+- 📱 **반응형 디자인**: Polaris 방식의 미디어 쿼리 시스템으로 모든 디바이스 지원
+- 🎭 **CSS Modules**: 스타일 충돌 없는 안전한 스코프 스타일링
+- 🧪 **완전한 테스트**: Vitest 기반 유닛 테스트 및 Storybook 인터랙션 테스트
+- 📚 **풍부한 문서화**: Storybook으로 작성된 인터랙티브 컴포넌트 문서
+- 🔧 **TypeScript**: 완벽한 타입 정의 제공
+- 🚀 **모노레포 구조**: Turborepo 기반 고성능 빌드 시스템
 
-As well as a few others tools preconfigured:
+## 🏗️ 모노레포 구조
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Changesets](https://github.com/changesets/changesets) for managing versioning and changelogs
-- [GitHub Actions](https://github.com/changesets/action) for fully automated package publishing
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e design-system
+```
+lyra/
+├── apps/
+│   ├── docs/          # Storybook 문서화 앱
+│   └── web/           # 웹 애플리케이션 (Vite)
+├── packages/
+│   ├── design-tokens/ # 디자인 토큰 시스템
+│   ├── ui/            # UI 컴포넌트 라이브러리
+│   ├── eslint-config/ # ESLint 공유 설정
+│   └── typescript-config/ # TypeScript 공유 설정
+└── docs/              # 프로젝트 문서
 ```
 
-### Useful Commands
+## 🚀 빠른 시작
 
-- `pnpm build` - Build all packages, including the Storybook site
-- `pnpm dev` - Run all packages locally and preview with Storybook
-- `pnpm lint` - Lint all packages
-- `pnpm changeset` - Generate a changeset
-- `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
+### 필수 요구사항
 
-## Turborepo
+- Node.js 18.x 이상
+- pnpm 10.x 이상
 
-[Turborepo](https://turborepo.com) is a high-performance build system for JavaScript and TypeScript codebases. It was designed after the workflows used by massive software engineering organizations to ship code at scale. Turborepo abstracts the complex configuration needed for monorepos and provides fast, incremental builds with zero-configuration remote caching.
-
-Using Turborepo simplifies managing your design system monorepo, as you can have a single lint, build, test, and release process for all packages. [Learn more](https://vercel.com/blog/monorepos-are-changing-how-teams-build-software) about how monorepos improve your development workflow.
-
-## Apps & Packages
-
-This Turborepo includes the following packages and applications:
-
-- `apps/docs`: Component documentation site with Storybook
-- `packages/ui`: Core React components
-- `packages/typescript-config`: Shared `tsconfig.json`s used throughout the Turborepo
-- `packages/eslint-config`: ESLint preset
-
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-w` workspaces flag with `pnpm add`.
-
-This example sets up your `.gitignore` to exclude all generated files, other folders like `node_modules` used to store your dependencies.
-
-### Compilation
-
-To make the ui library code work across all browsers, we need to compile the raw TypeScript and React code to plain JavaScript. We can accomplish this with `tsup`, which uses `esbuild` to greatly improve performance.
-
-Running `pnpm build` from the root of the Turborepo will run the `build` command defined in each package's `package.json` file. Turborepo runs each `build` in parallel and caches & hashes the output to speed up future builds.
-
-For `@acme/ui`, the `build` command is equivalent to the following:
+### 설치
 
 ```bash
-tsup src/*.tsx --format esm,cjs --dts --external react
+# 저장소 클론
+git clone https://github.com/YuJM/lyra.git
+cd lyra
+
+# 의존성 설치
+pnpm install
 ```
 
-`tsup` compiles all of the components in the design system individually, into both ES Modules and CommonJS formats as well as their TypeScript types. The `package.json` for `@acme/ui` then instructs the consumer to select the correct format:
+### 개발 서버 실행
 
-```json:ui/package.json
-{
-  "name": "@acme/ui",
-  "version": "0.0.0",
-  "sideEffects": false,
-  "exports":{
-    "./button": {
-      "types": "./src/button.tsx",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js"
-    }
+```bash
+# 모든 패키지를 watch 모드로 실행
+pnpm dev
+
+# Storybook 문서 서버 실행 (localhost:6006)
+pnpm dev --filter=docs
+```
+
+### 빌드
+
+```bash
+# 모든 패키지 빌드
+pnpm build
+
+# 특정 패키지만 빌드
+pnpm build --filter=@lyra/ui
+```
+
+## 📦 패키지 상세
+
+### @lyra/design-tokens
+
+디자인 시스템의 핵심 토큰을 관리하는 패키지입니다.
+
+**제공하는 토큰:**
+- 색상 (Color primitives)
+- 타이포그래피 (Font family, size, weight, line height)
+- 간격 (Spacing scale)
+- 브레이크포인트 (Responsive breakpoints)
+- 그림자 (Shadow tokens)
+- 테두리 (Border radius, width)
+- 애니메이션 (Duration, easing)
+- Z-index (Layering system)
+
+**기술 스택:**
+- Style Dictionary (토큰 변환)
+- DTCG 포맷 지원
+- CSS, JavaScript, JSON 형식 출력
+- Polaris 방식 미디어 쿼리 자동 생성
+
+**사용법:**
+```tsx
+import '@lyra/design-tokens/css';
+
+// CSS 변수로 사용
+.element {
+  color: var(--color-blue-600);
+  padding: var(--spacing-4);
+  font-size: var(--font-size-base);
+}
+```
+
+### @lyra/ui
+
+Base UI Components 기반의 접근성 우선 React 컴포넌트 라이브러리입니다.
+
+**제공 컴포넌트:**
+
+#### Form Components
+- **Button**: 다양한 variant를 지원하는 버튼
+- **Checkbox**: 단일/그룹 체크박스
+- **Radio**: 라디오 버튼 및 그룹
+- **Switch**: 토글 스위치
+- **Field**: 폼 필드 구성 요소 (Label, Control, Description, Error)
+- **Select**: 드롭다운 선택 컴포넌트
+
+#### Overlay Components
+- **Dialog**: 모달 다이얼로그
+- **Tooltip**: 툴팁
+
+**기술 스택:**
+- React 19
+- Base UI Components
+- CSS Modules + PostCSS
+- Rollup (빌드 시스템)
+- Vitest (테스팅)
+- Storybook (문서화)
+
+**사용법:**
+```tsx
+import { Button, Field, Select } from '@lyra/ui';
+import '@lyra/ui/styles';
+
+function App() {
+  return (
+    <>
+      <Button variant="primary">제출</Button>
+
+      <Field.Root>
+        <Field.Label>이메일</Field.Label>
+        <Field.Control type="email" />
+        <Field.Description>로그인에 사용할 이메일입니다</Field.Description>
+      </Field.Root>
+
+      <Select.Root>
+        <Select.Trigger>
+          <Select.Value placeholder="선택하세요" />
+        </Select.Trigger>
+        <Select.Portal>
+          <Select.Popup>
+            <Select.Item value="1">옵션 1</Select.Item>
+            <Select.Item value="2">옵션 2</Select.Item>
+          </Select.Popup>
+        </Select.Portal>
+      </Select.Root>
+    </>
+  );
+}
+```
+
+## 🛠️ 개발 가이드
+
+### 명령어
+
+#### 개발
+```bash
+pnpm dev                    # 모든 패키지를 watch 모드로 실행
+pnpm dev --filter=@lyra/ui  # 특정 패키지만 실행
+```
+
+#### 빌드
+```bash
+pnpm build                  # 모든 패키지 빌드
+pnpm build --filter=docs    # Storybook 빌드
+```
+
+#### 테스트
+```bash
+pnpm test                   # 모든 테스트 실행
+pnpm test --filter=@lyra/ui # UI 패키지 테스트만 실행
+pnpm test:watch             # Watch 모드로 테스트
+```
+
+#### 린팅
+```bash
+pnpm lint                   # 모든 패키지 린팅
+pnpm lint:fix               # 린트 에러 자동 수정
+```
+
+#### 클린업
+```bash
+pnpm clean                  # node_modules 및 빌드 결과물 삭제
+```
+
+### 새 컴포넌트 추가
+
+1. **컴포넌트 파일 생성**
+```tsx
+// packages/ui/src/components/my-component/my-component.tsx
+import * as BaseUI from '@base-ui-components/react/MyComponent';
+import styles from './my-component.module.css';
+
+export function MyComponent({ children, ...props }) {
+  return (
+    <BaseUI.Root {...props} className={styles.root}>
+      {children}
+    </BaseUI.Root>
+  );
+}
+```
+
+2. **스타일 작성**
+```css
+/* packages/ui/src/components/my-component/my-component.module.css */
+.root {
+  padding: var(--spacing-4);
+  background: var(--color-bg-surface-default);
+}
+```
+
+3. **테스트 작성**
+```tsx
+// packages/ui/src/components/my-component/my-component.test.tsx
+import { render, screen } from '@testing-library/react';
+import { MyComponent } from './my-component';
+
+describe('MyComponent', () => {
+  it('renders children', () => {
+    render(<MyComponent>Test</MyComponent>);
+    expect(screen.getByText('Test')).toBeInTheDocument();
+  });
+});
+```
+
+4. **Storybook 스토리 추가**
+```tsx
+// packages/ui/src/stories/components/my-component/my-component.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { MyComponent } from '../../../components/my-component/my-component';
+
+const meta = {
+  title: "MyComponent",
+  component: MyComponent,
+  tags: ["autodocs"],
+} satisfies Meta<typeof MyComponent>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    children: "Hello World",
+  },
+};
+```
+
+5. **export 추가**
+```tsx
+// packages/ui/src/index.tsx
+export { MyComponent } from './components/my-component/my-component';
+```
+
+## 🎨 디자인 토큰 사용 가이드
+
+### CSS에서 사용
+
+```css
+.button {
+  /* 색상 토큰 */
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary-default);
+  border-color: var(--color-border-default);
+
+  /* 간격 토큰 */
+  padding: var(--spacing-2) var(--spacing-4);
+  margin: var(--spacing-4);
+
+  /* 타이포그래피 토큰 */
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+
+  /* 테두리 토큰 */
+  border-radius: var(--border-radius-md);
+
+  /* 애니메이션 토큰 */
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--easing-ease-in-out);
+}
+```
+
+### 반응형 미디어 쿼리
+
+```css
+.container {
+  width: 100%;
+}
+
+/* 640px 이하 (모바일) */
+@media (--sm-down) {
+  .container {
+    padding: var(--spacing-2);
+  }
+}
+
+/* 640px 이상 (태블릿+) */
+@media (--sm-up) {
+  .container {
+    padding: var(--spacing-4);
+  }
+}
+
+/* 640px ~ 768px (태블릿만) */
+@media (--sm-only) {
+  .container {
+    padding: var(--spacing-3);
   }
 }
 ```
 
-Run `pnpm build` to confirm compilation is working correctly. You should see a folder `ui/dist` which contains the compiled output.
+## 🧪 테스팅
+
+### 유닛 테스트 (Vitest)
 
 ```bash
-ui
-└── dist
-    ├── button.d.ts  <-- Types
-    ├── button.js    <-- CommonJS version
-    ├── button.mjs   <-- ES Modules version
-    └── button.d.mts   <-- ES Modules version with Types
+# 모든 테스트 실행
+pnpm test
+
+# Watch 모드
+pnpm test:watch
+
+# 커버리지 리포트
+pnpm test:coverage
 ```
 
-## Components
+### Storybook 인터랙션 테스트
 
-Each file inside of `ui/src` is a component inside our design system. For example:
+```tsx
+import { expect, userEvent, within } from '@storybook/test';
 
-```tsx:ui/src/Button.tsx
-import * as React from 'react';
+export const InteractionTest: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button');
 
-export interface ButtonProps {
-  children: React.ReactNode;
-}
-
-export function Button(props: ButtonProps) {
-  return <button>{props.children}</button>;
-}
-
-Button.displayName = 'Button';
+    await userEvent.click(button);
+    await expect(button).toHaveAttribute('aria-pressed', 'true');
+  },
+};
 ```
 
-When adding a new file, ensure that its specifier is defined in `package.json` file:
+## 📖 문서화
 
-```json:ui/package.json
-{
-  "name": "@acme/ui",
-  "version": "0.0.0",
-  "sideEffects": false,
-  "exports":{
-    "./button": {
-      "types": "./src/button.tsx",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js"
-    }
-    // Add new component exports here
-  }
-}
-```
-
-## Storybook
-
-Storybook provides us with an interactive UI playground for our components. This allows us to preview our components in the browser and instantly see changes when developing locally. This example preconfigures Storybook to:
-
-- Use Vite to bundle stories instantly (in milliseconds)
-- Automatically find any stories inside the `stories/` folder
-- Support using module path aliases like `@acme/ui` for imports
-- Write MDX for component documentation pages
-
-For example, here's the included Story for our `Button` component:
-
-```js:apps/docs/stories/button.stories.mdx
-import { Button } from '@acme/ui/button';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-
-<Meta title="Components/Button" component={Button} />
-
-# Button
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi, euismod aliquam nisl nunc euismod.
-
-## Props
-
-<Props of={Box} />
-
-## Examples
-
-<Preview>
-  <Story name="Default">
-    <Button>Hello</Button>
-  </Story>
-</Preview>
-```
-
-This example includes a few helpful Storybook scripts:
-
-- `pnpm dev`: Starts Storybook in dev mode with hot reloading at `localhost:6006`
-- `pnpm build`: Builds the Storybook UI and generates the static HTML files
-- `pnpm preview-storybook`: Starts a local server to view the generated Storybook UI
-
-## Versioning & Publishing Packages
-
-This example uses [Changesets](https://github.com/changesets/changesets) to manage versions, create changelogs, and publish to npm. It's preconfigured so you can start publishing packages immediately.
-
-You'll need to create an `NPM_TOKEN` and `GITHUB_TOKEN` and add it to your GitHub repository settings to enable access to npm. It's also worth installing the [Changesets bot](https://github.com/apps/changeset-bot) on your repository.
-
-### Generating the Changelog
-
-To generate your changelog, run `pnpm changeset` locally:
-
-1. **Which packages would you like to include?** – This shows which packages and changed and which have remained the same. By default, no packages are included. Press `space` to select the packages you want to include in the `changeset`.
-1. **Which packages should have a major bump?** – Press `space` to select the packages you want to bump versions for.
-1. If doing the first major version, confirm you want to release.
-1. Write a summary for the changes.
-1. Confirm the changeset looks as expected.
-1. A new Markdown file will be created in the `changeset` folder with the summary and a list of the packages included.
-
-### Releasing
-
-When you push your code to GitHub, the [GitHub Action](https://github.com/changesets/action) will run the `release` script defined in the root `package.json`:
+### Storybook 실행
 
 ```bash
-turbo run build --filter=docs^... && changeset publish
+# 개발 모드
+pnpm dev --filter=docs
+
+# 빌드
+pnpm build --filter=docs
+
+# 프리뷰
+pnpm preview-storybook
 ```
 
-Turborepo runs the `build` script for all publishable packages (excluding docs) and publishes the packages to npm. By default, this example includes `acme` as the npm organization. To change this, do the following:
+Storybook은 http://localhost:6006 에서 실행됩니다.
 
-- Rename folders in `packages/*` to replace `acme` with your desired scope
-- Search and replace `acme` with your desired scope
-- Re-run `pnpm install`
+## 🔧 기술 스택
 
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
+### 코어
+- **React 19**: UI 라이브러리
+- **TypeScript**: 타입 안정성
+- **Base UI Components**: 접근성 우선 헤드리스 컴포넌트
 
-```diff
-- "publishConfig": {
--  "access": "public"
-- },
+### 빌드 도구
+- **Turborepo**: 모노레포 빌드 시스템
+- **pnpm**: 패키지 매니저
+- **Rollup**: UI 패키지 번들러
+- **Vite**: 개발 서버 및 빌드 도구
+
+### 스타일링
+- **CSS Modules**: 스코프 스타일링
+- **PostCSS**: CSS 변환
+  - postcss-nesting
+  - postcss-custom-media
+  - postcss-mixins
+  - postcss-global-data
+- **Style Dictionary**: 디자인 토큰 변환
+
+### 테스팅 & 문서화
+- **Vitest**: 유닛 테스트 프레임워크
+- **Testing Library**: React 컴포넌트 테스팅
+- **Storybook**: 컴포넌트 문서화 및 인터랙션 테스트
+- **Chromatic**: 시각적 회귀 테스트
+
+### 코드 품질
+- **ESLint**: 코드 린팅
+- **TypeScript**: 정적 타입 검사
+- **Changesets**: 버전 관리 및 체인지로그
+
+## 📝 버전 관리
+
+이 프로젝트는 [Changesets](https://github.com/changesets/changesets)를 사용하여 버전을 관리합니다.
+
+### 체인지셋 생성
+
+```bash
+pnpm changeset
 ```
+
+1. 변경된 패키지 선택
+2. 버전 범프 타입 선택 (major/minor/patch)
+3. 변경 사항 요약 작성
+
+### 버전 업데이트
+
+```bash
+pnpm changeset version
+```
+
+### 퍼블리시
+
+```bash
+pnpm release
+```
+
+## 🤝 기여하기
+
+이슈와 풀 리퀘스트는 언제나 환영합니다!
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feat/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feat/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 라이선스
+
+MIT
+
+## 🔗 링크
+
+- [Repository](https://github.com/YuJM/lyra)
+- [Storybook](https://lyra-storybook.vercel.app) (배포 예정)
+- [Documentation](./docs) (프로젝트 문서)
