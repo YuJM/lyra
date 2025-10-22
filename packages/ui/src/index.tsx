@@ -10,6 +10,7 @@ import "./components/tooltip/tooltip.module.css";
 import "./components/popover/popover.module.css";
 import "./components/menu/menu.module.css";
 import "./components/tabs/tabs.module.css";
+import "./components/collapsible/collapsible.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -107,3 +108,9 @@ export {
   type TabsIndicatorProps,
   type TabsPanelProps,
 } from "./components/tabs/tabs";
+export {
+  Collapsible,
+  type CollapsibleRootProps,
+  type CollapsibleTriggerProps,
+  type CollapsiblePanelProps,
+} from "./components/collapsible/collapsible";
