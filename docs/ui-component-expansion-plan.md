@@ -16,6 +16,7 @@
 - [x] Dialog - 모달 대화상자 컴포넌트
 - [x] Tooltip - Hover/Focus 기반 툴팁 컴포넌트
 - [x] Popover - 클릭 기반 팝오버 컴포넌트
+- [x] Menu - 드롭다운 메뉴 컴포넌트 (RadioItem, CheckboxItem, Submenu 지원)
 
 ### 🛠️ 인프라
 - [x] Vitest + @testing-library/react 테스트 환경
@@ -424,33 +425,86 @@
 ---
 
 ### 8. Menu
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐⭐⭐ 매우 어려움
-**예상 시간**: 8-10시간
+**실제 시간**: ~5시간
 **우선순위**: 8순위
 
 **작업 항목**:
-- [ ] `src/menu.tsx` 컴포넌트 구현
-  - [ ] Menu.Root
-  - [ ] Menu.Trigger
-  - [ ] Menu.Portal
-  - [ ] Menu.Backdrop
-  - [ ] Menu.Positioner
-  - [ ] Menu.Popup
-  - [ ] Menu.Arrow
-  - [ ] Menu.Item
-  - [ ] Menu.Separator
-  - [ ] Menu.Group
-  - [ ] Menu.GroupLabel
-  - [ ] Menu.RadioGroup
-  - [ ] Menu.RadioItem
-  - [ ] Menu.CheckboxItem
-  - [ ] Menu.SubmenuRoot
-  - [ ] Menu.SubmenuTrigger
-- [ ] `src/menu.module.css` 스타일
-- [ ] `src/menu.test.tsx` 테스트
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/menu.tsx` 컴포넌트 구현
+  - [x] Menu.Root
+  - [x] Menu.Trigger
+  - [x] Menu.Portal
+  - [x] Menu.Backdrop
+  - [x] Menu.Positioner
+  - [x] Menu.Popup
+  - [x] Menu.Arrow
+  - [x] Menu.Item
+  - [x] Menu.Separator
+  - [x] Menu.Group
+  - [x] Menu.GroupLabel
+  - [x] Menu.RadioGroup
+  - [x] Menu.RadioItem
+  - [x] Menu.RadioItemIndicator
+  - [x] Menu.CheckboxItem
+  - [x] Menu.CheckboxItemIndicator
+  - [x] Menu.SubmenuRoot
+  - [x] Menu.SubmenuTrigger
+- [x] `src/menu.module.css` 스타일
+  - [x] Item 상태 (hover, active, disabled, highlighted)
+  - [x] RadioItem/CheckboxItem 스타일
+  - [x] Indicator 스타일 (✓ checkmark)
+  - [x] Group과 GroupLabel
+  - [x] Separator
+  - [x] SubmenuTrigger (› arrow)
+  - [x] Arrow 4방향 지원
+  - [x] 애니메이션
+  - [x] 반응형 디자인
+- [x] `src/menu.test.tsx` 테스트
+- [x] Storybook 스토리 (12개)
+  - [x] Default
+  - [x] WithArrow
+  - [x] WithGroups
+  - [x] WithRadioItems
+  - [x] WithCheckboxItems
+  - [x] WithSubmenu
+  - [x] DifferentPositions
+  - [x] WithBackdrop
+  - [x] Controlled
+  - [x] ComplexMenu
+  - [x] WithDisabledItems
+  - [x] ContextMenuStyle
+- [x] Export 추가
+
+**테스트 결과**: 27개 테스트 모두 통과 ✅
+
+**구현 참고**:
+```tsx
+<Menu.Root>
+  <Menu.Trigger>Open Menu</Menu.Trigger>
+  <Menu.Portal>
+    <Menu.Positioner sideOffset={8}>
+      <Menu.Popup>
+        <Menu.Item>Cut</Menu.Item>
+        <Menu.Item>Copy</Menu.Item>
+        <Menu.Separator />
+        <Menu.RadioGroup value={align} onValueChange={setAlign}>
+          <Menu.RadioItem value="left">
+            <Menu.RadioItemIndicator />
+            Left
+          </Menu.RadioItem>
+        </Menu.RadioGroup>
+        <Menu.CheckboxItem checked={show} onCheckedChange={setShow}>
+          <Menu.CheckboxItemIndicator />
+          Show Details
+        </Menu.CheckboxItem>
+      </Menu.Popup>
+    </Menu.Positioner>
+  </Menu.Portal>
+</Menu.Root>
+```
+
+**설계 결정**: 가장 복잡한 컴포넌트 (18개 서브 컴포넌트). RadioItem, CheckboxItem, Submenu 등 다양한 기능 지원
 
 ---
 
@@ -619,24 +673,24 @@ toast.promise(myPromise, {
 
 ### 전체 진행률
 - **Phase 1 (Form)**: 4/4 (100%) ✅ Switch, Radio+RadioGroup, Field, Select 완료
-- **Phase 2 (Dialog/Overlay)**: 3/4 (75%) ✅ Dialog, Tooltip, Popover 완료
+- **Phase 2 (Dialog/Overlay)**: 4/4 (100%) ✅ Dialog, Tooltip, Popover, Menu 완료
 - **Phase 3 (Navigation)**: 0/2 (0%)
 - **Phase 4 (Feedback)**: 0/3 (0%)
 
-**총 진행률**: 7/13 (53.8%)
+**총 진행률**: 8/13 (61.5%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Menu 컴포넌트 구현 (Priority 8)
-- Phase 2 (Dialog & Overlay) 마지막 컴포넌트
-- Context7에서 Base UI Menu 문서 조회
-- Dropdown, Submenu, RadioItem, CheckboxItem 지원
-- 예상 시간: 8-10시간 (가장 복잡한 컴포넌트)
+**NEXT**: Tabs 컴포넌트 구현 (Priority 9)
+- Phase 3 (Navigation) 시작
+- Context7에서 Base UI Tabs 문서 조회
+- Tab 전환, 키보드 네비게이션, Indicator 애니메이션
+- 예상 시간: 4-5시간
 
 **참고**: Phase 1 (Form 컴포넌트) 100% 완료! 🎉
-**참고**: Phase 2 75% 완료 (Dialog, Tooltip, Popover)
+**참고**: Phase 2 (Dialog & Overlay) 100% 완료! 🎉
 
 ---
 

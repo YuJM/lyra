@@ -8,6 +8,7 @@ import "./components/select/select.module.css";
 import "./components/dialog/dialog.module.css";
 import "./components/tooltip/tooltip.module.css";
 import "./components/popover/popover.module.css";
+import "./components/menu/menu.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -76,3 +77,24 @@ export {
   type PopoverDescriptionProps,
   type PopoverCloseProps,
 } from "./components/popover/popover";
+export {
+  Menu,
+  type MenuRootProps,
+  type MenuTriggerProps,
+  type MenuPortalProps,
+  type MenuBackdropProps,
+  type MenuPositionerProps,
+  type MenuPopupProps,
+  type MenuArrowProps,
+  type MenuItemProps,
+  type MenuSeparatorProps,
+  type MenuGroupProps,
+  type MenuGroupLabelProps,
+  type MenuRadioGroupProps,
+  type MenuRadioItemProps,
+  type MenuRadioItemIndicatorProps,
+  type MenuCheckboxItemProps,
+  type MenuCheckboxItemIndicatorProps,
+  type MenuSubmenuRootProps,
+  type MenuSubmenuTriggerProps,
+} from "./components/menu/menu";
