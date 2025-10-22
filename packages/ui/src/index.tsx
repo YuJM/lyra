@@ -4,6 +4,7 @@ import "./checkbox.module.css";
 import "./switch.module.css";
 import "./radio.module.css";
 import "./field.module.css";
+import "./select.module.css";
 
 export { Button, type ButtonProps } from "./button";
 export {
@@ -23,3 +24,18 @@ export {
   type FieldErrorProps,
   type FieldValidityProps,
 } from "./field";
+export {
+  Select,
+  type SelectRootProps,
+  type SelectTriggerProps,
+  type SelectValueProps,
+  type SelectIconProps,
+  type SelectBackdropProps,
+  type SelectPositionerProps,
+  type SelectPopupProps,
+  type SelectArrowProps,
+  type SelectItemProps,
+  type SelectItemTextProps,
+  type SelectItemIndicatorProps,
+  type SelectGroupLabelProps,
+} from "./select";
