@@ -7,9 +7,6 @@
 /* Design Tokens */
 @import "@lyra/design-tokens/css" layer(base);
 
-/* Media Queries - @custom-media 정의 (모든 CSS 파일에서 사용 가능) */
-@import "@lyra/design-tokens/css/media-queries";
-
 /* Base Layer - CSS Variables & Reset */
 @layer base {
   /*
