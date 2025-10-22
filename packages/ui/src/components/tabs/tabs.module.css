@@ -1,0 +1,177 @@
+/* ================================
+   Tabs 컴포넌트 스타일
+   ================================ */
+
+/* List - 탭 목록 컨테이너 */
+.TabsList {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1, 4px);
+
+  position: relative;
+
+  border-bottom: 1px solid var(--color-border-default, #e5e7eb);
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /* 스크롤바 숨기기 */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.TabsList::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tab - 개별 탭 버튼 */
+.TabsTab {
+  all: unset;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2, 8px);
+
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-medium, 500);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-secondary, #6b7280);
+
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+
+  transition: color var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+.TabsTab:hover {
+  color: var(--color-text-primary, #000000);
+}
+
+.TabsTab:focus-visible {
+  outline: 2px solid var(--color-focus-ring, #0066cc);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.TabsTab[data-selected] {
+  color: var(--color-primary, #0066cc);
+}
+
+.TabsTab[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Indicator - 활성 탭 인디케이터 */
+.TabsIndicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+
+  height: 2px;
+  background-color: var(--color-primary, #0066cc);
+
+  transition:
+    left var(--duration-normal, 200ms) var(--easing-ease-in-out, ease-in-out),
+    width var(--duration-normal, 200ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+/* Panel - 탭 콘텐츠 패널 */
+.TabsPanel {
+  padding: var(--spacing-4, 16px) 0;
+
+  /* 애니메이션 */
+  opacity: 0;
+  animation: fadeIn var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out) forwards;
+}
+
+.TabsPanel:focus {
+  outline: none;
+}
+
+.TabsPanel[hidden] {
+  display: none;
+}
+
+/* 페이드 인 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 세로 레이아웃 지원 */
+.TabsList[data-orientation="vertical"] {
+  flex-direction: column;
+  align-items: stretch;
+  border-bottom: none;
+  border-right: 1px solid var(--color-border-default, #e5e7eb);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.TabsList[data-orientation="vertical"] .TabsTab {
+  justify-content: flex-start;
+}
+
+.TabsList[data-orientation="vertical"] .TabsIndicator {
+  bottom: auto;
+  left: auto;
+  right: -1px;
+  top: 0;
+
+  width: 2px;
+  height: auto;
+
+  transition:
+    top var(--duration-normal, 200ms) var(--easing-ease-in-out, ease-in-out),
+    height var(--duration-normal, 200ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+/* 반응형 - 모바일에서 조정 */
+@media (--sm-down) {
+  .TabsTab {
+    padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+    font-size: var(--font-size-xs, 12px);
+  }
+
+  .TabsPanel {
+    padding: var(--spacing-3, 12px) 0;
+  }
+}
+
+/* 다크모드 지원 (선택적) */
+@media (prefers-color-scheme: dark) {
+  .TabsList {
+    border-bottom-color: var(--color-border-default-dark, #374151);
+  }
+
+  .TabsTab {
+    color: var(--color-text-secondary-dark, #9ca3af);
+  }
+
+  .TabsTab:hover {
+    color: var(--color-text-primary-dark, #ffffff);
+  }
+
+  .TabsTab[data-selected] {
+    color: var(--color-primary-dark, #3b82f6);
+  }
+
+  .TabsIndicator {
+    background-color: var(--color-primary-dark, #3b82f6);
+  }
+
+  .TabsList[data-orientation="vertical"] {
+    border-right-color: var(--color-border-default-dark, #374151);
+  }
+}

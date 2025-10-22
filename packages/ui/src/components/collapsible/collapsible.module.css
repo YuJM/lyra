@@ -1,0 +1,148 @@
+/* ================================
+   Collapsible 컴포넌트 스타일
+   ================================ */
+
+/* Trigger - 접기/펼치기 버튼 */
+.CollapsibleTrigger {
+  all: unset;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-2, 8px);
+
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-weight-medium, 500);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-primary, #000000);
+
+  background-color: transparent;
+  border: 1px solid var(--color-border-default, #e5e7eb);
+  border-radius: var(--border-radius-md, 8px);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background-color var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out),
+    border-color var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+.CollapsibleTrigger:hover {
+  background-color: var(--color-background-hover, #f9fafb);
+  border-color: var(--color-border-hover, #d1d5db);
+}
+
+.CollapsibleTrigger:focus-visible {
+  outline: 2px solid var(--color-focus-ring, #0066cc);
+  outline-offset: 2px;
+}
+
+.CollapsibleTrigger[data-open] {
+  background-color: var(--color-background-selected, #eff6ff);
+  border-color: var(--color-primary, #0066cc);
+  color: var(--color-primary, #0066cc);
+}
+
+.CollapsibleTrigger[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Panel - 접히는 콘텐츠 영역 */
+.CollapsiblePanel {
+  overflow: hidden;
+
+  padding: var(--spacing-4, 16px);
+  margin-top: var(--spacing-2, 8px);
+
+  background-color: var(--color-background-default, #ffffff);
+  border: 1px solid var(--color-border-default, #e5e7eb);
+  border-radius: var(--border-radius-md, 8px);
+}
+
+/* 열림 상태 - 높이 애니메이션 */
+.CollapsiblePanel[data-open] {
+  animation: expandDown var(--duration-normal, 200ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+/* 닫힘 상태 - 높이 애니메이션 */
+.CollapsiblePanel[data-closed] {
+  animation: collapseUp var(--duration-normal, 200ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+/* 숨김 상태 */
+.CollapsiblePanel[hidden] {
+  display: none;
+}
+
+/* 애니메이션 정의 */
+@keyframes expandDown {
+  from {
+    height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    height: var(--collapsible-panel-height);
+    opacity: 1;
+    padding-top: var(--spacing-4, 16px);
+    padding-bottom: var(--spacing-4, 16px);
+  }
+}
+
+@keyframes collapseUp {
+  from {
+    height: var(--collapsible-panel-height);
+    opacity: 1;
+    padding-top: var(--spacing-4, 16px);
+    padding-bottom: var(--spacing-4, 16px);
+  }
+  to {
+    height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* 반응형 - 모바일에서 조정 */
+@media (--sm-down) {
+  .CollapsibleTrigger {
+    padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+    font-size: var(--font-size-sm, 14px);
+  }
+
+  .CollapsiblePanel {
+    padding: var(--spacing-3, 12px);
+    margin-top: var(--spacing-1, 4px);
+  }
+}
+
+/* 다크모드 지원 (선택적) */
+@media (prefers-color-scheme: dark) {
+  .CollapsibleTrigger {
+    color: var(--color-text-primary-dark, #ffffff);
+    border-color: var(--color-border-default-dark, #374151);
+  }
+
+  .CollapsibleTrigger:hover {
+    background-color: var(--color-background-hover-dark, #1f2937);
+    border-color: var(--color-border-hover-dark, #4b5563);
+  }
+
+  .CollapsibleTrigger[data-open] {
+    background-color: var(--color-background-selected-dark, #1e3a8a);
+    border-color: var(--color-primary-dark, #3b82f6);
+    color: var(--color-primary-dark, #3b82f6);
+  }
+
+  .CollapsiblePanel {
+    background-color: var(--color-background-default-dark, #111827);
+    border-color: var(--color-border-default-dark, #374151);
+  }
+}
