@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 import * as React from 'react';
-import { CheckboxGroup } from '../components/checkbox/checkbox-group';
-import { Checkbox } from '../components/checkbox/checkbox';
+import { CheckboxGroup } from '../../../components/checkbox/checkbox-group';
+import { Checkbox } from '../../../components/checkbox/checkbox';
 
 const meta = {
   title: 'Components/CheckboxGroup',

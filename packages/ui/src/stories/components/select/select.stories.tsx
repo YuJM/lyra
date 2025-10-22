@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Select } from "../components/select/select";
+import { Select } from "../../../components/select/select";
 import * as React from "react";
 
 const meta: Meta<typeof Select.Root> = {

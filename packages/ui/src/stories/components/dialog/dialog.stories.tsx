@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Dialog } from "../components/dialog/dialog";
+import { Dialog } from "../../../components/dialog/dialog";
 import * as React from "react";
 
 const meta: Meta<typeof Dialog.Root> = {
