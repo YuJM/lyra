@@ -22,7 +22,10 @@
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo dist",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "vitest run --project=unit",
+    "test:watch": "vitest --project=unit",
+    "test:coverage": "vitest run --project=unit --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
@@ -45,6 +48,9 @@
     "@storybook/addon-onboarding": "^9.1.13",
     "@storybook/addon-vitest": "^9.1.13",
     "@storybook/react-vite": "^9.1.13",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.9.1",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
