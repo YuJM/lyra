@@ -8,6 +8,7 @@ import "./components/select/select.module.css";
 import "./components/dialog/dialog.module.css";
 import "./components/tooltip/tooltip.module.css";
 import "./components/progress/progress.module.css";
+import "./components/avatar/avatar.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -71,3 +72,9 @@ export {
   type ProgressIndicatorProps,
   type ProgressValueProps,
 } from "./components/progress/progress";
+export {
+  Avatar,
+  type AvatarRootProps,
+  type AvatarImageProps,
+  type AvatarFallbackProps,
+} from "./components/avatar/avatar";
