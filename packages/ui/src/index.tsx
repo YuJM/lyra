@@ -1,6 +1,7 @@
 import "./global.css";
 import "./button.module.css";
 import "./checkbox.module.css";
+import "./switch.module.css";
 
 export { Button, type ButtonProps } from "./button";
 export {
@@ -8,3 +9,4 @@ export {
   type CheckboxProps,
 } from "./checkbox";
 export { CheckboxGroup, type CheckboxGroupProps } from "./checkbox-group";
+export { Switch, type SwitchProps } from "./switch";
