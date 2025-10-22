@@ -85,7 +85,8 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "modern-normalize": "^3.0.1",
-    "react": "catalog:"
+    "react": "catalog:",
+    "sonner": "^2.0.7"
   },
   "publishConfig": {
     "access": "public"

@@ -14,6 +14,12 @@
 - [x] Field - 폼 필드 구조 컴포넌트 (Label, Control, Error, Description)
 - [x] Select - 드롭다운 선택 컴포넌트
 - [x] Dialog - 모달 대화상자 컴포넌트
+- [x] Tooltip - 호버 기반 툴팁 컴포넌트
+- [x] Tabs - 탭 네비게이션 컴포넌트
+- [x] Collapsible - 접기/펼치기 컴포넌트
+- [x] Progress - 진행률 표시 컴포넌트
+- [x] Avatar - 사용자 아바타 컴포넌트
+- [x] Toast - 알림 토스트 컴포넌트 (Sonner 기반)
 
 ### 🛠️ 인프라
 - [x] Vitest + @testing-library/react 테스트 환경
@@ -303,24 +309,26 @@
 ---
 
 ### 6. Tooltip
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐ 중간
-**예상 시간**: 3-4시간
+**실제 시간**: ~3시간
 **우선순위**: 6순위
 
 **작업 항목**:
-- [ ] `src/tooltip.tsx` 컴포넌트 구현
-  - [ ] Tooltip.Provider
-  - [ ] Tooltip.Root
-  - [ ] Tooltip.Trigger
-  - [ ] Tooltip.Portal
-  - [ ] Tooltip.Positioner
-  - [ ] Tooltip.Popup
-  - [ ] Tooltip.Arrow
-- [ ] `src/tooltip.module.css` 스타일
-- [ ] `src/tooltip.test.tsx` 테스트
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/tooltip.tsx` 컴포넌트 구현
+  - [x] Tooltip.Provider
+  - [x] Tooltip.Root
+  - [x] Tooltip.Trigger
+  - [x] Tooltip.Portal
+  - [x] Tooltip.Positioner
+  - [x] Tooltip.Popup
+  - [x] Tooltip.Arrow
+- [x] `src/tooltip.module.css` 스타일
+- [x] `src/tooltip.test.tsx` 테스트
+- [x] Storybook 스토리
+- [x] Export 추가
+
+**테스트 결과**: 10개 테스트 모두 통과 ✅
 
 ---
 
@@ -373,28 +381,30 @@
 ## 🎯 Phase 3: Navigation 컴포넌트
 
 ### 9. Tabs
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐⭐ 어려움
-**예상 시간**: 4-5시간
+**실제 시간**: ~4시간
 **우선순위**: 9순위
 
 **작업 항목**:
-- [ ] `src/tabs.tsx` 컴포넌트 구현
-  - [ ] Tabs.Root
-  - [ ] Tabs.List
-  - [ ] Tabs.Tab
-  - [ ] Tabs.Indicator
-  - [ ] Tabs.Panel
-- [ ] `src/tabs.module.css` 스타일
-  - [ ] Tab 활성/비활성 상태
-  - [ ] Indicator 애니메이션
-  - [ ] Panel 전환 효과
-- [ ] `src/tabs.test.tsx` 테스트
-  - [ ] 탭 전환 동작
-  - [ ] 키보드 네비게이션
-  - [ ] 접근성
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/tabs.tsx` 컴포넌트 구현
+  - [x] Tabs.Root
+  - [x] Tabs.List
+  - [x] Tabs.Tab
+  - [x] Tabs.Indicator
+  - [x] Tabs.Panel
+- [x] `src/tabs.module.css` 스타일
+  - [x] Tab 활성/비활성 상태
+  - [x] Indicator 애니메이션
+  - [x] Panel 전환 효과
+- [x] `src/tabs.test.tsx` 테스트
+  - [x] 탭 전환 동작
+  - [x] 키보드 네비게이션
+  - [x] 접근성
+- [x] Storybook 스토리
+- [x] Export 추가
+
+**테스트 결과**: 19개 테스트 모두 통과 ✅
 
 **구현 참고**:
 ```tsx
@@ -410,46 +420,169 @@
 ---
 
 ### 10. Collapsible
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐ 중간
-**예상 시간**: 2-3시간
+**실제 시간**: ~2.5시간
 **우선순위**: 10순위
 
 **작업 항목**:
-- [ ] `src/collapsible.tsx` 컴포넌트 구현
-  - [ ] Collapsible.Root
-  - [ ] Collapsible.Trigger
-  - [ ] Collapsible.Panel
-- [ ] `src/collapsible.module.css` 스타일
-- [ ] `src/collapsible.test.tsx` 테스트
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/collapsible.tsx` 컴포넌트 구현
+  - [x] Collapsible.Root
+  - [x] Collapsible.Trigger
+  - [x] Collapsible.Panel
+- [x] `src/collapsible.module.css` 스타일
+- [x] `src/collapsible.test.tsx` 테스트
+- [x] Storybook 스토리 (10개)
+- [x] Export 추가
+
+**테스트 결과**: 16개 테스트 모두 통과 ✅
 
 ---
 
 ## 🎯 Phase 4: Feedback/Display 컴포넌트
 
 ### 11. Progress
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐ 중간
-**예상 시간**: 3-4시간
+**실제 시간**: ~2시간
 **우선순위**: 11순위
+
+**작업 항목**:
+- [x] `src/progress.tsx` 컴포넌트 구현
+  - [x] Progress.Root
+  - [x] Progress.Label
+  - [x] Progress.Track
+  - [x] Progress.Indicator
+  - [x] Progress.Value
+- [x] `src/progress.module.css` 스타일
+  - [x] 기본/진행/완료 상태
+  - [x] Indeterminate 애니메이션
+  - [x] 크기 변형 (sm, lg)
+- [x] `src/progress.test.tsx` 테스트 (16개)
+  - [x] 렌더링 테스트
+  - [x] 진행률 상태 테스트
+  - [x] min/max prop 테스트
+  - [x] 접근성 테스트
+  - [x] 커스터마이징 테스트
+- [x] Storybook 스토리 (10개)
+- [x] Export 추가
+
+**테스트 결과**: 16개 테스트 모두 통과 ✅
+
+**구현 참고**:
+```tsx
+<Progress.Root value={50}>
+  <Progress.Label>Loading...</Progress.Label>
+  <Progress.Track>
+    <Progress.Indicator />
+  </Progress.Track>
+  <Progress.Value />
+</Progress.Root>
+```
 
 ---
 
 ### 12. Avatar
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐ 쉬움
-**예상 시간**: 2-3시간
+**실제 시간**: ~2시간
 **우선순위**: 12순위
+
+**작업 항목**:
+- [x] `src/avatar.tsx` 컴포넌트 구현
+  - [x] Avatar.Root
+  - [x] Avatar.Image
+  - [x] Avatar.Fallback
+- [x] `src/avatar.module.css` 스타일
+  - [x] 원형 디자인
+  - [x] 크기 변형 (sm, md, lg, xl)
+  - [x] 색상 변형
+  - [x] 그룹 스타일
+- [x] `src/avatar.test.tsx` 테스트 (13개)
+  - [x] 렌더링 테스트
+  - [x] Image/Fallback 동작
+  - [x] onLoadingStatusChange 콜백
+  - [x] delay prop
+  - [x] 접근성 테스트
+  - [x] 커스터마이징
+- [x] Storybook 스토리 (10개)
+- [x] Export 추가
+
+**테스트 결과**: 13개 테스트 모두 통과 ✅
+
+**구현 참고**:
+```tsx
+<Avatar.Root>
+  <Avatar.Image src="/user.jpg" alt="User" />
+  <Avatar.Fallback>JD</Avatar.Fallback>
+</Avatar.Root>
+```
 
 ---
 
 ### 13. Toast
-**상태**: 🔲 미구현
+**상태**: ✅ 완료 (Sonner 기반)
 **난이도**: ⭐⭐⭐ 어려움
-**예상 시간**: 5-6시간
+**실제 시간**: ~3시간
 **우선순위**: 13순위
+
+**작업 항목**:
+- [x] Sonner 라이브러리 설치 (v2.0.7)
+- [x] `src/toast.tsx` 컴포넌트 구현
+  - [x] Toast.Provider (Toaster 래핑)
+  - [x] toast.show() - 기본 토스트
+  - [x] toast.success() - 성공 토스트
+  - [x] toast.error() - 에러 토스트
+  - [x] toast.info() - 정보 토스트
+  - [x] toast.warning() - 경고 토스트
+  - [x] toast.loading() - 로딩 토스트
+  - [x] toast.promise() - Promise 기반 토스트
+  - [x] toast.custom() - 커스텀 JSX 토스트
+  - [x] toast.dismiss() - 토스트 닫기
+- [x] `src/toast.module.css` 스타일
+  - [x] Lyra UI 디자인 토큰 통합
+  - [x] 타입별 색상 변형
+  - [x] 다크 모드 지원
+  - [x] 애니메이션 및 트랜지션
+- [x] `src/toast.test.tsx` 테스트 (20개)
+  - [x] Provider 렌더링
+  - [x] 타입별 toast 함수
+  - [x] description/action 옵션
+  - [x] Promise 토스트
+  - [x] 커스텀 토스트
+  - [x] dismiss 기능
+  - [x] 접근성
+- [x] Storybook 스토리 (12개)
+  - [x] Default, Types, WithDescription
+  - [x] WithAction, WithCancel
+  - [x] Loading, Promise
+  - [x] CustomDuration, Position
+  - [x] Custom, Multiple
+  - [x] RichColors
+- [x] Export 추가
+
+**테스트 결과**: 20개 테스트 모두 통과 ✅
+
+**구현 참고**:
+```tsx
+// Provider를 루트에 한 번 렌더링
+<Toast.Provider position="top-right" richColors />
+
+// 명령형 API로 토스트 호출
+toast.success("저장되었습니다");
+toast.error("오류가 발생했습니다");
+toast.promise(promise, {
+  loading: "로딩 중...",
+  success: "완료!",
+  error: "실패!"
+});
+```
+
+**설계 결정**: Base UI Toast 대신 Sonner 라이브러리 사용
+- 사용자 명시적 요청에 따라 Sonner 선택
+- 명령형 API로 더 간편한 사용성
+- 풍부한 기능 (promise, action, custom 등)
+- Lyra UI 디자인 토큰과 완벽히 통합
 
 ---
 
@@ -471,26 +604,25 @@
 
 ### 전체 진행률
 - **Phase 1 (Form)**: 4/4 (100%) ✅ Switch, Radio+RadioGroup, Field, Select 완료
-- **Phase 2 (Dialog/Overlay)**: 1/4 (25%) ✅ Dialog 완료
-- **Phase 3 (Navigation)**: 0/2 (0%)
-- **Phase 4 (Feedback)**: 0/3 (0%)
+- **Phase 2 (Dialog/Overlay)**: 2/4 (50%) ✅ Dialog, Tooltip 완료
+- **Phase 3 (Navigation)**: 2/2 (100%) ✅ Tabs, Collapsible 완료
+- **Phase 4 (Feedback)**: 3/3 (100%) ✅ Progress, Avatar, Toast 완료
 
-**총 진행률**: 5/13 (38.5%)
+**총 진행률**: 11/13 (84.6%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Tooltip 컴포넌트 구현 (Priority 6)
-- Phase 2 (Dialog & Overlay) 진행 중
-- Context7에서 Base UI Tooltip 문서 조회
-- Hover/Focus 기반 툴팁 UI 구현
-- Positioner 및 Arrow 지원
-- 지연 표시 및 애니메이션
-- 예상 시간: 3-4시간
+**NEXT**: Popover 컴포넌트 구현 (Priority 7) 또는 Menu 컴포넌트 구현 (Priority 8)
+- Phase 2 (Dialog/Overlay) 계속 진행
+- Context7에서 Base UI Popover/Menu 문서 조회
+- 복잡한 오버레이 UI 구현
+- 예상 시간: 4-5시간 (Popover) / 8-10시간 (Menu)
 
 **참고**: Phase 1 (Form 컴포넌트) 100% 완료! 🎉
-**참고**: Dialog 컴포넌트 완료! (Phase 2: 25%)
+**참고**: Phase 3 (Navigation 컴포넌트) 100% 완료! 🎉
+**참고**: Phase 4 (Feedback 컴포넌트) 100% 완료! 🎉
 
 ---
 

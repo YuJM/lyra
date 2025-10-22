@@ -1,0 +1,289 @@
+/**
+ * Toast Component Styles (Sonner)
+ *
+ * 알림 메시지를 표시하는 토스트 컴포넌트
+ * - Sonner 라이브러리 기반
+ * - Lyra UI 디자인 토큰 통합
+ * - 다양한 타입 지원 (success, error, info, warning)
+ */
+
+/* Toast - 개별 토스트 컨테이너 */
+.Toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3, 12px);
+  padding: var(--spacing-4, 16px);
+  border-radius: var(--border-radius-lg, 12px);
+  background-color: var(--color-background-default, #ffffff);
+  border: 1px solid var(--color-border-default, #e5e7eb);
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1));
+  font-family: var(--font-family-base, system-ui, -apple-system, sans-serif);
+  font-size: var(--font-size-base, 16px);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-default, #111827);
+  min-width: 320px;
+  max-width: 480px;
+  pointer-events: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Title - 토스트 제목 */
+.ToastTitle {
+  font-weight: var(--font-weight-semibold, 600);
+  font-size: var(--font-size-base, 16px);
+  line-height: var(--line-height-tight, 1.25);
+  color: var(--color-text-default, #111827);
+  margin: 0;
+}
+
+/* Description - 토스트 설명 */
+.ToastDescription {
+  font-size: var(--font-size-sm, 14px);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-secondary, #6b7280);
+  margin: var(--spacing-1, 4px) 0 0;
+}
+
+/* Action Button - 액션 버튼 */
+.ToastActionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  border-radius: var(--border-radius-md, 8px);
+  background-color: var(--color-primary-solid, #3b82f6);
+  color: var(--color-text-on-primary, #ffffff);
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-medium, 500);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast, 150ms) var(--easing-ease-out, ease-out);
+  margin-top: var(--spacing-2, 8px);
+}
+
+.ToastActionButton:hover {
+  background-color: var(--color-primary-hover, #2563eb);
+}
+
+.ToastActionButton:active {
+  background-color: var(--color-primary-active, #1d4ed8);
+}
+
+/* Cancel Button - 취소 버튼 */
+.ToastCancelButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  border-radius: var(--border-radius-md, 8px);
+  background-color: transparent;
+  color: var(--color-text-secondary, #6b7280);
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-medium, 500);
+  border: 1px solid var(--color-border-default, #e5e7eb);
+  cursor: pointer;
+  transition: all var(--duration-fast, 150ms) var(--easing-ease-out, ease-out);
+  margin-top: var(--spacing-2, 8px);
+  margin-left: var(--spacing-2, 8px);
+}
+
+.ToastCancelButton:hover {
+  background-color: var(--color-background-secondary, #f3f4f6);
+  border-color: var(--color-border-hover, #d1d5db);
+}
+
+/* Close Button - 닫기 버튼 */
+.ToastCloseButton {
+  position: absolute;
+  top: var(--spacing-2, 8px);
+  right: var(--spacing-2, 8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--border-radius-md, 8px);
+  background-color: transparent;
+  color: var(--color-text-tertiary, #9ca3af);
+  border: none;
+  cursor: pointer;
+  transition: all var(--duration-fast, 150ms) var(--easing-ease-out, ease-out);
+}
+
+.ToastCloseButton:hover {
+  background-color: var(--color-background-secondary, #f3f4f6);
+  color: var(--color-text-secondary, #6b7280);
+}
+
+/* ============================================
+   타입별 스타일 (Type Variants)
+   ============================================ */
+
+/* Success Toast */
+.ToastSuccess {
+  border-color: var(--color-success-border, #86efac);
+  background-color: var(--color-success-bg, #f0fdf4);
+}
+
+.ToastSuccess .ToastTitle {
+  color: var(--color-success-solid, #10b981);
+}
+
+.ToastSuccess .ToastDescription {
+  color: var(--color-success-text, #059669);
+}
+
+/* Error Toast */
+.ToastError {
+  border-color: var(--color-danger-border, #fca5a5);
+  background-color: var(--color-danger-bg, #fef2f2);
+}
+
+.ToastError .ToastTitle {
+  color: var(--color-danger-solid, #ef4444);
+}
+
+.ToastError .ToastDescription {
+  color: var(--color-danger-text, #dc2626);
+}
+
+/* Warning Toast */
+.ToastWarning {
+  border-color: var(--color-warning-border, #fcd34d);
+  background-color: var(--color-warning-bg, #fffbeb);
+}
+
+.ToastWarning .ToastTitle {
+  color: var(--color-warning-solid, #f59e0b);
+}
+
+.ToastWarning .ToastDescription {
+  color: var(--color-warning-text, #d97706);
+}
+
+/* Info Toast */
+.ToastInfo {
+  border-color: var(--color-info-border, #93c5fd);
+  background-color: var(--color-info-bg, #eff6ff);
+}
+
+.ToastInfo .ToastTitle {
+  color: var(--color-info-solid, #3b82f6);
+}
+
+.ToastInfo .ToastDescription {
+  color: var(--color-info-text, #2563eb);
+}
+
+/* ============================================
+   애니메이션
+   ============================================ */
+
+/* Enter animations are handled by Sonner */
+
+/* Loading state */
+.Toast[data-loading="true"] {
+  opacity: 0.9;
+}
+
+/* ============================================
+   다크 모드
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .Toast {
+    background-color: var(--color-background-default-dark, #1f2937);
+    border-color: var(--color-border-default-dark, #374151);
+    color: var(--color-text-default-dark, #f9fafb);
+  }
+
+  .ToastTitle {
+    color: var(--color-text-default-dark, #f9fafb);
+  }
+
+  .ToastDescription {
+    color: var(--color-text-secondary-dark, #d1d5db);
+  }
+
+  .ToastCancelButton {
+    color: var(--color-text-secondary-dark, #d1d5db);
+    border-color: var(--color-border-default-dark, #374151);
+  }
+
+  .ToastCancelButton:hover {
+    background-color: var(--color-background-secondary-dark, #374151);
+    border-color: var(--color-border-hover-dark, #4b5563);
+  }
+
+  .ToastCloseButton {
+    color: var(--color-text-tertiary-dark, #9ca3af);
+  }
+
+  .ToastCloseButton:hover {
+    background-color: var(--color-background-secondary-dark, #374151);
+    color: var(--color-text-secondary-dark, #d1d5db);
+  }
+
+  /* Dark mode type variants */
+  .ToastSuccess {
+    border-color: var(--color-success-border-dark, #34d399);
+    background-color: var(--color-success-bg-dark, #064e3b);
+  }
+
+  .ToastError {
+    border-color: var(--color-danger-border-dark, #f87171);
+    background-color: var(--color-danger-bg-dark, #7f1d1d);
+  }
+
+  .ToastWarning {
+    border-color: var(--color-warning-border-dark, #fbbf24);
+    background-color: var(--color-warning-bg-dark, #78350f);
+  }
+
+  .ToastInfo {
+    border-color: var(--color-info-border-dark, #60a5fa);
+    background-color: var(--color-info-bg-dark, #1e3a8a);
+  }
+}
+
+/* ============================================
+   접근성
+   ============================================ */
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+  .Toast {
+    border-width: 2px;
+  }
+
+  .ToastActionButton,
+  .ToastCancelButton {
+    border-width: 2px;
+  }
+}
+
+/* 움직임 감소 모드 */
+@media (prefers-reduced-motion: reduce) {
+  .Toast {
+    transition: none;
+  }
+
+  .ToastActionButton,
+  .ToastCancelButton,
+  .ToastCloseButton {
+    transition: none;
+  }
+}
+
+/* ============================================
+   반응형
+   ============================================ */
+
+@media (max-width: 640px) {
+  .Toast {
+    min-width: 280px;
+    max-width: calc(100vw - 32px);
+  }
+}

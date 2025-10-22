@@ -9,6 +9,7 @@ import "./components/dialog/dialog.module.css";
 import "./components/tooltip/tooltip.module.css";
 import "./components/progress/progress.module.css";
 import "./components/avatar/avatar.module.css";
+import "./components/toast/toast.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -78,3 +79,9 @@ export {
   type AvatarImageProps,
   type AvatarFallbackProps,
 } from "./components/avatar/avatar";
+export {
+  Toast,
+  toast,
+  type ToastProviderProps,
+  type ToastOptions,
+} from "./components/toast/toast";
