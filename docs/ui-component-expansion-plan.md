@@ -170,33 +170,71 @@
 ---
 
 ### 4. Select
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐⭐ 어려움
-**예상 시간**: 6-8시간
+**실제 시간**: ~6시간
 **우선순위**: 4순위
 
 **작업 항목**:
-- [ ] `src/select.tsx` 컴포넌트 구현
-  - [ ] Select.Root
-  - [ ] Select.Trigger
-  - [ ] Select.Value
-  - [ ] Select.Icon
-  - [ ] Select.Portal
-  - [ ] Select.Backdrop
-  - [ ] Select.Positioner
-  - [ ] Select.Popup
-  - [ ] Select.List
-  - [ ] Select.Item
-  - [ ] Select.ItemText
-  - [ ] Select.ItemIndicator
-- [ ] `src/select.module.css` 스타일
-  - [ ] Trigger 스타일
-  - [ ] Dropdown 스타일
-  - [ ] Item 호버/선택 상태
-  - [ ] 애니메이션
-- [ ] `src/select.test.tsx` 테스트
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/select.tsx` 컴포넌트 구현
+  - [x] Select.Root
+  - [x] Select.Trigger
+  - [x] Select.Value
+  - [x] Select.Icon
+  - [x] Select.Portal
+  - [x] Select.Backdrop
+  - [x] Select.Positioner
+  - [x] Select.Popup
+  - [x] Select.Arrow
+  - [x] Select.Item
+  - [x] Select.ItemText
+  - [x] Select.ItemIndicator
+  - [x] Select.Group
+  - [x] Select.GroupLabel
+- [x] `src/select.module.css` 스타일
+  - [x] Trigger 스타일
+  - [x] Dropdown 스타일
+  - [x] Item 호버/선택 상태
+  - [x] 애니메이션
+  - [x] Backdrop 오버레이
+  - [x] Arrow 포인터
+- [x] `src/select.test.tsx` 테스트
+- [x] Storybook 스토리 (10개)
+  - [x] Default
+  - [x] WithDefaultValue
+  - [x] Controlled
+  - [x] Disabled
+  - [x] DisabledOptions
+  - [x] WithGroups
+  - [x] WithBackdrop
+  - [x] WithArrow
+  - [x] LongList
+  - [x] CustomWidth
+- [x] Export 추가
+
+**테스트 결과**: 9개 테스트 모두 통과 ✅
+
+**구현 참고**:
+```tsx
+<Select.Root value={value} onValueChange={setValue}>
+  <Select.Trigger>
+    <Select.Value>Select a fruit</Select.Value>
+    <Select.Icon />
+  </Select.Trigger>
+  <Select.Portal>
+    <Select.Positioner>
+      <Select.Popup>
+        <Select.Item value="apple">
+          <Select.ItemText>Apple</Select.ItemText>
+          <Select.ItemIndicator />
+        </Select.Item>
+      </Select.Popup>
+    </Select.Positioner>
+  </Select.Portal>
+</Select.Root>
+```
+
+**설계 결정**: 복잡한 드롭다운 UI이므로 compose 패턴 사용. Portal, Positioner, Backdrop 등 고급 기능 포함
 
 ---
 
@@ -421,22 +459,26 @@
 ## 📊 진행 상황 추적
 
 ### 전체 진행률
-- **Phase 1 (Form)**: 3/4 (75%) ✅ Switch, Radio+RadioGroup, Field 완료
+- **Phase 1 (Form)**: 4/4 (100%) ✅ Switch, Radio+RadioGroup, Field, Select 완료
 - **Phase 2 (Dialog/Overlay)**: 0/4 (0%)
 - **Phase 3 (Navigation)**: 0/2 (0%)
 - **Phase 4 (Feedback)**: 0/3 (0%)
 
-**총 진행률**: 3/13 (23.1%)
+**총 진행률**: 4/13 (30.8%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Select 컴포넌트 구현 (Priority 4)
-- Context7에서 Base UI Select 문서 조회
-- 드롭다운 UI 및 아이템 선택 로직 구현
-- 키보드 네비게이션 (방향키, Enter, Escape) 지원
-- 예상 시간: 6-8시간
+**NEXT**: Dialog 컴포넌트 구현 (Priority 5)
+- Phase 2 (Dialog & Overlay) 시작
+- Context7에서 Base UI Dialog 문서 조회
+- 모달 팝업 UI 및 열기/닫기 로직 구현
+- 포커스 트랩 및 ESC 키 처리
+- Backdrop 오버레이 및 애니메이션
+- 예상 시간: 5-6시간
+
+**참고**: Phase 1 (Form 컴포넌트) 100% 완료! 🎉
 
 ---
 
