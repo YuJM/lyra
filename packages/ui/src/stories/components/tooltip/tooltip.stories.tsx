@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
-import { Tooltip } from "./tooltip";
+import { Tooltip } from "../../../components/tooltip/tooltip";
 
 const meta = {
-  title: "Tooltip",
+  title: "Components/Tooltip",
   component: Tooltip.Root,
   parameters: {
     layout: "centered",
@@ -286,3 +286,4 @@ export const Multiple: Story = {
     </Tooltip.Provider>
   ),
 };
+
