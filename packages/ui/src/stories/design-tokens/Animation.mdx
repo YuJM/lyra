@@ -1,0 +1,333 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens/Animation" />
+
+# Animation
+
+애니메이션 관련 디자인 토큰입니다. 일관된 모션과 전환 효과를 제공합니다.
+
+## 사용 방법
+
+```css
+@import "@lyra/design-tokens/css";
+
+.my-button {
+  transition: all var(--duration-base) var(--easing-easeInOut);
+}
+
+.my-button:hover {
+  transform: scale(1.05);
+}
+```
+
+---
+
+## Duration (지속 시간)
+
+<div className="grid-2col">
+  <div className="typography-demo">
+    <div className="token-name">--duration-instant</div>
+    <div className="token-value">75ms - 즉각적</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-instant) var(--easing-easeInOut)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      위 박스에 마우스를 올려보세요
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--duration-fast</div>
+    <div className="token-value">150ms - 빠름</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-fast) var(--easing-easeInOut)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      즉각적인 피드백
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--duration-base</div>
+    <div className="token-value">250ms - 기본</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-base) var(--easing-easeInOut)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      일반 전환
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--duration-moderate</div>
+    <div className="token-value">350ms - 중간</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-moderate) var(--easing-easeInOut)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      복잡한 전환
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--duration-slow</div>
+    <div className="token-value">500ms - 느림</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-slow) var(--easing-easeInOut)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      강조 효과
+    </div>
+  </div>
+</div>
+
+---
+
+## Easing (이징 함수)
+
+<div className="grid-2col">
+  <div className="typography-demo">
+    <div className="token-name">--easing-linear</div>
+    <div className="token-value">linear</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-moderate) var(--easing-linear)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      일정한 속도, 로딩 애니메이션
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--easing-ease</div>
+    <div className="token-value">ease</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-moderate) var(--easing-ease)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      부드러운 시작과 끝
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--easing-easeIn</div>
+    <div className="token-value">ease-in</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-moderate) var(--easing-easeIn)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      천천히 시작, 사라지는 요소
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--easing-easeOut</div>
+    <div className="token-value">ease-out</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-moderate) var(--easing-easeOut)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      천천히 끝남, 나타나는 요소
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--easing-easeInOut</div>
+    <div className="token-value">ease-in-out</div>
+    <div className="animation-demo" style={{
+      transition: `transform var(--duration-moderate) var(--easing-easeInOut)`,
+      marginTop: '0.5rem'
+    }} />
+    <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      부드러운 시작과 끝, 일반 전환
+    </div>
+  </div>
+</div>
+
+---
+
+## 사용 가이드
+
+### 버튼 상호작용
+
+<div className="code-block">{`.button {
+  transition: all var(--duration-fast) var(--easing-easeOut);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button:active {
+  transition-duration: var(--duration-instant);
+  transform: translateY(0);
+}`}</div>
+
+### 드롭다운 메뉴
+
+<div className="code-block">{`.dropdown {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity var(--duration-base) var(--easing-easeOut),
+    transform var(--duration-base) var(--easing-easeOut);
+}
+
+.dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+}`}</div>
+
+### 모달 다이얼로그
+
+<div className="code-block">{`/* 배경 오버레이 */
+.modal-overlay {
+  opacity: 0;
+  transition: opacity var(--duration-moderate) var(--easing-easeInOut);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+}
+
+/* 모달 컨텐츠 */
+.modal-content {
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity var(--duration-moderate) var(--easing-easeOut),
+    transform var(--duration-moderate) var(--easing-easeOut);
+}
+
+.modal-content.open {
+  opacity: 1;
+  transform: scale(1);
+}`}</div>
+
+### 토스트 알림
+
+<div className="code-block">{`.toast {
+  transform: translateX(100%);
+  transition:
+    transform var(--duration-moderate) var(--easing-easeOut);
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast.hide {
+  transition-timing-function: var(--easing-easeIn);
+  transform: translateX(100%);
+}`}</div>
+
+### 로딩 애니메이션
+
+<div className="code-block">{`@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin var(--duration-slow) var(--easing-linear) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.loading-pulse {
+  animation: pulse var(--duration-slow) var(--easing-easeInOut) infinite;
+}`}</div>
+
+---
+
+## 애니메이션 원칙
+
+### 1. 속도 선택 가이드
+
+**Instant (75ms)**
+- 즉각적인 피드백이 필요한 경우
+- 마우스 따라가기, 버튼 눌림
+
+**Fast (150ms)**
+- 빠른 반응이 중요한 경우
+- 호버 효과, 포커스 전환
+
+**Base (250ms)**
+- 일반적인 전환 효과
+- 탭 전환, 패널 슬라이드
+
+**Moderate (350ms)**
+- 복잡한 전환이나 여러 속성 변경
+- 페이드 + 이동, 크기 + 투명도
+
+**Slow (500ms)**
+- 강조가 필요한 중요한 변화
+- 페이지 전환, 모달 등장
+
+### 2. 이징 선택 가이드
+
+**Linear**
+- 로딩 스피너, 진행 바
+- 일정한 속도가 필요한 경우
+
+**Ease**
+- 범용적인 전환
+- 기본 호버 효과
+
+**Ease-In**
+- 사라지는 요소
+- 화면을 벗어나는 애니메이션
+
+**Ease-Out**
+- 나타나는 요소
+- 화면에 들어오는 애니메이션
+- 가장 자주 사용 (권장)
+
+**Ease-In-Out**
+- 순환하는 애니메이션
+- 시작과 끝이 명확한 전환
+
+### 3. 접근성 고려사항
+
+<div className="code-block">{`/* 애니메이션 축소 선호 시 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}`}</div>
+
+---
+
+## Quick Reference
+
+### Duration
+
+| Token | ms | 사용 예시 |
+|-------|----|----|
+| `--duration-instant` | 75ms | 즉각 피드백, 버튼 눌림 |
+| `--duration-fast` | 150ms | 호버 효과, 포커스 |
+| `--duration-base` | 250ms | 일반 전환, 탭 전환 |
+| `--duration-moderate` | 350ms | 복잡한 전환, 모달 |
+| `--duration-slow` | 500ms | 페이지 전환, 강조 |
+
+### Easing
+
+| Token | Value | 사용 예시 |
+|-------|-------|----------|
+| `--easing-linear` | linear | 로딩, 진행 바 |
+| `--easing-ease` | ease | 범용 전환 |
+| `--easing-easeIn` | ease-in | 사라지는 요소 |
+| `--easing-easeOut` | ease-out | 나타나는 요소 (권장) |
+| `--easing-easeInOut` | ease-in-out | 순환 애니메이션 |

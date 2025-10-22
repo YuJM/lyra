@@ -1,5 +1,9 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "compilerOptions": {
+    "outDir": "./dist/types",
+    "declarationDir": "./dist/types"
+  },
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules", "src/stories", "**/*.stories.tsx", "**/*.stories.ts", "**/*.test.tsx", "**/*.test.ts", "vitest.setup.ts", "vitest.config.ts"]
 }

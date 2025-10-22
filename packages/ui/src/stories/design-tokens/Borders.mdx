@@ -1,0 +1,166 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens/Borders" />
+
+# Borders
+
+테두리 관련 디자인 토큰입니다. 일관된 테두리 스타일을 제공합니다.
+
+## 사용 방법
+
+```css
+@import "@lyra/design-tokens/css";
+
+.my-card {
+  border: var(--border-width-1) solid var(--color-gray-300);
+  border-radius: var(--border-radius-md);
+}
+```
+
+---
+
+## Border Widths
+
+<div className="token-grid">
+  <div className="border-demo" style={{ borderWidth: 'var(--border-width-0)' }}>
+    <div className="token-name">--border-width-0</div>
+    <div className="token-value">0px - 테두리 없음</div>
+  </div>
+
+  <div className="border-demo" style={{ borderWidth: 'var(--border-width-1)' }}>
+    <div className="token-name">--border-width-1</div>
+    <div className="token-value">1px - 기본 테두리</div>
+  </div>
+
+  <div className="border-demo" style={{ borderWidth: 'var(--border-width-2)' }}>
+    <div className="token-name">--border-width-2</div>
+    <div className="token-value">2px - 강조 테두리</div>
+  </div>
+
+  <div className="border-demo" style={{ borderWidth: 'var(--border-width-4)' }}>
+    <div className="token-name">--border-width-4</div>
+    <div className="token-value">4px - 두꺼운 테두리</div>
+  </div>
+</div>
+
+---
+
+## Border Radius
+
+<div className="token-grid">
+  <div className="border-demo" style={{ borderRadius: 'var(--border-radius-none)' }}>
+    <div className="token-name">--border-radius-none</div>
+    <div className="token-value">0px - 직각</div>
+  </div>
+
+  <div className="border-demo" style={{ borderRadius: 'var(--border-radius-sm)' }}>
+    <div className="token-name">--border-radius-sm</div>
+    <div className="token-value">4px (var(--size-2)) - 작은 라운드</div>
+  </div>
+
+  <div className="border-demo" style={{ borderRadius: 'var(--border-radius-md)' }}>
+    <div className="token-name">--border-radius-md</div>
+    <div className="token-value">8px (var(--size-4)) - 중간 라운드</div>
+  </div>
+
+  <div className="border-demo" style={{ borderRadius: 'var(--border-radius-lg)' }}>
+    <div className="token-name">--border-radius-lg</div>
+    <div className="token-value">12px (var(--size-6)) - 큰 라운드</div>
+  </div>
+
+  <div className="border-demo" style={{ borderRadius: 'var(--border-radius-full)' }}>
+    <div className="token-name">--border-radius-full</div>
+    <div className="token-value">9999px - 완전한 라운드</div>
+  </div>
+
+  <div className="border-demo" style={{ borderRadius: 'var(--border-radius-circle)', width: '8rem', height: '8rem' }}>
+    <div className="token-name">--border-radius-circle</div>
+    <div className="token-value">50% - 원형</div>
+  </div>
+</div>
+
+---
+
+## 사용 가이드
+
+### 카드 컴포넌트
+
+<div className="code-block">{`.card {
+  border: var(--border-width-1) solid var(--color-gray-200);
+  border-radius: var(--border-radius-md);
+  padding: var(--size-8);
+}
+
+.card-elevated {
+  border: var(--border-width-0);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}`}</div>
+
+### 버튼 스타일
+
+<div className="code-block">{`.button {
+  border: var(--border-width-1) solid transparent;
+  border-radius: var(--border-radius-md);
+}
+
+.button-primary {
+  border-color: var(--color-blue-600);
+  background: var(--color-blue-500);
+}
+
+.button-outline {
+  border-color: var(--color-gray-300);
+  background: transparent;
+}`}</div>
+
+### 입력 필드
+
+<div className="code-block">{`.input {
+  border: var(--border-width-1) solid var(--color-gray-300);
+  border-radius: var(--border-radius-sm);
+  padding: var(--size-3) var(--size-4);
+}
+
+.input:focus {
+  border-width: var(--border-width-2);
+  border-color: var(--color-blue-500);
+}`}</div>
+
+### 구분선
+
+<div className="code-block">{`.divider-thin {
+  border-top: var(--border-width-1) solid var(--color-gray-200);
+}
+
+.divider-thick {
+  border-top: var(--border-width-2) solid var(--color-gray-300);
+}
+
+.divider-accent {
+  border-top: var(--border-width-4) solid var(--color-blue-500);
+}`}</div>
+
+---
+
+## Quick Reference
+
+### Border Width
+
+| Token | px | 사용 예시 |
+|-------|----|----|
+| `--border-width-0` | 0px | 테두리 제거 |
+| `--border-width-1` | 1px | 기본 테두리, 구분선 |
+| `--border-width-2` | 2px | 강조 테두리, 포커스 |
+| `--border-width-4` | 4px | 액센트, 진행 표시 |
+
+### Border Radius
+
+| Token | Value | 사용 예시 |
+|-------|-------|----------|
+| `--border-radius-none` | 0px | 직각 모서리 |
+| `--border-radius-sm` | 4px | 입력 필드, 작은 버튼 |
+| `--border-radius-md` | 8px | 버튼, 카드 |
+| `--border-radius-lg` | 12px | 큰 카드, 모달 |
+| `--border-radius-full` | 9999px | 약 모양 버튼, 태그 |
+| `--border-radius-circle` | 50% | 아바타, 아이콘 배지 |

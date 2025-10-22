@@ -1,0 +1,344 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens/Typography" />
+
+# Typography
+
+폰트 관련 디자인 토큰입니다. 일관된 타이포그래피 시스템을 제공합니다.
+
+## 사용 방법
+
+```css
+@import "@lyra/design-tokens/css";
+
+.my-text {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-lineHeight-normal);
+}
+```
+
+---
+
+## Font Families
+
+### Sans-serif (기본)
+
+시스템 폰트 스택으로 빠른 로딩과 네이티브 느낌을 제공합니다.
+
+<div className="typography-demo">
+  <div style={{ fontFamily: 'var(--font-family-sans)' }}>
+    <div className="token-name">--font-family-sans</div>
+    <div className="token-value" style={{ marginTop: '0.25rem', marginBottom: '1rem' }}>
+      system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', ...
+    </div>
+    <div style={{ fontSize: '2rem', fontWeight: 'var(--font-weight-normal)' }}>
+      The quick brown fox
+    </div>
+    <div style={{ fontSize: '1.5rem', fontWeight: 'var(--font-weight-medium)', marginTop: '0.5rem' }}>
+      Jumps over the lazy dog
+    </div>
+    <div style={{ fontSize: '1rem', fontWeight: 'var(--font-weight-normal)', marginTop: '0.5rem' }}>
+      0123456789 !@#$%^&*()
+    </div>
+  </div>
+</div>
+
+### Monospace (코드)
+
+코드, 숫자 정렬 등에 사용합니다.
+
+<div className="typography-demo">
+  <div style={{ fontFamily: 'var(--font-family-mono)' }}>
+    <div className="token-name">--font-family-mono</div>
+    <div className="token-value" style={{ marginTop: '0.25rem', marginBottom: '1rem' }}>
+      'Menlo', 'Monaco', 'Courier New', monospace
+    </div>
+    <div style={{ fontSize: '1.25rem' }}>
+      const message = "Hello World";
+    </div>
+    <div style={{ fontSize: '1rem', marginTop: '0.5rem' }}>
+      function calculate(a, b) &#123;<br />
+      &nbsp;&nbsp;return a + b;<br />
+      &#125;
+    </div>
+  </div>
+</div>
+
+---
+
+## Font Sizes
+
+모든 폰트 사이즈는 Size 토큰을 참조합니다.
+
+<div className="token-grid">
+  <div className="typography-demo">
+    <div className="token-name">--font-size-sm</div>
+    <div className="token-value">14px (var(--size-7))</div>
+    <div style={{ fontSize: 'var(--font-size-sm)', marginTop: '0.5rem' }}>
+      Small text - 캡션, 메타 정보
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--font-size-base</div>
+    <div className="token-value">16px (var(--size-8))</div>
+    <div style={{ fontSize: 'var(--font-size-base)', marginTop: '0.5rem' }}>
+      Base text - 본문, 일반 텍스트
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--font-size-lg</div>
+    <div className="token-value">18px (var(--size-9))</div>
+    <div style={{ fontSize: 'var(--font-size-lg)', marginTop: '0.5rem' }}>
+      Large text - 강조 텍스트
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--font-size-xl</div>
+    <div className="token-value">20px (var(--size-10))</div>
+    <div style={{ fontSize: 'var(--font-size-xl)', marginTop: '0.5rem' }}>
+      Extra large - 소제목
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--font-size-2xl</div>
+    <div className="token-value">24px (var(--size-12))</div>
+    <div style={{ fontSize: 'var(--font-size-2xl)', marginTop: '0.5rem' }}>
+      2X large - 제목
+    </div>
+  </div>
+</div>
+
+---
+
+## Font Weights
+
+<div className="grid-2col">
+  <div className="typography-demo">
+    <div className="token-name">--font-weight-normal</div>
+    <div className="token-value">400</div>
+    <div style={{ fontWeight: 'var(--font-weight-normal)', fontSize: '1.5rem', marginTop: '0.5rem' }}>
+      Normal Weight
+    </div>
+    <div style={{ fontWeight: 'var(--font-weight-normal)', fontSize: '1rem', marginTop: '0.25rem' }}>
+      본문 텍스트에 사용
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--font-weight-medium</div>
+    <div className="token-value">500</div>
+    <div style={{ fontWeight: 'var(--font-weight-medium)', fontSize: '1.5rem', marginTop: '0.5rem' }}>
+      Medium Weight
+    </div>
+    <div style={{ fontWeight: 'var(--font-weight-medium)', fontSize: '1rem', marginTop: '0.25rem' }}>
+      강조, 레이블에 사용
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--font-weight-semibold</div>
+    <div className="token-value">600</div>
+    <div style={{ fontWeight: 'var(--font-weight-semibold)', fontSize: '1.5rem', marginTop: '0.5rem' }}>
+      Semibold Weight
+    </div>
+    <div style={{ fontWeight: 'var(--font-weight-semibold)', fontSize: '1rem', marginTop: '0.25rem' }}>
+      제목, 헤딩에 사용
+    </div>
+  </div>
+</div>
+
+---
+
+## Line Heights
+
+<div className="grid-2col">
+  <div className="typography-demo">
+    <div className="token-name">--font-lineHeight-tight</div>
+    <div className="token-value">1.25</div>
+    <div style={{ lineHeight: 'var(--font-lineHeight-tight)', marginTop: '0.5rem' }}>
+      제목에 사용하는 좁은 줄간격입니다.<br />
+      여러 줄의 텍스트가 있을 때<br />
+      차이를 확인할 수 있습니다.<br />
+      헤딩, 제목에 적합합니다.
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--font-lineHeight-normal</div>
+    <div className="token-value">1.5</div>
+    <div style={{ lineHeight: 'var(--font-lineHeight-normal)', marginTop: '0.5rem' }}>
+      본문에 사용하는 일반 줄간격입니다.<br />
+      여러 줄의 텍스트가 있을 때<br />
+      차이를 확인할 수 있습니다.<br />
+      본문, 단락에 적합합니다.
+    </div>
+  </div>
+</div>
+
+---
+
+## Typography Scale
+
+타이포그래피 스케일 조합 예시입니다.
+
+### Heading 1
+<div className="typography-demo">
+  <div style={{
+    fontSize: 'var(--font-size-2xl)',
+    fontWeight: 'var(--font-weight-semibold)',
+    lineHeight: 'var(--font-lineHeight-tight)'
+  }}>
+    Page Title (2xl/semibold/tight)
+  </div>
+  <div className="token-value" style={{ marginTop: '0.5rem' }}>
+    font-size: 2xl (24px) / weight: semibold (600) / line-height: tight (1.25)
+  </div>
+</div>
+
+### Heading 2
+<div className="typography-demo">
+  <div style={{
+    fontSize: 'var(--font-size-xl)',
+    fontWeight: 'var(--font-weight-semibold)',
+    lineHeight: 'var(--font-lineHeight-tight)'
+  }}>
+    Section Title (xl/semibold/tight)
+  </div>
+  <div className="token-value" style={{ marginTop: '0.5rem' }}>
+    font-size: xl (20px) / weight: semibold (600) / line-height: tight (1.25)
+  </div>
+</div>
+
+### Heading 3
+<div className="typography-demo">
+  <div style={{
+    fontSize: 'var(--font-size-lg)',
+    fontWeight: 'var(--font-weight-medium)',
+    lineHeight: 'var(--font-lineHeight-tight)'
+  }}>
+    Subsection Title (lg/medium/tight)
+  </div>
+  <div className="token-value" style={{ marginTop: '0.5rem' }}>
+    font-size: lg (18px) / weight: medium (500) / line-height: tight (1.25)
+  </div>
+</div>
+
+### Body Text
+<div className="typography-demo">
+  <div style={{
+    fontSize: 'var(--font-size-base)',
+    fontWeight: 'var(--font-weight-normal)',
+    lineHeight: 'var(--font-lineHeight-normal)'
+  }}>
+    본문 텍스트입니다. 일반적인 문단과 내용에 사용됩니다.
+    충분한 줄간격으로 가독성이 좋습니다. (base/normal/normal)
+  </div>
+  <div className="token-value" style={{ marginTop: '0.5rem' }}>
+    font-size: base (16px) / weight: normal (400) / line-height: normal (1.5)
+  </div>
+</div>
+
+### Caption
+<div className="typography-demo">
+  <div style={{
+    fontSize: 'var(--font-size-sm)',
+    fontWeight: 'var(--font-weight-normal)',
+    lineHeight: 'var(--font-lineHeight-normal)'
+  }}>
+    캡션, 메타 정보, 보조 텍스트 (sm/normal/normal)
+  </div>
+  <div className="token-value" style={{ marginTop: '0.5rem' }}>
+    font-size: sm (14px) / weight: normal (400) / line-height: normal (1.5)
+  </div>
+</div>
+
+---
+
+## 사용 예시
+
+### 제목 스타일
+
+<div className="code-block">{`h1 {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--font-lineHeight-tight);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--font-lineHeight-tight);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-lineHeight-tight);
+}`}</div>
+
+### 본문 스타일
+
+<div className="code-block">{`body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-lineHeight-normal);
+}
+
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--font-lineHeight-normal);
+}
+
+small, .caption {
+  font-size: var(--font-size-sm);
+}`}</div>
+
+### 코드 블록
+
+<div className="code-block">{`code, pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+}
+
+.code-block {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-base);
+  line-height: var(--font-lineHeight-normal);
+}`}</div>
+
+---
+
+## Quick Reference
+
+### Font Size Scale
+
+| Token | px | rem | 사용 예시 |
+|-------|----|----|----------|
+| `--font-size-sm` | 14px | 0.875rem | 캡션, 메타 정보 |
+| `--font-size-base` | 16px | 1rem | 본문 |
+| `--font-size-lg` | 18px | 1.125rem | 강조 텍스트 |
+| `--font-size-xl` | 20px | 1.25rem | 소제목 |
+| `--font-size-2xl` | 24px | 1.5rem | 제목 |
+
+### Font Weight
+
+| Token | Value | 사용 예시 |
+|-------|-------|----------|
+| `--font-weight-normal` | 400 | 본문 |
+| `--font-weight-medium` | 500 | 강조, 레이블 |
+| `--font-weight-semibold` | 600 | 제목, 헤딩 |
+
+### Line Height
+
+| Token | Value | 사용 예시 |
+|-------|-------|----------|
+| `--font-lineHeight-tight` | 1.25 | 제목, 헤딩 |
+| `--font-lineHeight-normal` | 1.5 | 본문, 단락 |

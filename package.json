@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:ui": "pnpm --filter @lyra/ui build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
@@ -16,6 +17,6 @@
     "prettier": "^3.2.5",
     "turbo": "^2.5.8"
   },
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@10.18.3",
   "name": "design-system"
 }

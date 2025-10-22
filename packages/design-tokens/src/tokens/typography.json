@@ -1,0 +1,72 @@
+{
+  "font": {
+    "family": {
+      "sans": {
+        "$value": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+        "$type": "fontFamily",
+        "$description": "시스템 기본 폰트"
+      },
+      "mono": {
+        "$value": "'Menlo', 'Monaco', 'Courier New', monospace",
+        "$type": "fontFamily",
+        "$description": "고정폭 폰트"
+      }
+    },
+    "size": {
+      "sm": {
+        "$value": "{spacing.7}",
+        "$type": "dimension",
+        "$description": "14px - 보조 텍스트"
+      },
+      "base": {
+        "$value": "{spacing.8}",
+        "$type": "dimension",
+        "$description": "16px - 기본 텍스트"
+      },
+      "lg": {
+        "$value": "{spacing.9}",
+        "$type": "dimension",
+        "$description": "18px - 강조 텍스트"
+      },
+      "xl": {
+        "$value": "{spacing.10}",
+        "$type": "dimension",
+        "$description": "20px - 서브헤딩"
+      },
+      "2xl": {
+        "$value": "{spacing.12}",
+        "$type": "dimension",
+        "$description": "24px - 헤딩"
+      }
+    },
+    "weight": {
+      "normal": {
+        "$value": "400",
+        "$type": "fontWeight",
+        "$description": "일반 텍스트"
+      },
+      "medium": {
+        "$value": "500",
+        "$type": "fontWeight",
+        "$description": "중간 강조"
+      },
+      "semibold": {
+        "$value": "600",
+        "$type": "fontWeight",
+        "$description": "강한 강조"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "$value": "1.25",
+        "$type": "number",
+        "$description": "좁은 행간 (제목용)"
+      },
+      "normal": {
+        "$value": "1.5",
+        "$type": "number",
+        "$description": "기본 행간 (본문용)"
+      }
+    }
+  }
+}

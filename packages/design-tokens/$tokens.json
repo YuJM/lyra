@@ -1,0 +1,760 @@
+{
+  "$metadata": {
+    "tokenSetOrder": [
+      "primitives/spacing",
+      "primitives/colors",
+      "primitives/typography",
+      "primitives/borders",
+      "primitives/shadows",
+      "primitives/animation",
+      "primitives/z-index",
+      "primitives/breakpoints"
+    ]
+  },
+  "primitives/spacing": {
+    "spacing": {
+      "0": {
+        "$value": "0",
+        "$type": "dimension",
+        "$description": "0px"
+      },
+      "1": {
+        "$value": "0.125rem",
+        "$type": "dimension",
+        "$description": "2px"
+      },
+      "2": {
+        "$value": "0.25rem",
+        "$type": "dimension",
+        "$description": "4px"
+      },
+      "3": {
+        "$value": "0.375rem",
+        "$type": "dimension",
+        "$description": "6px"
+      },
+      "4": {
+        "$value": "0.5rem",
+        "$type": "dimension",
+        "$description": "8px"
+      },
+      "5": {
+        "$value": "0.625rem",
+        "$type": "dimension",
+        "$description": "10px"
+      },
+      "6": {
+        "$value": "0.75rem",
+        "$type": "dimension",
+        "$description": "12px"
+      },
+      "7": {
+        "$value": "0.875rem",
+        "$type": "dimension",
+        "$description": "14px"
+      },
+      "8": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "16px"
+      },
+      "9": {
+        "$value": "1.125rem",
+        "$type": "dimension",
+        "$description": "18px"
+      },
+      "10": {
+        "$value": "1.25rem",
+        "$type": "dimension",
+        "$description": "20px"
+      },
+      "12": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "24px"
+      },
+      "14": {
+        "$value": "1.75rem",
+        "$type": "dimension",
+        "$description": "28px"
+      },
+      "16": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "32px"
+      },
+      "20": {
+        "$value": "2.5rem",
+        "$type": "dimension",
+        "$description": "40px"
+      },
+      "24": {
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "48px"
+      },
+      "32": {
+        "$value": "4rem",
+        "$type": "dimension",
+        "$description": "64px"
+      },
+      "px": {
+        "$value": "1px",
+        "$type": "dimension",
+        "$description": "1px"
+      },
+      "icon": {
+        "sm": {
+          "$value": "{spacing.8}",
+          "$type": "dimension",
+          "$description": "16px - 작은 아이콘"
+        },
+        "md": {
+          "$value": "{spacing.10}",
+          "$type": "dimension",
+          "$description": "20px - 중간 아이콘"
+        },
+        "lg": {
+          "$value": "{spacing.12}",
+          "$type": "dimension",
+          "$description": "24px - 큰 아이콘"
+        }
+      }
+    }
+  },
+  "primitives/colors": {
+    "color": {
+      "gray": {
+        "50": {
+          "$value": "oklch(0.984 0.003 247.858)",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "oklch(0.968 0.006 264.542)",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "oklch(0.929 0.013 264.531)",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "oklch(0.870 0.023 261.325)",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "oklch(0.709 0.043 256.788)",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "oklch(0.554 0.046 257.417)",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "oklch(0.434 0.047 257.281)",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "oklch(0.362 0.044 257.287)",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "oklch(0.270 0.041 260.031)",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "oklch(0.214 0.044 265.755)",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "oklch(0.129 0.042 264.695)",
+          "$type": "color"
+        }
+      },
+      "blue": {
+        "50": {
+          "$value": "oklch(0.970 0.014 254.604)",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "oklch(0.929 0.039 251.326)",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "oklch(0.866 0.065 252.375)",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "oklch(0.779 0.108 248.582)",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "oklch(0.702 0.155 248.007)",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "oklch(0.623 0.214 249.816)",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "oklch(0.513 0.234 256.288)",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "oklch(0.438 0.214 260.147)",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "oklch(0.384 0.170 262.881)",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "oklch(0.343 0.125 265.866)",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "oklch(0.239 0.079 268.679)",
+          "$type": "color"
+        }
+      },
+      "red": {
+        "50": {
+          "$value": "oklch(0.971 0.013 17.379)",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "oklch(0.936 0.032 17.717)",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "oklch(0.885 0.062 19.542)",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "oklch(0.808 0.120 23.542)",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "oklch(0.704 0.191 27.325)",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "oklch(0.637 0.237 25.331)",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "oklch(0.577 0.249 22.182)",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "oklch(0.505 0.214 21.302)",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "oklch(0.444 0.177 21.538)",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "oklch(0.399 0.141 22.781)",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "oklch(0.258 0.092 27.513)",
+          "$type": "color"
+        }
+      },
+      "green": {
+        "50": {
+          "$value": "oklch(0.982 0.018 155.826)",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "oklch(0.962 0.044 156.743)",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "oklch(0.925 0.084 155.995)",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "oklch(0.871 0.150 154.449)",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "oklch(0.788 0.184 149.579)",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "oklch(0.696 0.178 149.579)",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "oklch(0.593 0.158 152.584)",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "oklch(0.496 0.130 153.027)",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "oklch(0.420 0.105 153.588)",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "oklch(0.368 0.087 155.409)",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "oklch(0.250 0.070 158.090)",
+          "$type": "color"
+        }
+      },
+      "yellow": {
+        "50": {
+          "$value": "oklch(0.987 0.024 102.212)",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "oklch(0.973 0.069 101.372)",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "oklch(0.945 0.129 99.526)",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "oklch(0.902 0.182 96.868)",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "oklch(0.847 0.184 91.720)",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "oklch(0.780 0.160 86.047)",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "oklch(0.664 0.139 74.492)",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "oklch(0.548 0.123 63.427)",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "oklch(0.473 0.109 56.288)",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "oklch(0.422 0.095 52.449)",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "oklch(0.292 0.066 46.512)",
+          "$type": "color"
+        }
+      },
+      "orange": {
+        "50": {
+          "$value": "oklch(0.980 0.021 75.656)",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "oklch(0.954 0.053 75.234)",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "oklch(0.901 0.101 68.872)",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "oklch(0.837 0.144 59.517)",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "oklch(0.750 0.171 48.767)",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "oklch(0.705 0.190 41.656)",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "oklch(0.646 0.199 37.945)",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "oklch(0.558 0.169 35.556)",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "oklch(0.479 0.136 34.405)",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "oklch(0.423 0.109 34.856)",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "oklch(0.285 0.074 33.365)",
+          "$type": "color"
+        }
+      },
+      "purple": {
+        "50": {
+          "$value": "oklch(0.977 0.014 293.756)",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "oklch(0.953 0.031 294.588)",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "oklch(0.914 0.058 293.285)",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "oklch(0.851 0.113 293.756)",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "oklch(0.761 0.184 293.841)",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "oklch(0.691 0.241 292.717)",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "oklch(0.617 0.269 293.090)",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "oklch(0.549 0.250 292.551)",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "oklch(0.471 0.209 291.267)",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "oklch(0.408 0.174 289.936)",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "oklch(0.307 0.158 288.866)",
+          "$type": "color"
+        }
+      },
+      "pink": {
+        "50": {
+          "$value": "oklch(0.971 0.014 343.198)",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "oklch(0.948 0.028 342.258)",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "oklch(0.898 0.061 343.231)",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "oklch(0.823 0.120 346.390)",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "oklch(0.730 0.184 349.761)",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "oklch(0.656 0.219 354.308)",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "oklch(0.592 0.240 0.996)",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "oklch(0.532 0.216 4.087)",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "oklch(0.471 0.184 4.547)",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "oklch(0.421 0.153 3.945)",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "oklch(0.294 0.114 3.566)",
+          "$type": "color"
+        }
+      }
+    }
+  },
+  "primitives/typography": {
+    "font": {
+      "family": {
+        "sans": {
+          "$value": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+          "$type": "fontFamily",
+          "$description": "시스템 기본 폰트"
+        },
+        "mono": {
+          "$value": "'Menlo', 'Monaco', 'Courier New', monospace",
+          "$type": "fontFamily",
+          "$description": "고정폭 폰트"
+        }
+      },
+      "size": {
+        "sm": {
+          "$value": "{spacing.7}",
+          "$type": "dimension",
+          "$description": "14px - 보조 텍스트"
+        },
+        "base": {
+          "$value": "{spacing.8}",
+          "$type": "dimension",
+          "$description": "16px - 기본 텍스트"
+        },
+        "lg": {
+          "$value": "{spacing.9}",
+          "$type": "dimension",
+          "$description": "18px - 강조 텍스트"
+        },
+        "xl": {
+          "$value": "{spacing.10}",
+          "$type": "dimension",
+          "$description": "20px - 서브헤딩"
+        },
+        "2xl": {
+          "$value": "{spacing.12}",
+          "$type": "dimension",
+          "$description": "24px - 헤딩"
+        }
+      },
+      "weight": {
+        "normal": {
+          "$value": "400",
+          "$type": "fontWeight",
+          "$description": "일반 텍스트"
+        },
+        "medium": {
+          "$value": "500",
+          "$type": "fontWeight",
+          "$description": "중간 강조"
+        },
+        "semibold": {
+          "$value": "600",
+          "$type": "fontWeight",
+          "$description": "강한 강조"
+        }
+      },
+      "lineHeight": {
+        "tight": {
+          "$value": "1.25",
+          "$type": "number",
+          "$description": "좁은 행간 (제목용)"
+        },
+        "normal": {
+          "$value": "1.5",
+          "$type": "number",
+          "$description": "기본 행간 (본문용)"
+        }
+      }
+    }
+  },
+  "primitives/borders": {
+    "border": {
+      "width": {
+        "0": {
+          "$value": "{spacing.0}",
+          "$type": "dimension",
+          "$description": "0px - 선 없음"
+        },
+        "1": {
+          "$value": "{spacing.px}",
+          "$type": "dimension",
+          "$description": "1px - 기본 선"
+        },
+        "2": {
+          "$value": "{spacing.1}",
+          "$type": "dimension",
+          "$description": "2px - 강조 선"
+        },
+        "4": {
+          "$value": "{spacing.2}",
+          "$type": "dimension",
+          "$description": "4px - 굵은 선"
+        }
+      },
+      "radius": {
+        "none": {
+          "$value": "{spacing.0}",
+          "$type": "dimension",
+          "$description": "0px - sharp corners"
+        },
+        "sm": {
+          "$value": "{spacing.2}",
+          "$type": "dimension",
+          "$description": "4px - 약간 둥글게"
+        },
+        "md": {
+          "$value": "{spacing.4}",
+          "$type": "dimension",
+          "$description": "8px - 둥글게"
+        },
+        "full": {
+          "$value": "9999px",
+          "$type": "dimension",
+          "$description": "pill/circle"
+        }
+      }
+    }
+  },
+  "primitives/shadows": {
+    "shadow": {
+      "sm": {
+        "$value": "0 1px 2px 0 oklch(0 0 0 / 0.05)",
+        "$type": "shadow",
+        "$description": "subtle shadow"
+      },
+      "md": {
+        "$value": "0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1)",
+        "$type": "shadow",
+        "$description": "normal shadow"
+      },
+      "lg": {
+        "$value": "0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1)",
+        "$type": "shadow",
+        "$description": "prominent shadow"
+      },
+      "inner": {
+        "$value": "inset 0 2px 4px 0 oklch(0 0 0 / 0.05)",
+        "$type": "shadow",
+        "$description": "inset shadow"
+      }
+    }
+  },
+  "primitives/animation": {
+    "duration": {
+      "instant": {
+        "$value": "0ms",
+        "$type": "duration"
+      },
+      "fast": {
+        "$value": "100ms",
+        "$type": "duration"
+      },
+      "base": {
+        "$value": "200ms",
+        "$type": "duration"
+      },
+      "moderate": {
+        "$value": "300ms",
+        "$type": "duration"
+      },
+      "slow": {
+        "$value": "500ms",
+        "$type": "duration"
+      }
+    },
+    "easing": {
+      "linear": {
+        "$value": "linear",
+        "$type": "cubicBezier"
+      },
+      "ease": {
+        "$value": "ease",
+        "$type": "cubicBezier"
+      },
+      "easeIn": {
+        "$value": "ease-in",
+        "$type": "cubicBezier"
+      },
+      "easeOut": {
+        "$value": "ease-out",
+        "$type": "cubicBezier"
+      },
+      "easeInOut": {
+        "$value": "ease-in-out",
+        "$type": "cubicBezier"
+      }
+    }
+  },
+  "primitives/z-index": {
+    "zIndex": {
+      "base": {
+        "$value": "0",
+        "$type": "number",
+        "$description": "기본 레이어"
+      },
+      "dropdown": {
+        "$value": "1000",
+        "$type": "number",
+        "$description": "드롭다운, 팝오버"
+      },
+      "sticky": {
+        "$value": "1100",
+        "$type": "number",
+        "$description": "Sticky 요소"
+      },
+      "overlay": {
+        "$value": "1200",
+        "$type": "number",
+        "$description": "오버레이 배경"
+      },
+      "modal": {
+        "$value": "1300",
+        "$type": "number",
+        "$description": "모달, 다이얼로그"
+      },
+      "popover": {
+        "$value": "1400",
+        "$type": "number",
+        "$description": "팝오버 (모달 위)"
+      },
+      "tooltip": {
+        "$value": "1500",
+        "$type": "number",
+        "$description": "툴팁"
+      },
+      "notification": {
+        "$value": "1600",
+        "$type": "number",
+        "$description": "토스트, 알림"
+      }
+    }
+  },
+  "primitives/breakpoints": {
+    "breakpoint": {
+      "sm": {
+        "$value": "640px",
+        "$type": "dimension",
+        "$description": "Small devices (mobile landscape)"
+      },
+      "md": {
+        "$value": "768px",
+        "$type": "dimension",
+        "$description": "Medium devices (tablets)"
+      },
+      "lg": {
+        "$value": "1024px",
+        "$type": "dimension",
+        "$description": "Large devices (desktops)"
+      },
+      "xl": {
+        "$value": "1280px",
+        "$type": "dimension",
+        "$description": "Extra large devices (large desktops)"
+      },
+      "2xl": {
+        "$value": "1536px",
+        "$type": "dimension",
+        "$description": "2X large devices (ultra-wide)"
+      }
+    }
+  }
+}

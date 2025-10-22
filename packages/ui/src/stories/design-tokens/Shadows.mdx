@@ -1,0 +1,204 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens/Shadows" />
+
+# Shadows
+
+그림자 관련 디자인 토큰입니다. 깊이와 계층을 표현하는 일관된 그림자 시스템을 제공합니다.
+
+## 사용 방법
+
+```css
+@import "@lyra/design-tokens/css";
+
+.my-card {
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+}
+```
+
+---
+
+## Shadow Elevation
+
+<div className="shadow-grid">
+  <div>
+    <div className="shadow-demo" style={{ boxShadow: 'var(--shadow-sm)' }}>
+      <div style={{ textAlign: 'center' }}>--shadow-sm</div>
+    </div>
+    <div className="token-value" style={{ marginTop: '1rem', textAlign: 'center' }}>
+      Small - 작은 그림자<br />
+      카드, 버튼
+    </div>
+  </div>
+
+  <div>
+    <div className="shadow-demo" style={{ boxShadow: 'var(--shadow-md)' }}>
+      <div style={{ textAlign: 'center' }}>--shadow-md</div>
+    </div>
+    <div className="token-value" style={{ marginTop: '1rem', textAlign: 'center' }}>
+      Medium - 중간 그림자<br />
+      드롭다운, 팝오버
+    </div>
+  </div>
+
+  <div>
+    <div className="shadow-demo" style={{ boxShadow: 'var(--shadow-lg)' }}>
+      <div style={{ textAlign: 'center' }}>--shadow-lg</div>
+    </div>
+    <div className="token-value" style={{ marginTop: '1rem', textAlign: 'center' }}>
+      Large - 큰 그림자<br />
+      모달, 다이얼로그
+    </div>
+  </div>
+
+  <div>
+    <div className="shadow-demo" style={{ boxShadow: 'var(--shadow-inner)' }}>
+      <div style={{ textAlign: 'center' }}>--shadow-inner</div>
+    </div>
+    <div className="token-value" style={{ marginTop: '1rem', textAlign: 'center' }}>
+      Inner - 내부 그림자<br />
+      눌린 버튼, 입력 필드
+    </div>
+  </div>
+</div>
+
+---
+
+## Shadow Values
+
+<div className="code-block">{`--shadow-sm:
+  0 1px 2px 0 rgba(0, 0, 0, 0.05)
+
+--shadow-md:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06)
+
+--shadow-lg:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05)
+
+--shadow-inner:
+  inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)`}</div>
+
+---
+
+## 사용 가이드
+
+### 카드 계층
+
+<div className="code-block">{`/* 평면 카드 */
+.card-flat {
+  box-shadow: var(--shadow-sm);
+  border: var(--border-width-1) solid var(--color-gray-200);
+}
+
+/* 떠있는 카드 */
+.card-elevated {
+  box-shadow: var(--shadow-md);
+}
+
+/* 강조 카드 */
+.card-prominent {
+  box-shadow: var(--shadow-lg);
+}`}</div>
+
+### 상호작용 상태
+
+<div className="code-block">{`/* 버튼 상태 */
+.button {
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--duration-base) var(--easing-easeInOut);
+}
+
+.button:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.button:active {
+  box-shadow: var(--shadow-inner);
+}`}</div>
+
+### 드롭다운과 팝오버
+
+<div className="code-block">{`/* 드롭다운 메뉴 */
+.dropdown {
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+  background: white;
+}
+
+/* 툴팁 */
+.tooltip {
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+/* 모달 */
+.modal {
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--border-radius-lg);
+}`}</div>
+
+### 입력 필드
+
+<div className="code-block">{`/* 일반 입력 */
+.input {
+  border: var(--border-width-1) solid var(--color-gray-300);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 포커스 상태 */
+.input:focus {
+  border-color: var(--color-blue-500);
+  box-shadow: var(--shadow-md);
+}
+
+/* 눌린 상태 (체크박스, 라디오) */
+.input:active {
+  box-shadow: var(--shadow-inner);
+}`}</div>
+
+---
+
+## 깊이 계층 시스템
+
+그림자는 UI 요소의 시각적 계층을 나타냅니다:
+
+### Level 1 - Small (sm)
+- **깊이**: 1-2px
+- **용도**: 미묘한 구분, 카드, 버튼
+- **예시**: 목록 아이템, 작은 버튼
+
+### Level 2 - Medium (md)
+- **깊이**: 4-6px
+- **용도**: 부유하는 요소, 드롭다운
+- **예시**: 드롭다운 메뉴, 팝오버, 날짜 선택기
+
+### Level 3 - Large (lg)
+- **깊이**: 10-15px
+- **용도**: 최상위 요소, 모달
+- **예시**: 모달 다이얼로그, 전체 화면 오버레이
+
+### Special - Inner
+- **깊이**: 내부로 2-4px
+- **용도**: 눌린 상태, 입력 필드
+- **예시**: 활성화된 버튼, 텍스트 입력
+
+---
+
+## Quick Reference
+
+| Token | 깊이 | 사용 예시 |
+|-------|------|----------|
+| `--shadow-sm` | 1-2px | 카드, 버튼, 목록 아이템 |
+| `--shadow-md` | 4-6px | 드롭다운, 팝오버, 날짜 선택기 |
+| `--shadow-lg` | 10-15px | 모달, 다이얼로그, 사이드 패널 |
+| `--shadow-inner` | 내부 2-4px | 눌린 버튼, 입력 필드, 토글 |
+
+## 접근성 고려사항
+
+- **대비 의존 금지**: 그림자만으로 중요 정보를 전달하지 마세요
+- **색상 모드**: 다크 모드에서는 그림자를 조정하거나 테두리 사용
+- **성능**: 과도한 그림자는 렌더링 성능에 영향
+- **일관성**: 같은 계층의 요소는 같은 그림자 사용

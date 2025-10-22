@@ -1,0 +1,24 @@
+{
+  "shadow": {
+    "sm": {
+      "$value": "0 1px 2px 0 oklch(0 0 0 / 0.05)",
+      "$type": "shadow",
+      "$description": "subtle shadow"
+    },
+    "md": {
+      "$value": "0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1)",
+      "$type": "shadow",
+      "$description": "normal shadow"
+    },
+    "lg": {
+      "$value": "0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1)",
+      "$type": "shadow",
+      "$description": "prominent shadow"
+    },
+    "inner": {
+      "$value": "inset 0 2px 4px 0 oklch(0 0 0 / 0.05)",
+      "$type": "shadow",
+      "$description": "inset shadow"
+    }
+  }
+}

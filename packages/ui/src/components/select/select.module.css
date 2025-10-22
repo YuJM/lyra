@@ -1,0 +1,214 @@
+/* Select Component Styles */
+@layer components {
+  /* Trigger */
+  .Trigger {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    min-width: 200px;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-2);
+    height: 40px;
+    padding: 0 var(--spacing-3);
+    border: var(--border-width-1) solid var(--color-border-default);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-surface-default);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-sans);
+    line-height: var(--font-line-height-normal);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--easing-ease-in-out);
+    outline: none;
+
+    &:hover:not([data-disabled]) {
+      border-color: var(--color-border-hover);
+      background-color: var(--color-bg-input-hover);
+    }
+
+    &:focus-visible {
+      border-color: var(--color-border-focus);
+      outline: var(--border-width-2) solid var(--color-border-focus);
+      outline-offset: -1px;
+    }
+
+    &[data-disabled] {
+      background-color: var(--color-bg-input-disabled);
+      color: var(--color-text-disabled);
+      border-color: var(--color-border-disabled);
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &[data-popup-open] {
+      border-color: var(--color-border-focus);
+    }
+  }
+
+  .Value {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &[data-placeholder] {
+      color: var(--color-text-tertiary);
+    }
+  }
+
+  .Icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+    color: var(--color-icon-default);
+    transition: transform var(--duration-fast) var(--easing-ease-in-out);
+
+    .Trigger[data-popup-open] & {
+      transform: rotate(180deg);
+    }
+
+    .Trigger[data-disabled] & {
+      color: var(--color-icon-subtle);
+    }
+  }
+
+  /* Backdrop */
+  .Backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: transparent;
+    z-index: var(--z-index-popup-backdrop);
+  }
+
+  /* Positioner */
+  .Positioner {
+    position: fixed;
+    z-index: var(--z-index-popup);
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  /* Popup */
+  .Popup {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: var(--spacing-1);
+    border: var(--border-width-1) solid var(--color-border-subtle);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-surface-elevated);
+    box-shadow: var(--shadow-lg);
+    outline: none;
+    pointer-events: auto;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity var(--duration-fast) var(--easing-ease-in-out),
+      transform var(--duration-fast) var(--easing-ease-in-out);
+
+    &[data-open] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &[data-closed] {
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+    }
+  }
+
+  /* Arrow */
+  .Arrow {
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    background-color: var(--color-bg-surface-elevated);
+    border: var(--border-width-1) solid var(--color-border-subtle);
+    border-right: none;
+    border-bottom: none;
+    z-index: -1;
+  }
+
+  /* Item */
+  .Item {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    min-height: 36px;
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--border-radius-sm);
+    background-color: transparent;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family-sans);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--easing-ease-in-out);
+    outline: none;
+
+    &:hover:not([data-disabled]) {
+      background-color: var(--color-bg-secondary-default);
+    }
+
+    &[data-highlighted] {
+      background-color: var(--color-bg-secondary-default);
+    }
+
+    &[data-selected] {
+      background-color: var(--color-bg-primary-default);
+      color: var(--color-text-inverse);
+    }
+
+    &[data-disabled] {
+      color: var(--color-text-disabled);
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  .ItemText {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ItemIndicator {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+    color: currentColor;
+
+    .Item[data-selected] & {
+      display: flex;
+    }
+  }
+
+  /* Group Label */
+  .GroupLabel {
+    padding: var(--spacing-2) var(--spacing-3);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

@@ -1,0 +1,239 @@
+/**
+ * Storybook Utility Classes
+ * Tailwind 없이 사용할 수 있는 유틸리티 클래스들
+ */
+
+/* ============================================
+   Layout - Flexbox
+   ============================================ */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* ============================================
+   Spacing - Gap
+   ============================================ */
+.gap-1 {
+  gap: 0.25rem; /* 4px */
+}
+
+.gap-2 {
+  gap: 0.5rem; /* 8px */
+}
+
+.gap-3 {
+  gap: 0.75rem; /* 12px */
+}
+
+.gap-4 {
+  gap: 1rem; /* 16px */
+}
+
+.gap-6 {
+  gap: 1.5rem; /* 24px */
+}
+
+/* ============================================
+   Spacing - Padding
+   ============================================ */
+.p-3 {
+  padding: 0.75rem; /* 12px */
+}
+
+.px-4 {
+  padding-left: 1rem; /* 16px */
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem; /* 8px */
+  padding-bottom: 0.5rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem; /* 4px */
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem; /* 8px */
+}
+
+.pl-6 {
+  padding-left: 1.5rem; /* 24px */
+}
+
+/* ============================================
+   Spacing - Margin
+   ============================================ */
+.mt-1 {
+  margin-top: 0.25rem; /* 4px */
+}
+
+.mt-2 {
+  margin-top: 0.5rem; /* 8px */
+}
+
+.mt-4 {
+  margin-top: 1rem; /* 16px */
+}
+
+.ml-7 {
+  margin-left: 1.75rem; /* 28px */
+}
+
+/* ============================================
+   Typography - Font Size
+   ============================================ */
+.text-xs {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
+}
+
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
+
+.text-base {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+}
+
+/* ============================================
+   Typography - Font Weight
+   ============================================ */
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* ============================================
+   Colors - Text
+   ============================================ */
+.text-white {
+  color: #ffffff;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.text-red-600 {
+  color: #dc2626;
+}
+
+/* ============================================
+   Colors - Background
+   ============================================ */
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.bg-blue-600 {
+  background-color: #2563eb;
+}
+
+.bg-blue-700 {
+  background-color: #1d4ed8;
+}
+
+/* ============================================
+   Borders
+   ============================================ */
+.border-b {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.border-b-2 {
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.rounded {
+  border-radius: 0.25rem; /* 4px */
+}
+
+/* ============================================
+   Cursor
+   ============================================ */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+/* ============================================
+   Opacity
+   ============================================ */
+.opacity-50 {
+  opacity: 0.5;
+}
+
+/* ============================================
+   User Select
+   ============================================ */
+.select-none {
+  user-select: none;
+}
+
+/* ============================================
+   Hover States
+   ============================================ */
+.hover\:bg-blue-700:hover {
+  background-color: #1d4ed8;
+}
+
+/* ============================================
+   Width & Height
+   ============================================ */
+.h-4 {
+  height: 1rem; /* 16px */
+}
+
+.h-5 {
+  height: 1.25rem; /* 20px */
+}
+
+.h-6 {
+  height: 1.5rem; /* 24px */
+}
+
+.w-4 {
+  width: 1rem; /* 16px */
+}
+
+.w-5 {
+  width: 1.25rem; /* 20px */
+}
+
+.w-6 {
+  width: 1.5rem; /* 24px */
+}

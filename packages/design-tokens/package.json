@@ -1,0 +1,28 @@
+{
+  "name": "@lyra/design-tokens",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./css": "./dist/css/tokens.css",
+    "./css/media-queries": "./dist/css/media-queries.css",
+    "./js": "./dist/js/index.js",
+    "./json": "./dist/json/tokens.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "build:figma": "node build-figma.js",
+    "dev": "node build.js --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "jsdom": "^27.0.1",
+    "style-dictionary": "^5.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

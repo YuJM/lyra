@@ -1,0 +1,390 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens/Z-Index" />
+
+# Z-Index
+
+Z-Index 관련 디자인 토큰입니다. 일관된 레이어 스택을 제공하여 요소의 쌓임 순서를 관리합니다.
+
+## 사용 방법
+
+```css
+@import "@lyra/design-tokens/css";
+
+.my-modal {
+  position: fixed;
+  z-index: var(--z-modal);
+}
+
+.my-dropdown {
+  position: absolute;
+  z-index: var(--z-dropdown);
+}
+```
+
+---
+
+## Z-Index Scale
+
+<div className="token-grid">
+  <div className="typography-demo">
+    <div className="token-name">--z-base</div>
+    <div className="token-value">0 - 기본 레이어</div>
+    <div style={{ marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      일반 컨텐츠, 기본값
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--z-dropdown</div>
+    <div className="token-value">100 - 드롭다운</div>
+    <div style={{ marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      드롭다운 메뉴, 셀렉트 옵션
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--z-sticky</div>
+    <div className="token-value">200 - 고정 요소</div>
+    <div style={{ marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      고정 헤더, 사이드바
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--z-overlay</div>
+    <div className="token-value">300 - 오버레이</div>
+    <div style={{ marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      배경 딤, 오버레이 레이어
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--z-modal</div>
+    <div className="token-value">400 - 모달</div>
+    <div style={{ marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      모달 다이얼로그, 전체 화면 팝업
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--z-popover</div>
+    <div className="token-value">500 - 팝오버</div>
+    <div style={{ marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      팝오버, 컨텍스트 메뉴
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--z-tooltip</div>
+    <div className="token-value">600 - 툴팁</div>
+    <div style={{ marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      툴팁, 도움말 텍스트
+    </div>
+  </div>
+
+  <div className="typography-demo">
+    <div className="token-name">--z-notification</div>
+    <div className="token-value">700 - 알림</div>
+    <div style={{ marginTop: '0.5rem', color: 'var(--color-gray-600)' }}>
+      토스트, 알림, 최상위 메시지
+    </div>
+  </div>
+</div>
+
+---
+
+## 레이어 시각화
+
+<div className="z-index-demo">
+  <div className="z-layer" style={{
+    zIndex: 'var(--z-base)',
+    top: '40px',
+    left: '20px',
+    background: 'var(--color-gray-400)'
+  }}>
+    Base (0)
+  </div>
+
+  <div className="z-layer" style={{
+    zIndex: 'var(--z-dropdown)',
+    top: '60px',
+    left: '60px',
+    background: 'var(--color-blue-400)'
+  }}>
+    Dropdown (100)
+  </div>
+
+  <div className="z-layer" style={{
+    zIndex: 'var(--z-sticky)',
+    top: '80px',
+    left: '100px',
+    background: 'var(--color-green-400)'
+  }}>
+    Sticky (200)
+  </div>
+
+  <div className="z-layer" style={{
+    zIndex: 'var(--z-overlay)',
+    top: '100px',
+    left: '140px',
+    background: 'var(--color-yellow-400)'
+  }}>
+    Overlay (300)
+  </div>
+
+  <div className="z-layer" style={{
+    zIndex: 'var(--z-modal)',
+    top: '120px',
+    left: '180px',
+    background: 'var(--color-orange-400)'
+  }}>
+    Modal (400)
+  </div>
+</div>
+
+<div style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--color-gray-600)' }}>
+  위 시각화는 각 레이어가 어떻게 쌓이는지 보여줍니다. 숫자가 클수록 위에 표시됩니다.
+</div>
+
+---
+
+## 사용 가이드
+
+### 드롭다운 메뉴
+
+<div className="code-block">{`.dropdown-trigger {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: var(--z-dropdown);
+  top: 100%;
+  left: 0;
+}`}</div>
+
+### 고정 헤더
+
+<div className="code-block">{`.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar {
+  position: fixed;
+  z-index: var(--z-sticky);
+  top: 0;
+  left: 0;
+  height: 100vh;
+}`}</div>
+
+### 모달 다이얼로그
+
+<div className="code-block">{`/* 배경 오버레이 */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 모달 컨텐츠 */
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z-modal);
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}`}</div>
+
+### 툴팁
+
+<div className="code-block">{`.tooltip-trigger {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: var(--z-tooltip);
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--size-2) var(--size-3);
+  background: var(--color-gray-900);
+  color: white;
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-sm);
+  white-space: nowrap;
+}`}</div>
+
+### 토스트 알림
+
+<div className="code-block">{`.toast-container {
+  position: fixed;
+  top: var(--size-8);
+  right: var(--size-8);
+  z-index: var(--z-notification);
+}
+
+.toast {
+  background: white;
+  padding: var(--size-4);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--size-4);
+}`}</div>
+
+### 팝오버
+
+<div className="code-block">{`.popover-trigger {
+  position: relative;
+}
+
+.popover {
+  position: absolute;
+  z-index: var(--z-popover);
+  background: white;
+  border: var(--border-width-1) solid var(--color-gray-200);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--size-4);
+}`}</div>
+
+---
+
+## 레이어 계층 설명
+
+### 레벨 0: Base (0)
+- **용도**: 일반 페이지 컨텐츠
+- **특징**: 기본 문서 흐름
+- **예시**: 텍스트, 이미지, 카드
+
+### 레벨 1: Dropdown (100)
+- **용도**: 드롭다운 요소
+- **특징**: 일반 컨텐츠 위, 다른 UI 아래
+- **예시**: 셀렉트 옵션, 자동완성 목록
+
+### 레벨 2: Sticky (200)
+- **용도**: 고정된 UI 요소
+- **특징**: 스크롤해도 위치 유지
+- **예시**: 고정 헤더, 사이드바, 하단 네비게이션
+
+### 레벨 3: Overlay (300)
+- **용도**: 배경 오버레이
+- **특징**: 컨텐츠를 흐리게 하는 배경
+- **예시**: 모달 배경, 사이드 메뉴 딤
+
+### 레벨 4: Modal (400)
+- **용도**: 모달 다이얼로그
+- **특징**: 전체 화면 컨텐츠 차단
+- **예시**: 확인 다이얼로그, 전체 화면 폼
+
+### 레벨 5: Popover (500)
+- **용도**: 컨텍스트 팝업
+- **특징**: 모달 위에 표시 가능
+- **예시**: 컨텍스트 메뉴, 선택 팔레트
+
+### 레벨 6: Tooltip (600)
+- **용도**: 정보성 툴팁
+- **특징**: 모든 UI 위에 표시
+- **예시**: 도움말 텍스트, 단축키 힌트
+
+### 레벨 7: Notification (700)
+- **용도**: 시스템 알림
+- **특징**: 최상위 레이어
+- **예시**: 토스트 메시지, 에러 알림, 성공 메시지
+
+---
+
+## 베스트 프랙티스
+
+### 1. 일관성 유지
+<div className="code-block">{`/* ✅ 좋음: 토큰 사용 */
+.modal {
+  z-index: var(--z-modal);
+}
+
+/* ❌ 나쁨: 임의의 값 */
+.modal {
+  z-index: 9999;
+}`}</div>
+
+### 2. Stacking Context 이해
+<div className="code-block">{`/* 새로운 stacking context 생성 */
+.container {
+  position: relative;
+  z-index: var(--z-base);
+  /* 내부 요소의 z-index는 이 context 내에서만 유효 */
+}
+
+.child {
+  position: absolute;
+  z-index: var(--z-modal); /* 부모 context에 제한됨 */
+}`}</div>
+
+### 3. Position 속성 필요
+<div className="code-block">{`/* ✅ 좋음: position 설정 */
+.element {
+  position: relative;
+  z-index: var(--z-dropdown);
+}
+
+/* ❌ 나쁨: position 없음 (z-index 무시됨) */
+.element {
+  z-index: var(--z-dropdown);
+}`}</div>
+
+### 4. 불필요한 z-index 피하기
+<div className="code-block">{`/* ✅ 좋음: 필요한 경우만 */
+.dropdown-menu {
+  position: absolute;
+  z-index: var(--z-dropdown);
+}
+
+/* ❌ 나쁨: 모든 요소에 적용 */
+.card, .button, .text {
+  z-index: var(--z-base);
+}`}</div>
+
+---
+
+## Quick Reference
+
+| Token | Value | 사용 예시 |
+|-------|-------|----------|
+| `--z-base` | 0 | 일반 컨텐츠 |
+| `--z-dropdown` | 100 | 드롭다운, 셀렉트 |
+| `--z-sticky` | 200 | 고정 헤더, 사이드바 |
+| `--z-overlay` | 300 | 모달 배경, 딤 |
+| `--z-modal` | 400 | 모달, 다이얼로그 |
+| `--z-popover` | 500 | 팝오버, 컨텍스트 메뉴 |
+| `--z-tooltip` | 600 | 툴팁, 힌트 |
+| `--z-notification` | 700 | 토스트, 알림 |
+
+## 디버깅 팁
+
+<div className="code-block">{`/* z-index 문제 디버깅 */
+
+/* 1. position 확인 */
+element {
+  position: relative; /* 또는 absolute, fixed, sticky */
+}
+
+/* 2. stacking context 확인 */
+parent {
+  /* 다음 속성들은 새로운 stacking context 생성 */
+  opacity: 0.99;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 3. 브라우저 DevTools 사용 */
+/* Elements > Layers 패널에서 stacking order 확인 */`}</div>

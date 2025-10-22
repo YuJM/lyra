@@ -1,0 +1,86 @@
+/* Field Component Styles */
+@layer components {
+  /* Field.Root - Container for the entire field */
+  .FieldRoot {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Field.Label - Label for the form control */
+  .FieldLabel {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary); /* 시멘틱 토큰 사용 */
+    line-height: var(--font-line-height-normal);
+  }
+
+  /* Field.Control - The input element */
+  .FieldControl {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0 var(--spacing-7);
+    border: var(--border-width-1) solid var(--color-border-subtle);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-input-default);
+    transition: all var(--duration-fast) var(--easing-ease-in-out);
+    outline: none;
+
+    &::placeholder {
+      color: var(--color-text-tertiary);
+    }
+
+    &:hover:not(:disabled) {
+      border-color: var(--color-border-hover);
+      background-color: var(--color-bg-input-hover);
+    }
+
+    &:focus {
+      border-color: var(--color-border-focus);
+      outline: var(--border-width-2) solid var(--color-border-focus);
+      outline-offset: -1px;
+    }
+
+    &:disabled {
+      background-color: var(--color-bg-input-disabled);
+      color: var(--color-text-disabled);
+      border-color: var(--color-border-disabled);
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &[data-invalid] {
+      border-color: var(--color-border-error);
+
+      &:focus {
+        border-color: var(--color-border-error);
+        outline-color: var(--color-border-error);
+      }
+    }
+  }
+
+  /* Field.Description - Helper text */
+  .FieldDescription {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--font-line-height-normal);
+    margin: 0;
+  }
+
+  /* Field.Error - Error message */
+  .FieldError {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-error);
+    line-height: var(--font-line-height-normal);
+
+    &:empty {
+      display: none;
+    }
+  }
+}

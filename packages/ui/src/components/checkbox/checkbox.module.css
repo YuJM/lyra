@@ -1,0 +1,78 @@
+/* Checkbox Component Styles */
+@layer components {
+  .Checkbox {
+    box-sizing: border-box;
+    display: flex;
+    width: var(--spacing-icon-md);
+    height: var(--spacing-icon-md);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--easing-ease-in-out);
+    border: var(--border-width-1) solid var(--color-border-default);
+
+    /* Unchecked state */
+    &[data-unchecked] {
+      background-color: transparent;
+    }
+
+    /* Checked state */
+    &[data-checked] {
+      background-color: var(--color-bg-primary-default);
+    }
+
+    /* Indeterminate state */
+    &[data-indeterminate] {
+      border: var(--border-width-1) solid var(--color-interactive-default);
+      background-color: var(--color-bg-surface-default);
+    }
+
+    /* Hover states */
+    &[data-unchecked]:hover:not([data-disabled]) {
+      border-color: var(--color-border-hover);
+    }
+
+    &[data-checked]:hover:not([data-disabled]) {
+      background-color: var(--color-interactive-hover);
+      border-color: var(--color-interactive-hover);
+    }
+
+    /* Disabled state */
+    &[data-disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    /* Focus state */
+    &:focus-visible {
+      outline: var(--border-width-2) solid var(--color-border-focus);
+      outline-offset: var(--border-width-2);
+    }
+  }
+
+  .Indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-icon-inverse);
+
+    /* Hide when unchecked */
+    &[data-unchecked] {
+      display: none;
+    }
+
+    /* Indeterminate state color */
+    &[data-indeterminate] {
+      color: var(--color-icon-default);
+    }
+  }
+
+  .Icon {
+    width: var(--spacing-icon-sm);
+    height: var(--spacing-icon-sm);
+  }
+}

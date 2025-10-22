@@ -1,0 +1,73 @@
+/* ================================
+   Tooltip 컴포넌트 스타일
+   ================================ */
+
+/* Trigger */
+.TooltipTrigger {
+  cursor: help;
+}
+
+/* Positioner */
+.TooltipPositioner {
+  z-index: var(--z-index-tooltip, 2000);
+}
+
+/* Popup - 툴팁 컨테이너 */
+.TooltipPopup {
+  background-color: var(--color-bg-inverse, #1f2937);
+  color: var(--color-text-inverse, #ffffff);
+
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  border-radius: var(--border-radius-sm, 4px);
+
+  font-size: var(--font-size-sm, 14px);
+  line-height: var(--line-height-normal, 1.5);
+
+  max-width: 300px;
+  word-wrap: break-word;
+
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.15));
+
+  /* 애니메이션 */
+  opacity: 0;
+  scale: 0.95;
+  transition:
+    opacity 150ms ease-in-out,
+    scale 150ms ease-in-out;
+}
+
+.TooltipPopup[data-open] {
+  opacity: 1;
+  scale: 1;
+}
+
+.TooltipPopup[data-ending-style] {
+  opacity: 0;
+  scale: 0.95;
+}
+
+/* Arrow - 화살표 */
+.TooltipArrow {
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background-color: var(--color-bg-inverse, #1f2937);
+  z-index: -1;
+}
+
+/* Arrow 위치별 스타일 */
+.TooltipPopup[data-side="top"] .TooltipArrow {
+  bottom: -5px;
+}
+
+.TooltipPopup[data-side="bottom"] .TooltipArrow {
+  top: -5px;
+}
+
+.TooltipPopup[data-side="left"] .TooltipArrow {
+  right: -5px;
+}
+
+.TooltipPopup[data-side="right"] .TooltipArrow {
+  left: -5px;
+}
