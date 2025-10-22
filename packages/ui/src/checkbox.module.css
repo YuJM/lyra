@@ -3,8 +3,8 @@
   .Checkbox {
     box-sizing: border-box;
     display: flex;
-    width: var(--size-icon-md);
-    height: var(--size-icon-md);
+    width: var(--spacing-icon-md);
+    height: var(--spacing-icon-md);
     align-items: center;
     justify-content: center;
     border-radius: var(--border-radius-sm);
@@ -72,7 +72,7 @@
   }
 
   .Icon {
-    width: var(--size-icon-sm);
-    height: var(--size-icon-sm);
+    width: var(--spacing-icon-sm);
+    height: var(--spacing-icon-sm);
   }
 }

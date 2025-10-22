@@ -7,7 +7,7 @@ const __dirname = dirname(__filename);
 
 // 토큰 파일 목록
 const tokenFiles = [
-  { path: 'src/tokens/size.json', set: 'primitives/size' },
+  { path: 'src/tokens/spacing.json', set: 'primitives/spacing' },
   { path: 'src/tokens/colors/primitives.json', set: 'primitives/colors' },
   { path: 'src/tokens/typography.json', set: 'primitives/typography' },
   { path: 'src/tokens/borders.json', set: 'primitives/borders' },

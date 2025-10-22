@@ -14,27 +14,27 @@
     },
     "size": {
       "sm": {
-        "$value": "{size.7}",
+        "$value": "{spacing.7}",
         "$type": "dimension",
         "$description": "14px - 보조 텍스트"
       },
       "base": {
-        "$value": "{size.8}",
+        "$value": "{spacing.8}",
         "$type": "dimension",
         "$description": "16px - 기본 텍스트"
       },
       "lg": {
-        "$value": "{size.9}",
+        "$value": "{spacing.9}",
         "$type": "dimension",
         "$description": "18px - 강조 텍스트"
       },
       "xl": {
-        "$value": "{size.10}",
+        "$value": "{spacing.10}",
         "$type": "dimension",
         "$description": "20px - 서브헤딩"
       },
       "2xl": {
-        "$value": "{size.12}",
+        "$value": "{spacing.12}",
         "$type": "dimension",
         "$description": "24px - 헤딩"
       }

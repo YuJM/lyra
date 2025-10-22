@@ -1,5 +1,5 @@
 {
-  "size": {
+  "spacing": {
     "0": {
       "$value": "0",
       "$type": "dimension",
@@ -92,17 +92,17 @@
     },
     "icon": {
       "sm": {
-        "$value": "{size.8}",
+        "$value": "{spacing.8}",
         "$type": "dimension",
         "$description": "16px - 작은 아이콘"
       },
       "md": {
-        "$value": "{size.10}",
+        "$value": "{spacing.10}",
         "$type": "dimension",
         "$description": "20px - 중간 아이콘"
       },
       "lg": {
-        "$value": "{size.12}",
+        "$value": "{spacing.12}",
         "$type": "dimension",
         "$description": "24px - 큰 아이콘"
       }

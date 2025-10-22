@@ -1,7 +1,7 @@
 {
   "$metadata": {
     "tokenSetOrder": [
-      "primitives/size",
+      "primitives/spacing",
       "primitives/colors",
       "primitives/typography",
       "primitives/borders",
@@ -11,8 +11,8 @@
       "primitives/breakpoints"
     ]
   },
-  "primitives/size": {
-    "size": {
+  "primitives/spacing": {
+    "spacing": {
       "0": {
         "$value": "0",
         "$type": "dimension",
@@ -105,17 +105,17 @@
       },
       "icon": {
         "sm": {
-          "$value": "{size.8}",
+          "$value": "{spacing.8}",
           "$type": "dimension",
           "$description": "16px - 작은 아이콘"
         },
         "md": {
-          "$value": "{size.10}",
+          "$value": "{spacing.10}",
           "$type": "dimension",
           "$description": "20px - 중간 아이콘"
         },
         "lg": {
-          "$value": "{size.12}",
+          "$value": "{spacing.12}",
           "$type": "dimension",
           "$description": "24px - 큰 아이콘"
         }
@@ -510,27 +510,27 @@
       },
       "size": {
         "sm": {
-          "$value": "{size.7}",
+          "$value": "{spacing.7}",
           "$type": "dimension",
           "$description": "14px - 보조 텍스트"
         },
         "base": {
-          "$value": "{size.8}",
+          "$value": "{spacing.8}",
           "$type": "dimension",
           "$description": "16px - 기본 텍스트"
         },
         "lg": {
-          "$value": "{size.9}",
+          "$value": "{spacing.9}",
           "$type": "dimension",
           "$description": "18px - 강조 텍스트"
         },
         "xl": {
-          "$value": "{size.10}",
+          "$value": "{spacing.10}",
           "$type": "dimension",
           "$description": "20px - 서브헤딩"
         },
         "2xl": {
-          "$value": "{size.12}",
+          "$value": "{spacing.12}",
           "$type": "dimension",
           "$description": "24px - 헤딩"
         }
@@ -570,39 +570,39 @@
     "border": {
       "width": {
         "0": {
-          "$value": "{size.0}",
+          "$value": "{spacing.0}",
           "$type": "dimension",
           "$description": "0px - 선 없음"
         },
         "1": {
-          "$value": "{size.px}",
+          "$value": "{spacing.px}",
           "$type": "dimension",
           "$description": "1px - 기본 선"
         },
         "2": {
-          "$value": "{size.1}",
+          "$value": "{spacing.1}",
           "$type": "dimension",
           "$description": "2px - 강조 선"
         },
         "4": {
-          "$value": "{size.2}",
+          "$value": "{spacing.2}",
           "$type": "dimension",
           "$description": "4px - 굵은 선"
         }
       },
       "radius": {
         "none": {
-          "$value": "{size.0}",
+          "$value": "{spacing.0}",
           "$type": "dimension",
           "$description": "0px - sharp corners"
         },
         "sm": {
-          "$value": "{size.2}",
+          "$value": "{spacing.2}",
           "$type": "dimension",
           "$description": "4px - 약간 둥글게"
         },
         "md": {
-          "$value": "{size.4}",
+          "$value": "{spacing.4}",
           "$type": "dimension",
           "$description": "8px - 둥글게"
         },

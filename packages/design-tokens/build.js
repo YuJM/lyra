@@ -1,5 +1,6 @@
 import StyleDictionary from 'style-dictionary';
-import { usesReferences, getReferences, typeDtcgDelegate } from 'style-dictionary/utils';
+import { formattedVariables, typeDtcgDelegate } from 'style-dictionary/utils';
+import { propertyFormatNames } from 'style-dictionary/enums';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { watch } from 'fs';
@@ -22,28 +23,15 @@ StyleDictionary.registerFormat({
   format: ({ dictionary, options }) => {
     const layer = options.layer || 'base';
     const selector = options.selector || ':root';
-    const outputReferences = options.outputReferences ?? false;
 
     return `@layer ${layer} {
   ${selector} {
-${dictionary.allTokens.map(token => {
-  // DTCG preprocessor를 사용하더라도 $value를 직접 접근
-  let value = token.$value ?? token.value;
-
-  // outputReferences가 true이고 토큰이 다른 토큰을 참조하는 경우
-  const originalValue = token.original?.$value ?? token.original?.value;
-
-  if (outputReferences && token.original && usesReferences(originalValue)) {
-    const refs = getReferences(originalValue, dictionary.tokens);
-
-    if (refs && refs.length > 0) {
-      const varName = refs[0].ref.join('-');
-      value = `var(--${varName})`;
-    }
-  }
-
-  return `    --${token.name}: ${value};`;
-}).join('\n')}
+${formattedVariables({
+  format: propertyFormatNames.css,
+  dictionary,
+  outputReferences: options.outputReferences,
+  usesDtcg: true,
+})}
   }
 }
 `;
@@ -54,7 +42,7 @@ ${dictionary.allTokens.map(token => {
 const baseConfig = {
   preprocessors: ['dtcg'],
   source: [
-    'src/tokens/size.json',
+    'src/tokens/spacing.json',
     'src/tokens/colors/primitives.json',
     'src/tokens/typography.json',
     'src/tokens/borders.json',
