@@ -132,6 +132,9 @@
     --color-interactive-active: var(--color-primary-active);
     --color-interactive-focus: var(--color-primary);
     --color-interactive-disabled: var(--color-primary-disabled);
+
+    /* Focus Ring - PostCSS mixin에서 사용 */
+    --focus-color: var(--color-primary);
   }
 
   /* Typography */
