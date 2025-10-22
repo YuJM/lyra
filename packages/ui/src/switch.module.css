@@ -17,7 +17,7 @@
 
     /* Unchecked state */
     &[data-unchecked] {
-      background-color: var(--color-gray-300);
+      background-color: var(--color-bg-secondary-default);
     }
 
     /* Checked state */
@@ -27,7 +27,7 @@
 
     /* Hover states */
     &[data-unchecked]:hover:not([data-disabled]) {
-      background-color: var(--color-gray-400);
+      background-color: var(--color-bg-secondary-hover);
     }
 
     &[data-checked]:hover:not([data-disabled]) {

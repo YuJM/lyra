@@ -92,12 +92,12 @@ const baseConfig = {
 
 // Build function
 async function buildTokens() {
-  console.log('🎨 Building primitive design tokens...\n');
+  console.log('🎨 Building design tokens (primitives only)...\n');
 
   const sd = new StyleDictionary(baseConfig);
   await sd.buildAllPlatforms();
 
-  console.log('\n✅ Primitive design tokens built successfully!');
+  console.log('\n✅ Design tokens built successfully!');
 }
 
 // Initial build

@@ -11,13 +11,13 @@
     cursor: pointer;
     border: var(--border-width-1) solid transparent;
     border-radius: var(--border-radius-sm);
-    background-color: var(--color-blue-500);
-    color: var(--color-gray-50);
-    transition: all var(--duration-base) var(--easing-easeInOut);
+    background-color: var(--color-bg-primary-default);
+    color: var(--color-text-inverse);
+    transition: all var(--duration-base) var(--easing-ease-in-out);
 
     /* Nesting: hover state */
     &:hover {
-      background-color: var(--color-blue-600);
+      background-color: var(--color-bg-primary-hover);
     }
 
     /* Mixin: focus-ring */
@@ -25,13 +25,13 @@
 
     /* Nesting: active state */
     &:active {
-      background-color: var(--color-blue-700);
+      background-color: var(--color-bg-primary-active);
       transform: scale(0.98);
     }
 
     /* Nesting: disabled state */
     &:disabled {
-      background-color: var(--color-blue-300);
+      background-color: var(--color-bg-primary-disabled);
       opacity: 0.5;
       cursor: not-allowed;
     }
