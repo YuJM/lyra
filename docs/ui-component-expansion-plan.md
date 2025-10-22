@@ -573,20 +573,59 @@
 ---
 
 ### 10. Collapsible
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐ 중간
-**예상 시간**: 2-3시간
+**실제 시간**: ~2.5시간
 **우선순위**: 10순위
 
 **작업 항목**:
-- [ ] `src/collapsible.tsx` 컴포넌트 구현
-  - [ ] Collapsible.Root
-  - [ ] Collapsible.Trigger
-  - [ ] Collapsible.Panel
-- [ ] `src/collapsible.module.css` 스타일
-- [ ] `src/collapsible.test.tsx` 테스트
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/collapsible.tsx` 컴포넌트 구현
+  - [x] Collapsible.Root
+  - [x] Collapsible.Trigger
+  - [x] Collapsible.Panel
+- [x] `src/collapsible.module.css` 스타일
+  - [x] Trigger 스타일 (hover, focus, open, disabled)
+  - [x] Panel 스타일
+  - [x] 접기/펼치기 애니메이션 (height transition)
+  - [x] 반응형 디자인
+  - [x] 다크모드 지원
+- [x] `src/collapsible.test.tsx` 테스트
+  - [x] 렌더링 테스트 (4개)
+  - [x] 인터랙션 테스트 (3개)
+  - [x] 키보드 네비게이션 (2개)
+  - [x] 제어/비제어 모드 (2개)
+  - [x] 접근성 테스트 (4개)
+  - [x] 비제어 모드 (1개)
+- [x] Storybook 스토리 (10개)
+  - [x] Default
+  - [x] WithDefaultOpen
+  - [x] Controlled
+  - [x] Disabled
+  - [x] WithRichContent
+  - [x] MultipleCollapsibles
+  - [x] FAQ
+  - [x] CustomStyling
+  - [x] WithForm
+  - [x] NestedCollapsibles
+- [x] Export 추가
+
+**테스트 결과**: 16개 테스트 모두 통과 ✅
+
+**구현 참고**:
+```tsx
+<Collapsible.Root>
+  <Collapsible.Trigger>Toggle</Collapsible.Trigger>
+  <Collapsible.Panel>
+    Collapsible content
+  </Collapsible.Panel>
+</Collapsible.Root>
+```
+
+**설계 결정**:
+- 접기/펼치기 애니메이션으로 부드러운 UX 제공
+- 제어/비제어 모드 모두 지원 (open, defaultOpen props)
+- 키보드 접근성 완벽 지원 (Enter, Space 키)
+- FAQ, 중첩 콘텐츠 등 다양한 사용 사례 지원
 
 ---
 
@@ -699,24 +738,24 @@ toast.promise(myPromise, {
 ### 전체 진행률
 - **Phase 1 (Form)**: 4/4 (100%) ✅ Switch, Radio+RadioGroup, Field, Select 완료
 - **Phase 2 (Dialog/Overlay)**: 4/4 (100%) ✅ Dialog, Tooltip, Popover, Menu 완료
-- **Phase 3 (Navigation)**: 1/2 (50%) ✅ Tabs 완료
+- **Phase 3 (Navigation)**: 2/2 (100%) ✅ Tabs, Collapsible 완료
 - **Phase 4 (Feedback)**: 0/3 (0%)
 
-**총 진행률**: 9/13 (69.2%)
+**총 진행률**: 10/13 (76.9%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Collapsible 컴포넌트 구현 (Priority 10)
-- Phase 3 (Navigation) 마무리
-- Context7에서 Base UI Collapsible 문서 조회
-- 접기/펼치기 애니메이션, 키보드 접근성
-- 예상 시간: 2-3시간
+**NEXT**: Progress 컴포넌트 구현 (Priority 11)
+- Phase 4 (Feedback/Display) 시작
+- Context7에서 Base UI Progress 문서 조회
+- 진행률 표시, 애니메이션, 접근성
+- 예상 시간: 3-4시간
 
 **참고**: Phase 1 (Form 컴포넌트) 100% 완료! 🎉
 **참고**: Phase 2 (Dialog & Overlay) 100% 완료! 🎉
-**참고**: Tabs 컴포넌트 완료! (19개 테스트 통과, 10개 스토리) 🎉
+**참고**: Phase 3 (Navigation) 100% 완료! 🎉
 
 ---
 
