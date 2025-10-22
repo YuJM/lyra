@@ -9,6 +9,8 @@
 - [x] Checkbox - 단일 체크박스 (indeterminate 지원)
 - [x] CheckboxGroup - 다중 선택 및 Parent/Nested Parent 패턴
 - [x] Switch - 토글 스위치 (controlled/uncontrolled)
+- [x] Radio - 라디오 버튼 (단일 컴포넌트)
+- [x] RadioGroup - 단일 선택 그룹 (방향키 네비게이션)
 
 ### 🛠️ 인프라
 - [x] Vitest + @testing-library/react 테스트 환경
@@ -63,66 +65,107 @@
 ---
 
 ### 2. Radio + RadioGroup
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐ 중간
-**예상 시간**: 3-4시간
+**실제 시간**: ~2시간
 **우선순위**: 2순위
 
 **작업 항목**:
-- [ ] `src/radio.tsx` 컴포넌트 구현
-  - [ ] Radio.Root
-  - [ ] Radio.Indicator
-- [ ] `src/radio-group.tsx` 컴포넌트 구현
-  - [ ] RadioGroup context
-  - [ ] 단일 선택 로직
-  - [ ] value/onValueChange props
-- [ ] `src/radio.module.css` 스타일 작성
-  - [ ] 기본/선택 상태
-  - [ ] 비활성화 상태
-  - [ ] 호버/포커스 상태
-- [ ] `src/radio.test.tsx` + `src/radio-group.test.tsx` 테스트
-  - [ ] 단일 선택 동작
-  - [ ] 제어/비제어 모드
-  - [ ] 키보드 네비게이션 (방향키)
-  - [ ] 접근성 (role="radio")
-- [ ] Storybook 스토리
-  - [ ] Basic RadioGroup
-  - [ ] Disabled options
-  - [ ] Pre-selected
-  - [ ] Controlled
-- [ ] Export 추가
+- [x] `src/radio.tsx` 컴포넌트 구현
+  - [x] 단일 컴포넌트 패턴 (Radio.Root + Radio.Indicator 통합)
+- [x] `src/radio-group.tsx` 컴포넌트 구현
+  - [x] RadioGroup Base UI re-export
+  - [x] 단일 선택 로직
+  - [x] value/onValueChange props
+- [x] `src/radio.module.css` 스타일 작성
+  - [x] 원형 디자인 (border-radius-full)
+  - [x] 기본/선택 상태
+  - [x] 비활성화 상태
+  - [x] 호버/포커스 상태
+- [x] `src/radio.test.tsx` + `src/radio-group.test.tsx` 테스트
+  - [x] 단일 선택 동작
+  - [x] 제어/비제어 모드
+  - [x] 키보드 네비게이션 (방향키)
+  - [x] 접근성 (role="radio", role="radiogroup")
+- [x] Storybook 스토리 (7개)
+  - [x] Default
+  - [x] WithDefaultValue
+  - [x] Disabled
+  - [x] DisabledOptions
+  - [x] Controlled
+  - [x] Horizontal
+  - [x] WithDescriptions
+- [x] Export 추가
+
+**테스트 결과**:
+- Radio: 11개 테스트 통과 ✅
+- RadioGroup: 13개 테스트 통과 ✅
 
 **구현 참고**:
 ```tsx
 <RadioGroup value={selected} onValueChange={setSelected}>
-  <Radio.Root value="a"><Radio.Indicator /></Radio.Root>
-  <Radio.Root value="b"><Radio.Indicator /></Radio.Root>
+  <Radio value="a" />
+  <Radio value="b" />
 </RadioGroup>
 ```
+
+**설계 결정**: Switch와 동일하게 단일 컴포넌트 패턴 사용
 
 ---
 
 ### 3. Field
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐ 중간
-**예상 시간**: 3-4시간
+**실제 시간**: ~2시간
 **우선순위**: 3순위
 
 **작업 항목**:
-- [ ] `src/field.tsx` 컴포넌트 구현
-  - [ ] Field.Root
-  - [ ] Field.Label
-  - [ ] Field.Control
-  - [ ] Field.Description
-  - [ ] Field.Error
-  - [ ] Field.Validity
-- [ ] `src/field.module.css` 스타일
-- [ ] `src/field.test.tsx` 테스트
-  - [ ] Label 연결 테스트
-  - [ ] Error 상태 표시
-  - [ ] Validation 통합
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/field.tsx` 컴포넌트 구현
+  - [x] Field.Root
+  - [x] Field.Label
+  - [x] Field.Control
+  - [x] Field.Description
+  - [x] Field.Error (match prop 지원)
+  - [x] Field.Validity (validity state function)
+- [x] `src/field.module.css` 스타일
+  - [x] Flexbox 레이아웃
+  - [x] Input 스타일 (focus, hover, disabled, invalid)
+  - [x] Error 메시지 스타일
+  - [x] Description 스타일
+- [x] `src/field.test.tsx` 테스트 작성
+  - [x] 렌더링 테스트
+  - [x] Label 연결 테스트
+  - [x] Error 상태 표시
+  - [x] Validation 통합 (required, type, pattern)
+  - [x] Validity 상태
+  - [x] 접근성 테스트
+- [x] `src/stories/LyraField.stories.tsx` 스토리 (10개)
+  - [x] Default
+  - [x] Required
+  - [x] WithError
+  - [x] Disabled
+  - [x] Password
+  - [x] WithPattern
+  - [x] MultipleFields
+  - [x] WithValidity
+  - [x] NumberInput
+  - [x] TextArea
+- [x] `src/index.tsx`에 export 추가
+
+**테스트 결과**: 22개 테스트 모두 통과 ✅
+
+**구현 참고**:
+```tsx
+<Field.Root>
+  <Field.Label>Email</Field.Label>
+  <Field.Control type="email" required />
+  <Field.Error match="valueMissing">Email is required</Field.Error>
+  <Field.Error match="typeMismatch">Invalid email</Field.Error>
+  <Field.Description>We'll never share your email</Field.Description>
+</Field.Root>
+```
+
+**설계 결정**: Form 구조 컴포넌트이므로 compose 패턴 사용 (Field.Root, Field.Label 등)
 
 ---
 
@@ -378,22 +421,22 @@
 ## 📊 진행 상황 추적
 
 ### 전체 진행률
-- **Phase 1 (Form)**: 1/4 (25%) ✅ Switch 완료
+- **Phase 1 (Form)**: 3/4 (75%) ✅ Switch, Radio+RadioGroup, Field 완료
 - **Phase 2 (Dialog/Overlay)**: 0/4 (0%)
 - **Phase 3 (Navigation)**: 0/2 (0%)
 - **Phase 4 (Feedback)**: 0/3 (0%)
 
-**총 진행률**: 1/13 (7.7%)
+**총 진행률**: 3/13 (23.1%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Radio + RadioGroup 컴포넌트 구현 (Priority 2)
-- Context7에서 Base UI Radio 문서 조회
-- 단일 선택 로직 구현
-- 키보드 네비게이션 (방향키) 지원
-- 예상 시간: 3-4시간
+**NEXT**: Select 컴포넌트 구현 (Priority 4)
+- Context7에서 Base UI Select 문서 조회
+- 드롭다운 UI 및 아이템 선택 로직 구현
+- 키보드 네비게이션 (방향키, Enter, Escape) 지원
+- 예상 시간: 6-8시간
 
 ---
 

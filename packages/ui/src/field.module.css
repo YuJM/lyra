@@ -1,0 +1,84 @@
+/* Field Component Styles */
+@layer components {
+  /* Field.Root - Container for the entire field */
+  .FieldRoot {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Field.Label - Label for the form control */
+  .FieldLabel {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-md);
+  }
+
+  /* Field.Control - The input element */
+  .FieldControl {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0 var(--spacing-3-5);
+    border: var(--border-width-1) solid var(--color-gray-200);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary-default);
+    transition: all var(--duration-fast) var(--easing-ease-in-out);
+    outline: none;
+
+    &::placeholder {
+      color: var(--color-gray-400);
+    }
+
+    &:hover:not(:disabled) {
+      border-color: var(--color-gray-300);
+    }
+
+    &:focus {
+      border-color: var(--color-bg-primary-default);
+      outline: var(--border-width-2) solid var(--color-bg-primary-default);
+      outline-offset: -1px;
+    }
+
+    &:disabled {
+      background-color: var(--color-gray-50);
+      color: var(--color-gray-400);
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &[data-invalid] {
+      border-color: var(--color-red-500);
+
+      &:focus {
+        border-color: var(--color-red-500);
+        outline-color: var(--color-red-500);
+      }
+    }
+  }
+
+  /* Field.Description - Helper text */
+  .FieldDescription {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    line-height: var(--line-height-md);
+    margin: 0;
+  }
+
+  /* Field.Error - Error message */
+  .FieldError {
+    font-size: var(--font-size-sm);
+    color: var(--color-red-600);
+    line-height: var(--line-height-md);
+
+    &:empty {
+      display: none;
+    }
+  }
+}
