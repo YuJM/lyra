@@ -1,0 +1,75 @@
+/* Radio Component Styles */
+@layer components {
+  .Radio {
+    box-sizing: border-box;
+    display: flex;
+    width: var(--spacing-icon-md);
+    height: var(--spacing-icon-md);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-full);
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--easing-ease-in-out);
+    border: var(--border-width-1) solid var(--color-gray-400);
+
+    /* Unchecked state */
+    &[data-unchecked] {
+      background-color: transparent;
+    }
+
+    /* Checked state */
+    &[data-checked] {
+      background-color: transparent;
+      border-color: var(--color-bg-primary-default);
+    }
+
+    /* Hover states */
+    &[data-unchecked]:hover:not([data-disabled]) {
+      border-color: var(--color-border-hover);
+    }
+
+    &[data-checked]:hover:not([data-disabled]) {
+      border-color: var(--color-bg-primary-hover);
+    }
+
+    /* Disabled state */
+    &[data-disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    /* Focus state */
+    &:focus-visible {
+      outline: var(--border-width-2) solid var(--color-border-focus);
+      outline-offset: var(--border-width-2);
+    }
+  }
+
+  .Indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+    border-radius: var(--border-radius-full);
+    background-color: var(--color-bg-primary-default);
+
+    /* Hide when unchecked */
+    &[data-unchecked] {
+      display: none;
+    }
+
+    /* Checked state color */
+    &[data-checked] {
+      background-color: var(--color-bg-primary-default);
+    }
+
+    /* Hover state */
+    .Radio[data-checked]:hover:not([data-disabled]) & {
+      background-color: var(--color-bg-primary-hover);
+    }
+  }
+}
