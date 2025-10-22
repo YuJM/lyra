@@ -7,6 +7,7 @@ import "./components/field/field.module.css";
 import "./components/select/select.module.css";
 import "./components/dialog/dialog.module.css";
 import "./components/tooltip/tooltip.module.css";
+import "./components/progress/progress.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -62,3 +63,11 @@ export {
   type TooltipPopupProps,
   type TooltipArrowProps,
 } from "./components/tooltip/tooltip";
+export {
+  Progress,
+  type ProgressRootProps,
+  type ProgressLabelProps,
+  type ProgressTrackProps,
+  type ProgressIndicatorProps,
+  type ProgressValueProps,
+} from "./components/progress/progress";
