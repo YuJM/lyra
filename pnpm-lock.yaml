@@ -253,6 +253,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^3.2.4
         version: 3.2.4(@vitest/browser@3.2.4)(vitest@3.2.4)
+      chromatic:
+        specifier: ^13.3.1
+        version: 13.3.1
       cssnano:
         specifier: ^7.1.1
         version: 7.1.1(postcss@8.5.6)
@@ -2696,6 +2699,18 @@ packages:
 
   chromatic@12.2.0:
     resolution: {integrity: sha512-GswmBW9ZptAoTns1BMyjbm55Z7EsIJnUvYKdQqXIBZIKbGErmpA+p4c0BYA+nzw5B0M+rb3Iqp1IaH8TFwIQew==}
+    hasBin: true
+    peerDependencies:
+      '@chromatic-com/cypress': ^0.*.* || ^1.0.0
+      '@chromatic-com/playwright': ^0.*.* || ^1.0.0
+    peerDependenciesMeta:
+      '@chromatic-com/cypress':
+        optional: true
+      '@chromatic-com/playwright':
+        optional: true
+
+  chromatic@13.3.1:
+    resolution: {integrity: sha512-qJ/el70Wo7jFgiXPpuukqxCEc7IKiH/e8MjTzIF9uKw+3XZ6GghOTTLC7lGfeZtosiQBMkRlYet77tC4KKHUng==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -8665,6 +8680,8 @@ snapshots:
       readdirp: 4.1.2
 
   chromatic@12.2.0: {}
+
+  chromatic@13.3.1: {}
 
   ci-info@3.9.0: {}
 
