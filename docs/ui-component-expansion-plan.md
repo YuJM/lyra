@@ -15,8 +15,6 @@
 - [x] Select - 드롭다운 선택 컴포넌트
 - [x] Dialog - 모달 대화상자 컴포넌트
 - [x] Tooltip - 호버 기반 툴팁 컴포넌트
-- [x] Tabs - 탭 네비게이션 컴포넌트
-- [x] Collapsible - 접기/펼치기 컴포넌트
 - [x] Progress - 진행률 표시 컴포넌트
 - [x] Avatar - 사용자 아바타 컴포넌트
 - [x] Toast - 알림 토스트 컴포넌트 (Sonner 기반)
@@ -381,30 +379,28 @@
 ## 🎯 Phase 3: Navigation 컴포넌트
 
 ### 9. Tabs
-**상태**: ✅ 완료
+**상태**: 🔲 미구현
 **난이도**: ⭐⭐⭐ 어려움
-**실제 시간**: ~4시간
+**예상 시간**: 4-5시간
 **우선순위**: 9순위
 
 **작업 항목**:
-- [x] `src/tabs.tsx` 컴포넌트 구현
-  - [x] Tabs.Root
-  - [x] Tabs.List
-  - [x] Tabs.Tab
-  - [x] Tabs.Indicator
-  - [x] Tabs.Panel
-- [x] `src/tabs.module.css` 스타일
-  - [x] Tab 활성/비활성 상태
-  - [x] Indicator 애니메이션
-  - [x] Panel 전환 효과
-- [x] `src/tabs.test.tsx` 테스트
-  - [x] 탭 전환 동작
-  - [x] 키보드 네비게이션
-  - [x] 접근성
-- [x] Storybook 스토리
-- [x] Export 추가
-
-**테스트 결과**: 19개 테스트 모두 통과 ✅
+- [ ] `src/tabs.tsx` 컴포넌트 구현
+  - [ ] Tabs.Root
+  - [ ] Tabs.List
+  - [ ] Tabs.Tab
+  - [ ] Tabs.Indicator
+  - [ ] Tabs.Panel
+- [ ] `src/tabs.module.css` 스타일
+  - [ ] Tab 활성/비활성 상태
+  - [ ] Indicator 애니메이션
+  - [ ] Panel 전환 효과
+- [ ] `src/tabs.test.tsx` 테스트
+  - [ ] 탭 전환 동작
+  - [ ] 키보드 네비게이션
+  - [ ] 접근성
+- [ ] Storybook 스토리
+- [ ] Export 추가
 
 **구현 참고**:
 ```tsx
@@ -420,22 +416,20 @@
 ---
 
 ### 10. Collapsible
-**상태**: ✅ 완료
+**상태**: 🔲 미구현
 **난이도**: ⭐⭐ 중간
-**실제 시간**: ~2.5시간
+**예상 시간**: 2-3시간
 **우선순위**: 10순위
 
 **작업 항목**:
-- [x] `src/collapsible.tsx` 컴포넌트 구현
-  - [x] Collapsible.Root
-  - [x] Collapsible.Trigger
-  - [x] Collapsible.Panel
-- [x] `src/collapsible.module.css` 스타일
-- [x] `src/collapsible.test.tsx` 테스트
-- [x] Storybook 스토리 (10개)
-- [x] Export 추가
-
-**테스트 결과**: 16개 테스트 모두 통과 ✅
+- [ ] `src/collapsible.tsx` 컴포넌트 구현
+  - [ ] Collapsible.Root
+  - [ ] Collapsible.Trigger
+  - [ ] Collapsible.Panel
+- [ ] `src/collapsible.module.css` 스타일
+- [ ] `src/collapsible.test.tsx` 테스트
+- [ ] Storybook 스토리
+- [ ] Export 추가
 
 ---
 
@@ -605,24 +599,32 @@ toast.promise(promise, {
 ### 전체 진행률
 - **Phase 1 (Form)**: 4/4 (100%) ✅ Switch, Radio+RadioGroup, Field, Select 완료
 - **Phase 2 (Dialog/Overlay)**: 2/4 (50%) ✅ Dialog, Tooltip 완료
-- **Phase 3 (Navigation)**: 2/2 (100%) ✅ Tabs, Collapsible 완료
+- **Phase 3 (Navigation)**: 0/2 (0%) 🔲 Tabs, Collapsible 미구현
 - **Phase 4 (Feedback)**: 3/3 (100%) ✅ Progress, Avatar, Toast 완료
 
-**총 진행률**: 11/13 (84.6%)
+**총 진행률**: 9/13 (69.2%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Popover 컴포넌트 구현 (Priority 7) 또는 Menu 컴포넌트 구현 (Priority 8)
+**NEXT**: Tabs 컴포넌트 구현 (Priority 9) 또는 Collapsible 컴포넌트 구현 (Priority 10)
+- Phase 3 (Navigation) 시작
+- Context7에서 Base UI Tabs/Collapsible 문서 조회
+- 탭 네비게이션 및 접기/펼치기 UI 구현
+- 예상 시간: 4-5시간 (Tabs) / 2-3시간 (Collapsible)
+
+또는
+
+**ALTERNATIVE**: Popover 컴포넌트 구현 (Priority 7) 또는 Menu 컴포넌트 구현 (Priority 8)
 - Phase 2 (Dialog/Overlay) 계속 진행
 - Context7에서 Base UI Popover/Menu 문서 조회
 - 복잡한 오버레이 UI 구현
 - 예상 시간: 4-5시간 (Popover) / 8-10시간 (Menu)
 
 **참고**: Phase 1 (Form 컴포넌트) 100% 완료! 🎉
-**참고**: Phase 3 (Navigation 컴포넌트) 100% 완료! 🎉
 **참고**: Phase 4 (Feedback 컴포넌트) 100% 완료! 🎉
+**중요**: Phase 3 (Navigation) 컴포넌트는 아직 구현되지 않음
 
 ---
 
