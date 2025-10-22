@@ -14,6 +14,7 @@
 - [x] Field - 폼 필드 구조 컴포넌트 (Label, Control, Error, Description)
 - [x] Select - 드롭다운 선택 컴포넌트
 - [x] Dialog - 모달 대화상자 컴포넌트
+- [x] Tooltip - Hover/Focus 기반 툴팁 컴포넌트
 
 ### 🛠️ 인프라
 - [x] Vitest + @testing-library/react 테스트 환경
@@ -303,24 +304,58 @@
 ---
 
 ### 6. Tooltip
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐ 중간
-**예상 시간**: 3-4시간
+**실제 시간**: ~3시간
 **우선순위**: 6순위
 
 **작업 항목**:
-- [ ] `src/tooltip.tsx` 컴포넌트 구현
-  - [ ] Tooltip.Provider
-  - [ ] Tooltip.Root
-  - [ ] Tooltip.Trigger
-  - [ ] Tooltip.Portal
-  - [ ] Tooltip.Positioner
-  - [ ] Tooltip.Popup
-  - [ ] Tooltip.Arrow
-- [ ] `src/tooltip.module.css` 스타일
-- [ ] `src/tooltip.test.tsx` 테스트
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/tooltip.tsx` 컴포넌트 구현
+  - [x] Tooltip.Provider
+  - [x] Tooltip.Root
+  - [x] Tooltip.Trigger
+  - [x] Tooltip.Portal
+  - [x] Tooltip.Positioner
+  - [x] Tooltip.Popup
+  - [x] Tooltip.Arrow
+- [x] `src/tooltip.module.css` 스타일
+  - [x] Hover/Focus 상태
+  - [x] 애니메이션 (fade, scale)
+  - [x] Arrow 4방향 지원
+  - [x] 반응형 디자인
+  - [x] 다크모드 지원
+- [x] `src/tooltip.test.tsx` 테스트 (13/14 통과)
+- [x] Storybook 스토리 (10개)
+  - [x] Default
+  - [x] WithArrow
+  - [x] DifferentPositions
+  - [x] WithDelay
+  - [x] Controlled
+  - [x] MultipleTooltips
+  - [x] WithLongContent
+  - [x] OnIcon
+  - [x] CustomStyling
+  - [x] DisabledState
+- [x] Export 추가
+
+**테스트 결과**: 13개 테스트 통과 (1개 skip) ✅
+
+**구현 참고**:
+```tsx
+<Tooltip.Provider delay={0}>
+  <Tooltip.Root>
+    <Tooltip.Trigger>Hover me</Tooltip.Trigger>
+    <Tooltip.Portal>
+      <Tooltip.Positioner side="top" sideOffset={8}>
+        <Tooltip.Popup>
+          Tooltip content
+          <Tooltip.Arrow />
+        </Tooltip.Popup>
+      </Tooltip.Positioner>
+    </Tooltip.Portal>
+  </Tooltip.Root>
+</Tooltip.Provider>
+```
 
 ---
 
@@ -471,26 +506,25 @@
 
 ### 전체 진행률
 - **Phase 1 (Form)**: 4/4 (100%) ✅ Switch, Radio+RadioGroup, Field, Select 완료
-- **Phase 2 (Dialog/Overlay)**: 1/4 (25%) ✅ Dialog 완료
+- **Phase 2 (Dialog/Overlay)**: 2/4 (50%) ✅ Dialog, Tooltip 완료
 - **Phase 3 (Navigation)**: 0/2 (0%)
 - **Phase 4 (Feedback)**: 0/3 (0%)
 
-**총 진행률**: 5/13 (38.5%)
+**총 진행률**: 6/13 (46.2%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Tooltip 컴포넌트 구현 (Priority 6)
+**NEXT**: Popover 컴포넌트 구현 (Priority 7)
 - Phase 2 (Dialog & Overlay) 진행 중
-- Context7에서 Base UI Tooltip 문서 조회
-- Hover/Focus 기반 툴팁 UI 구현
+- Context7에서 Base UI Popover 문서 조회
 - Positioner 및 Arrow 지원
-- 지연 표시 및 애니메이션
-- 예상 시간: 3-4시간
+- Close Button 및 제목 지원
+- 예상 시간: 4-5시간
 
 **참고**: Phase 1 (Form 컴포넌트) 100% 완료! 🎉
-**참고**: Dialog 컴포넌트 완료! (Phase 2: 25%)
+**참고**: Tooltip 컴포넌트 완료! (Phase 2: 50%)
 
 ---
 
