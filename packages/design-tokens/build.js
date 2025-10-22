@@ -38,31 +38,6 @@ ${formattedVariables({
   }
 });
 
-// Custom format for @custom-media from breakpoints
-StyleDictionary.registerFormat({
-  name: 'css/custom-media',
-  format: ({ dictionary, options }) => {
-    // Filter only breakpoint tokens
-    const breakpoints = dictionary.allTokens.filter(token =>
-      token.path[0] === 'breakpoint'
-    );
-
-    if (breakpoints.length === 0) {
-      return '';
-    }
-
-    // Generate @custom-media declarations
-    const customMediaDeclarations = breakpoints.map(token => {
-      const name = token.path[token.path.length - 1]; // e.g., 'sm', 'md'
-      // Get value from original DTCG format or transformed value
-      const value = token.original?.$value || token.value;
-      return `@custom-media --${name} (max-width: ${value});`;
-    }).join('\n');
-
-    return `/* Custom Media Queries - Auto-generated from breakpoints.json */\n${customMediaDeclarations}\n`;
-  }
-});
-
 // Build configuration for primitive tokens only
 const baseConfig = {
   preprocessors: ['dtcg'],
@@ -89,11 +64,6 @@ const baseConfig = {
             selector: ':root',
             outputReferences: true
           }
-        },
-        {
-          destination: 'breakpoints.css',
-          format: 'css/custom-media',
-          filter: (token) => token.path[0] === 'breakpoint'
         }
       ]
     },
