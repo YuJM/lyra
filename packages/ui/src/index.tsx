@@ -5,6 +5,7 @@ import "./components/switch/switch.module.css";
 import "./components/radio/radio.module.css";
 import "./components/field/field.module.css";
 import "./components/select/select.module.css";
+import "./components/dialog/dialog.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -39,3 +40,14 @@ export {
   type SelectItemIndicatorProps,
   type SelectGroupLabelProps,
 } from "./components/select/select";
+export {
+  Dialog,
+  type DialogRootProps,
+  type DialogTriggerProps,
+  type DialogPortalProps,
+  type DialogBackdropProps,
+  type DialogPopupProps,
+  type DialogTitleProps,
+  type DialogDescriptionProps,
+  type DialogCloseProps,
+} from "./components/dialog/dialog";
