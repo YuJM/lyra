@@ -3,7 +3,7 @@ import * as React from "react";
 import { Tooltip } from "./tooltip";
 
 const meta = {
-  title: "Design System/Tooltip",
+  title: "Tooltip",
   component: Tooltip.Root,
   parameters: {
     layout: "centered",

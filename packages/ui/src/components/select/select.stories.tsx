@@ -3,7 +3,7 @@ import * as React from "react";
 import { Select } from "./select";
 
 const meta = {
-  title: "Design System/Select",
+  title: "Select",
   component: Select.Root,
   parameters: {
     layout: "centered",

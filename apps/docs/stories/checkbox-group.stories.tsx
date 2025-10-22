@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const meta: Meta<typeof CheckboxGroup> = {
   component: CheckboxGroup,
-  title: "Components/CheckboxGroup",
+  title: "CheckboxGroup",
   parameters: {
     layout: "centered",
   },
