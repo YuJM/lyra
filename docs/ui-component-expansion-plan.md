@@ -15,6 +15,7 @@
 - [x] Select - 드롭다운 선택 컴포넌트
 - [x] Dialog - 모달 대화상자 컴포넌트
 - [x] Tooltip - Hover/Focus 기반 툴팁 컴포넌트
+- [x] Popover - 클릭 기반 팝오버 컴포넌트
 
 ### 🛠️ 인프라
 - [x] Vitest + @testing-library/react 테스트 환경
@@ -360,17 +361,65 @@
 ---
 
 ### 7. Popover
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐⭐ 어려움
-**예상 시간**: 4-5시간
+**실제 시간**: ~4시간
 **우선순위**: 7순위
 
 **작업 항목**:
-- [ ] `src/popover.tsx` 컴포넌트 구현
-- [ ] `src/popover.module.css` 스타일
-- [ ] `src/popover.test.tsx` 테스트
-- [ ] Storybook 스토리
-- [ ] Export 추가
+- [x] `src/popover.tsx` 컴포넌트 구현
+  - [x] Popover.Root
+  - [x] Popover.Trigger
+  - [x] Popover.Portal
+  - [x] Popover.Backdrop
+  - [x] Popover.Positioner
+  - [x] Popover.Popup
+  - [x] Popover.Arrow
+  - [x] Popover.Title
+  - [x] Popover.Description
+  - [x] Popover.Close
+- [x] `src/popover.module.css` 스타일
+  - [x] Popup 스타일 (max-width 400px)
+  - [x] Title, Description, Close 스타일
+  - [x] Backdrop (선택적)
+  - [x] Arrow 4방향 지원
+  - [x] 애니메이션 (fade, scale)
+  - [x] 반응형 디자인
+- [x] `src/popover.test.tsx` 테스트
+- [x] Storybook 스토리 (10개)
+  - [x] Default
+  - [x] WithArrow
+  - [x] DifferentPositions
+  - [x] WithBackdrop
+  - [x] Controlled
+  - [x] WithForm
+  - [x] InfoPopover
+  - [x] ConfirmationPopover
+  - [x] CustomStyling
+  - [x] LongContent
+- [x] Export 추가
+
+**테스트 결과**: 14개 테스트 모두 통과 ✅
+
+**구현 참고**:
+```tsx
+<Popover.Root>
+  <Popover.Trigger>Open Popover</Popover.Trigger>
+  <Popover.Portal>
+    <Popover.Backdrop />
+    <Popover.Positioner sideOffset={8}>
+      <Popover.Popup>
+        <Popover.Title>Title</Popover.Title>
+        <Popover.Description>Description</Popover.Description>
+        <Popover.Close>Close</Popover.Close>
+        <Popover.Arrow />
+      </Popover.Popup>
+    </Popover.Positioner>
+  </Popover.Portal>
+</Popover.Root>
+```
+
+**설계 결정**: Dialog와 유사하지만 더 가볍고 작은 컨텐츠용. Tooltip보다 많은 정보를 담을 수 있음
 
 ---
 
@@ -482,9 +531,73 @@
 
 ### 13. Toast
 **상태**: 🔲 미구현
-**난이도**: ⭐⭐⭐ 어려움
-**예상 시간**: 5-6시간
+**난이도**: ⭐⭐ 중간
+**예상 시간**: 3-4시간
 **우선순위**: 13순위
+**라이브러리**: Sonner (https://sonner.emilkowal.ski/)
+
+**작업 항목**:
+- [ ] `pnpm add sonner` - Sonner 라이브러리 설치
+- [ ] `src/toast.tsx` 컴포넌트 구현
+  - [ ] Toaster 컴포넌트 re-export
+  - [ ] toast 함수 re-export
+  - [ ] 테마 통합 (다크모드 지원)
+  - [ ] 기본 position 설정
+- [ ] `src/toast.module.css` 커스텀 스타일 (선택적)
+  - [ ] Design Token 통합
+  - [ ] 브랜드 컬러 매칭
+- [ ] `src/toast.test.tsx` 테스트
+  - [ ] 기본 toast 렌더링
+  - [ ] Success/Error/Loading toast
+  - [ ] Promise toast
+  - [ ] Action/Cancel 버튼
+  - [ ] 위치 변경
+  - [ ] 자동 dismiss
+- [ ] Storybook 스토리
+  - [ ] Default
+  - [ ] Success/Error/Info/Warning
+  - [ ] WithAction
+  - [ ] WithCancel
+  - [ ] Loading
+  - [ ] Promise
+  - [ ] Positions
+  - [ ] CustomStyling
+  - [ ] RichColors
+- [ ] Export 추가
+
+**구현 참고**:
+```tsx
+// Layout에 Toaster 추가
+import { Toaster } from '@lyra/ui';
+
+function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        {children}
+        <Toaster position="bottom-right" richColors />
+      </body>
+    </html>
+  );
+}
+
+// Toast 사용
+import { toast } from '@lyra/ui';
+
+toast('Event created');
+toast.success('Saved successfully');
+toast.error('Failed to delete');
+toast.promise(myPromise, {
+  loading: 'Loading...',
+  success: 'Done!',
+  error: 'Failed!',
+});
+```
+
+**설계 결정**: 
+- Base UI 대신 Sonner 라이브러리 사용 (더 나은 DX와 기능)
+- Sonner는 이미 완성도 높은 토스트 솔루션 제공
+- 우리의 Design Token과 테마 시스템과만 통합하면 됨
 
 ---
 
@@ -506,25 +619,24 @@
 
 ### 전체 진행률
 - **Phase 1 (Form)**: 4/4 (100%) ✅ Switch, Radio+RadioGroup, Field, Select 완료
-- **Phase 2 (Dialog/Overlay)**: 2/4 (50%) ✅ Dialog, Tooltip 완료
+- **Phase 2 (Dialog/Overlay)**: 3/4 (75%) ✅ Dialog, Tooltip, Popover 완료
 - **Phase 3 (Navigation)**: 0/2 (0%)
 - **Phase 4 (Feedback)**: 0/3 (0%)
 
-**총 진행률**: 6/13 (46.2%)
+**총 진행률**: 7/13 (53.8%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Popover 컴포넌트 구현 (Priority 7)
-- Phase 2 (Dialog & Overlay) 진행 중
-- Context7에서 Base UI Popover 문서 조회
-- Positioner 및 Arrow 지원
-- Close Button 및 제목 지원
-- 예상 시간: 4-5시간
+**NEXT**: Menu 컴포넌트 구현 (Priority 8)
+- Phase 2 (Dialog & Overlay) 마지막 컴포넌트
+- Context7에서 Base UI Menu 문서 조회
+- Dropdown, Submenu, RadioItem, CheckboxItem 지원
+- 예상 시간: 8-10시간 (가장 복잡한 컴포넌트)
 
 **참고**: Phase 1 (Form 컴포넌트) 100% 완료! 🎉
-**참고**: Tooltip 컴포넌트 완료! (Phase 2: 50%)
+**참고**: Phase 2 75% 완료 (Dialog, Tooltip, Popover)
 
 ---
 

@@ -7,6 +7,7 @@ import "./components/field/field.module.css";
 import "./components/select/select.module.css";
 import "./components/dialog/dialog.module.css";
 import "./components/tooltip/tooltip.module.css";
+import "./components/popover/popover.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -62,3 +63,16 @@ export {
   type TooltipPopupProps,
   type TooltipArrowProps,
 } from "./components/tooltip/tooltip";
+export {
+  Popover,
+  type PopoverRootProps,
+  type PopoverTriggerProps,
+  type PopoverPortalProps,
+  type PopoverBackdropProps,
+  type PopoverPositionerProps,
+  type PopoverPopupProps,
+  type PopoverArrowProps,
+  type PopoverTitleProps,
+  type PopoverDescriptionProps,
+  type PopoverCloseProps,
+} from "./components/popover/popover";
