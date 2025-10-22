@@ -30,13 +30,16 @@ module.exports.styles = function styles({
 
   const filter = createFilter(include, exclude);
 
+  // PostCSS 플러그인 순서:
+  // 1. postcss-import, postcss-custom-media 등이 먼저 실행
+  // 2. postcss-modules는 마지막에 실행되어야 CSS Modules 처리
   const styleProcessor = postcss([
+    ...plugins,
     cssModules({
       ...modules,
       // eslint-disable-next-line no-empty-function
       getJSON() {},
     }),
-    ...plugins,
   ]);
 
   let inputRoot;

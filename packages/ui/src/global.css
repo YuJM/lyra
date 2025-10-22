@@ -7,9 +7,6 @@
 /* Design Tokens */
 @import "@lyra/design-tokens/css" layer(base);
 
-/* Custom Media Queries - Auto-generated from design tokens */
-@import "@lyra/design-tokens/css/breakpoints";
-
 /* Base Layer - CSS Variables & Reset */
 @layer base {
   /*
