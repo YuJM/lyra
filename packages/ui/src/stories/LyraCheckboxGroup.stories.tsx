@@ -5,7 +5,7 @@ import { Checkbox } from '../checkbox';
 import * as React from 'react';
 
 const meta = {
-  title: 'Components/CheckboxGroup',
+  title: 'Design System/Components/CheckboxGroup',
   component: CheckboxGroup,
   parameters: {
     layout: 'centered',
@@ -358,10 +358,7 @@ export const NestedParentCheckbox: Story = {
                     <Checkbox
                       parent
                       id="nested-content-all"
-                      indeterminate={
-                        contentSelected.length > 0 &&
-                        contentSelected.length !== allContentPermissions.length
-                      }
+                      value="content-all"
                     />
                     콘텐츠 관리
                   </label>

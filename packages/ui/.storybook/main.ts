@@ -16,7 +16,17 @@ const config: StorybookConfig = {
   ],
   "addons": [
     getAbsolutePath('@chromatic-com/storybook'),
-    getAbsolutePath('@storybook/addon-docs'),
+    {
+      name: getAbsolutePath('@storybook/addon-docs'),
+      options: {
+        csfPluginOptions: null,
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [],
+          },
+        },
+      },
+    },
     getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-vitest")
