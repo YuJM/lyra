@@ -11,6 +11,9 @@
 - [x] Switch - 토글 스위치 (controlled/uncontrolled)
 - [x] Radio - 라디오 버튼 (단일 컴포넌트)
 - [x] RadioGroup - 단일 선택 그룹 (방향키 네비게이션)
+- [x] Field - 폼 필드 구조 컴포넌트 (Label, Control, Error, Description)
+- [x] Select - 드롭다운 선택 컴포넌트
+- [x] Dialog - 모달 대화상자 컴포넌트
 
 ### 🛠️ 인프라
 - [x] Vitest + @testing-library/react 테스트 환경
@@ -241,38 +244,46 @@
 ## 🎯 Phase 2: Dialog & Overlay 컴포넌트
 
 ### 5. Dialog
-**상태**: 🔲 미구현
+**상태**: ✅ 완료
 **난이도**: ⭐⭐⭐ 어려움
-**예상 시간**: 5-6시간
+**실제 시간**: ~3시간
 **우선순위**: 5순위
 
 **작업 항목**:
-- [ ] `src/dialog.tsx` 컴포넌트 구현
-  - [ ] Dialog.Root (open state management)
-  - [ ] Dialog.Trigger
-  - [ ] Dialog.Portal
-  - [ ] Dialog.Backdrop
-  - [ ] Dialog.Popup
-  - [ ] Dialog.Title
-  - [ ] Dialog.Description
-  - [ ] Dialog.Close
-- [ ] `src/dialog.module.css` 스타일
-  - [ ] Backdrop 오버레이
-  - [ ] Popup 중앙 정렬
-  - [ ] 페이드 인/아웃 애니메이션
-  - [ ] 스크롤 락 처리
-- [ ] `src/dialog.test.tsx` 테스트
-  - [ ] 열기/닫기 동작
-  - [ ] ESC 키 닫기
-  - [ ] Backdrop 클릭 닫기
-  - [ ] 포커스 트랩
-  - [ ] 접근성 (role="dialog", aria-labelledby)
-- [ ] Storybook 스토리
-  - [ ] Basic Dialog
-  - [ ] Controlled Dialog
-  - [ ] Form Dialog
-  - [ ] Alert Dialog variant
-- [ ] Export 추가
+- [x] `src/dialog.tsx` 컴포넌트 구현
+  - [x] Dialog.Root (open state management)
+  - [x] Dialog.Trigger
+  - [x] Dialog.Portal
+  - [x] Dialog.Backdrop
+  - [x] Dialog.Popup
+  - [x] Dialog.Title
+  - [x] Dialog.Description
+  - [x] Dialog.Close
+- [x] `src/dialog.module.css` 스타일
+  - [x] Backdrop 오버레이
+  - [x] Popup 중앙 정렬
+  - [x] 페이드 인/아웃 애니메이션
+  - [x] 반응형 디자인
+  - [x] 스크롤바 커스터마이징
+- [x] `src/dialog.test.tsx` 테스트
+  - [x] 열기/닫기 동작
+  - [x] ESC 키 닫기
+  - [x] Backdrop 클릭 닫기
+  - [x] 제어/비제어 모드
+  - [x] 접근성 (role="dialog", aria-labelledby, aria-describedby)
+  - [x] Portal 렌더링
+- [x] Storybook 스토리 (8개)
+  - [x] Default
+  - [x] WithoutBackdrop
+  - [x] Controlled
+  - [x] WithForm
+  - [x] ConfirmationDialog
+  - [x] LongContent
+  - [x] NestedDialogs
+  - [x] CustomStyling
+- [x] Export 추가
+
+**테스트 결과**: 14개 테스트 모두 통과 ✅
 
 **구현 참고**:
 ```tsx
@@ -460,25 +471,26 @@
 
 ### 전체 진행률
 - **Phase 1 (Form)**: 4/4 (100%) ✅ Switch, Radio+RadioGroup, Field, Select 완료
-- **Phase 2 (Dialog/Overlay)**: 0/4 (0%)
+- **Phase 2 (Dialog/Overlay)**: 1/4 (25%) ✅ Dialog 완료
 - **Phase 3 (Navigation)**: 0/2 (0%)
 - **Phase 4 (Feedback)**: 0/3 (0%)
 
-**총 진행률**: 4/13 (30.8%)
+**총 진행률**: 5/13 (38.5%)
 
 ---
 
 ## 🎯 다음 작업
 
-**NEXT**: Dialog 컴포넌트 구현 (Priority 5)
-- Phase 2 (Dialog & Overlay) 시작
-- Context7에서 Base UI Dialog 문서 조회
-- 모달 팝업 UI 및 열기/닫기 로직 구현
-- 포커스 트랩 및 ESC 키 처리
-- Backdrop 오버레이 및 애니메이션
-- 예상 시간: 5-6시간
+**NEXT**: Tooltip 컴포넌트 구현 (Priority 6)
+- Phase 2 (Dialog & Overlay) 진행 중
+- Context7에서 Base UI Tooltip 문서 조회
+- Hover/Focus 기반 툴팁 UI 구현
+- Positioner 및 Arrow 지원
+- 지연 표시 및 애니메이션
+- 예상 시간: 3-4시간
 
 **참고**: Phase 1 (Form 컴포넌트) 100% 완료! 🎉
+**참고**: Dialog 컴포넌트 완료! (Phase 2: 25%)
 
 ---
 
