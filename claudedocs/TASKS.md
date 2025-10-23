@@ -8,11 +8,12 @@
 
 ## 📊 진행 상황
 
-- **전체 진행률**: 15% (4/27 작업 완료)
+- **전체 진행률**: 22% (6/27 작업 완료)
 - **현재 Phase**: Phase 1 - 기반 강화
 - **Week 1 목표**: ✅ 완료 (색상 감사 + ChatGPT 테마 + Card API 설계)
 - **Week 2 진행**: ✅ Task 1.4 완료 (색상 토큰 마이그레이션 계획)
-- **다음 작업**: Task 1.5 Card 컴포넌트 구현 시작
+- **Week 2-3 진행**: ✅ Epic 1.2 완료 (접근성 검증 시스템)
+- **다음 작업**: Epic 1.3 Storybook 문서화 강화
 
 ---
 
@@ -135,9 +136,16 @@ export const Card = {
 - [ ] Task 1.4: 비준수 컴포넌트 리팩토링 (5h) - ⏳ 예정
 
 ### Epic 1.2: 접근성 검증 시스템 (12시간)
-- [ ] Task 1.5: axe-core 통합 (4h)
-- [ ] Task 1.6: WCAG 2.1 AA 체크리스트 (3h)
-- [ ] Task 1.7: 키보드 네비게이션 테스트 (5h)
+- [x] Task 1.5: axe-core 통합 (4h) - ✅ 완료
+- [x] Task 1.6: WCAG 2.1 AA 체크리스트 (3h) - ✅ 완료
+- [ ] Task 1.7: 키보드 네비게이션 테스트 (5h) - ⏸️ 컴포넌트 구현 후 진행
+
+**Task 1.5 & 1.6 완료 내역**:
+- `.storybook/preview.ts`: WCAG 2.1 AA axe rules 설정
+- `claudedocs/wcag-2.1-aa-checklist.md`: 종합 체크리스트
+- `scripts/test-a11y.mjs`: 자동화 테스트 스크립트
+- `docs/accessibility.md`: 개발자 가이드라인
+- `package.json`: `pnpm test:a11y` 스크립트 추가
 
 ### Epic 1.3: Storybook 문서화 강화 (8시간)
 - [ ] Task 1.8: OpenAI 가이드라인 문서 링크 (2h)
