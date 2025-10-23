@@ -1,0 +1,266 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens/Spacing" />
+
+# Spacing (2px Unit System)
+
+모든 spacing 토큰은 2px 단위로 증가하여 일관된 spacing rhythm을 제공합니다.
+
+## 사용 방법
+
+```css
+@import "@lyra/design-tokens/css";
+
+.my-component {
+  padding: var(--spacing-4);
+  margin: var(--spacing-8);
+  gap: var(--spacing-2);
+}
+```
+
+---
+
+## Base Scale (2px 단위)
+
+<div className="token-grid">
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-0)', height: 'var(--spacing-4)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-0</div>
+      <div className="token-value">0px (0)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-px)', height: 'var(--spacing-px)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-px</div>
+      <div className="token-value">1px</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-1)', height: 'var(--spacing-1)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-1</div>
+      <div className="token-value">2px (0.125rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-2)', height: 'var(--spacing-2)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-2</div>
+      <div className="token-value">4px (0.25rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-3)', height: 'var(--spacing-3)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-3</div>
+      <div className="token-value">6px (0.375rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-4)', height: 'var(--spacing-4)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-4</div>
+      <div className="token-value">8px (0.5rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-5)', height: 'var(--spacing-5)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-5</div>
+      <div className="token-value">10px (0.625rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-6)', height: 'var(--spacing-6)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-6</div>
+      <div className="token-value">12px (0.75rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-7</div>
+      <div className="token-value">14px (0.875rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-8)', height: 'var(--spacing-8)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-8</div>
+      <div className="token-value">16px (1rem) - Base</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-9)', height: 'var(--spacing-9)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-9</div>
+      <div className="token-value">18px (1.125rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-10)', height: 'var(--spacing-10)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-10</div>
+      <div className="token-value">20px (1.25rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-12)', height: 'var(--spacing-12)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-12</div>
+      <div className="token-value">24px (1.5rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-14)', height: 'var(--spacing-14)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-14</div>
+      <div className="token-value">28px (1.75rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-16)', height: 'var(--spacing-16)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-16</div>
+      <div className="token-value">32px (2rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-20)', height: 'var(--spacing-20)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-20</div>
+      <div className="token-value">40px (2.5rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-24)', height: 'var(--spacing-24)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-24</div>
+      <div className="token-value">48px (3rem)</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-32)', height: 'var(--spacing-32)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-32</div>
+      <div className="token-value">64px (4rem)</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Icon Sizes
+
+아이콘 전용 크기입니다. 각 사이즈는 Base Scale을 참조합니다.
+
+<div className="grid-2col">
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-icon-sm)', height: 'var(--spacing-icon-sm)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-icon-sm</div>
+      <div className="token-value">16px (var(--spacing-8)) - 작은 아이콘</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-icon-md)', height: 'var(--spacing-icon-md)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-icon-md</div>
+      <div className="token-value">20px (var(--spacing-10)) - 중간 아이콘</div>
+    </div>
+  </div>
+  <div className="size-demo">
+    <div className="size-box" style={{ width: 'var(--spacing-icon-lg)', height: 'var(--spacing-icon-lg)' }} />
+    <div className="color-info">
+      <div className="token-name">--spacing-icon-lg</div>
+      <div className="token-value">24px (var(--spacing-12)) - 큰 아이콘</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## 사용 가이드
+
+### Spacing (패딩, 마진, 갭)
+
+<div className="code-block">{`/* 작은 간격 */
+padding: var(--spacing-2);  /* 4px */
+gap: var(--spacing-2);      /* 4px */
+
+/* 일반 간격 */
+padding: var(--spacing-4);  /* 8px */
+margin: var(--spacing-4);   /* 8px */
+
+/* 큰 간격 */
+padding: var(--spacing-8);  /* 16px */
+margin: var(--spacing-12);  /* 24px */
+
+/* 컨테이너 패딩 */
+padding: var(--spacing-16); /* 32px */
+padding: var(--spacing-24); /* 48px */`}</div>
+
+### Icons
+
+<div className="code-block">{`/* SVG 아이콘 */
+.icon-sm {
+  width: var(--spacing-icon-sm);   /* 16px */
+  height: var(--spacing-icon-sm);
+}
+
+.icon-md {
+  width: var(--spacing-icon-md);   /* 20px */
+  height: var(--spacing-icon-md);
+}
+
+.icon-lg {
+  width: var(--spacing-icon-lg);   /* 24px */
+  height: var(--spacing-icon-lg);
+}`}</div>
+
+---
+
+## 2px 단위의 이점
+
+### 1. 일관된 Rhythm
+모든 요소가 2px 그리드에 정렬되어 시각적 일관성이 향상됩니다.
+
+### 2. 유연성
+충분히 세밀한 간격 조절이 가능하면서도 관리하기 쉽습니다.
+
+### 3. 반응형 대응
+rem 단위로 사용자 브라우저 설정에 반응합니다.
+
+### 4. 수학적 조합
+2의 배수로 조합하기 쉽습니다.
+
+<div className="code-block">{`/* 조합 예시 */
+padding: var(--spacing-4) var(--spacing-8);  /* 8px 16px */
+margin: var(--spacing-2) var(--spacing-4) var(--spacing-6);  /* 4px 8px 12px */
+
+/* 계산 예시 */
+width: calc(var(--spacing-8) * 3);  /* 48px */
+gap: calc(var(--spacing-2) + var(--spacing-4));  /* 12px */`}</div>
+
+---
+
+## Quick Reference
+
+| Token | px | rem | 사용 예시 |
+|-------|----|----|----------|
+| `--spacing-2` | 4px | 0.25rem | 작은 간격, 여백 |
+| `--spacing-4` | 8px | 0.5rem | 일반 간격, 패딩 |
+| `--spacing-8` | 16px | 1rem | 기본 간격, 마진 |
+| `--spacing-12` | 24px | 1.5rem | 큰 간격 |
+| `--spacing-16` | 32px | 2rem | 컨테이너 패딩 |
+| `--spacing-24` | 48px | 3rem | 섹션 간격 |
+| `--spacing-32` | 64px | 4rem | 큰 섹션 간격 |
+
+| Token | px | 사용 예시 |
+|-------|----|----|
+| `--spacing-icon-sm` | 16px | 인라인 아이콘 |
+| `--spacing-icon-md` | 20px | 버튼 아이콘 |
+| `--spacing-icon-lg` | 24px | 헤더 아이콘 |
