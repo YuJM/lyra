@@ -1,0 +1,236 @@
+/**
+ * ChatGPT Theme Preset
+ *
+ * OpenAI Apps SDK 디자인 가이드라인을 준수하는 테마입니다.
+ *
+ * 핵심 원칙:
+ * 1. 배경/텍스트 색상은 고정 (브랜드 액센트 제외)
+ * 2. 브랜드 액센트는 버튼/아이콘에만 사용
+ * 3. Gradient 사용 금지
+ * 4. 시스템 다크모드 지원
+ *
+ * @see https://platform.openai.com/docs/guides/apps-design-guidelines
+ */
+
+:root {
+  /* ============================================
+   * Surface & Background Colors (고정)
+   * ============================================ */
+
+  /* 메인 배경: 순백 (OpenAI 가이드라인) */
+  --color-bg-surface-default: oklch(1 0 0) !important;
+
+  /* 보조 배경: 극히 연한 회색 */
+  --color-bg-surface-secondary: oklch(0.98 0 0) !important;
+
+  /* 상승된 Surface (카드, 다이얼로그) */
+  --color-bg-surface-elevated: oklch(1 0 0) !important;
+
+  /* Overlay 배경 */
+  --color-bg-overlay: oklch(0 0 0 / 0.5) !important;
+
+  /* Input 배경 */
+  --color-bg-input-default: oklch(0.97 0 0) !important;
+  --color-bg-input-hover: oklch(0.95 0 0) !important;
+  --color-bg-input-disabled: oklch(0.92 0 0) !important;
+
+  /* ============================================
+   * Text Colors (고정)
+   * ============================================ */
+
+  /* 주 텍스트: 거의 검정 */
+  --color-text-primary: oklch(0.2 0 0) !important;
+
+  /* 보조 텍스트: 회색 */
+  --color-text-secondary: oklch(0.5 0 0) !important;
+
+  /* 비활성 텍스트 */
+  --color-text-disabled: oklch(0.65 0 0) !important;
+
+  /* 다크 배경 위 텍스트 */
+  --color-text-on-dark: oklch(1 0 0) !important;
+
+  /* ============================================
+   * Brand Accent (버튼/아이콘만)
+   * ============================================ */
+
+  /* 브랜드 주 색상 - 사용자가 오버라이드 가능 */
+  --brand-accent: var(--color-blue-600, #3b82f6);
+
+  /* Primary는 브랜드 액센트로 매핑 */
+  --color-primary: var(--brand-accent);
+  --color-primary-hover: oklch(from var(--brand-accent) calc(l * 0.9) c h);
+  --color-primary-active: oklch(from var(--brand-accent) calc(l * 0.8) c h);
+
+  /* Primary 배경 (버튼 전용) */
+  --color-bg-primary-default: var(--color-primary);
+  --color-bg-primary-hover: var(--color-primary-hover);
+  --color-bg-primary-active: var(--color-primary-active);
+  --color-bg-primary-disabled: oklch(0.85 0 0);
+
+  /* ============================================
+   * Semantic Colors (시스템 피드백)
+   * ============================================ */
+
+  /* 성공 */
+  --color-success: var(--color-green-600, #10b981);
+  --color-success-bg: oklch(0.96 0.05 150);
+  --color-success-solid: var(--color-success);
+
+  /* 에러 */
+  --color-danger: var(--color-red-600, #ef4444);
+  --color-danger-bg: oklch(0.96 0.05 20);
+  --color-danger-solid: var(--color-danger);
+
+  /* 경고 */
+  --color-warning: var(--color-yellow-600, #f59e0b);
+  --color-warning-bg: oklch(0.96 0.05 80);
+  --color-warning-solid: var(--color-warning);
+
+  /* 정보 */
+  --color-info: var(--color-blue-600, #3b82f6);
+  --color-info-bg: oklch(0.96 0.05 240);
+  --color-info-solid: var(--color-info);
+
+  /* ============================================
+   * Interactive States (중립 색상)
+   * ============================================ */
+
+  /* Hover 상태 - 극히 연한 회색 */
+  --color-bg-hover: oklch(0.96 0 0 / 0.5);
+
+  /* Active 상태 - 조금 더 진한 회색 */
+  --color-bg-active: oklch(0.93 0 0 / 0.7);
+
+  /* Selected 상태 - 중립 회색 (브랜드 색상 X) */
+  --color-bg-selected: oklch(0.95 0 0);
+
+  /* ============================================
+   * Borders (중립 색상)
+   * ============================================ */
+
+  /* 기본 테두리 */
+  --color-border-default: oklch(0.85 0 0);
+
+  /* Hover 테두리 */
+  --color-border-hover: oklch(0.7 0 0);
+
+  /* Focus 테두리 - 브랜드 액센트 사용 허용 */
+  --color-border-focus: var(--brand-accent);
+
+  /* ============================================
+   * Shadows (중립)
+   * ============================================ */
+
+  /* 작은 그림자 */
+  --shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.05);
+
+  /* 중간 그림자 */
+  --shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.1),
+              0 2px 4px -1px oklch(0 0 0 / 0.06);
+
+  /* 큰 그림자 */
+  --shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1),
+              0 4px 6px -2px oklch(0 0 0 / 0.05);
+}
+
+/* ============================================
+ * Dark Mode (시스템 다크모드 지원)
+ * ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surface & Background */
+    --color-bg-surface-default: oklch(0.18 0 0) !important;
+    --color-bg-surface-secondary: oklch(0.15 0 0) !important;
+    --color-bg-surface-elevated: oklch(0.22 0 0) !important;
+    --color-bg-overlay: oklch(0 0 0 / 0.7) !important;
+
+    /* Input */
+    --color-bg-input-default: oklch(0.25 0 0) !important;
+    --color-bg-input-hover: oklch(0.28 0 0) !important;
+    --color-bg-input-disabled: oklch(0.2 0 0) !important;
+
+    /* Text */
+    --color-text-primary: oklch(0.95 0 0) !important;
+    --color-text-secondary: oklch(0.65 0 0) !important;
+    --color-text-disabled: oklch(0.5 0 0) !important;
+    --color-text-on-dark: oklch(0.95 0 0) !important;
+
+    /* Interactive States */
+    --color-bg-hover: oklch(0.3 0 0 / 0.5);
+    --color-bg-active: oklch(0.35 0 0 / 0.7);
+    --color-bg-selected: oklch(0.25 0 0);
+
+    /* Borders */
+    --color-border-default: oklch(0.35 0 0);
+    --color-border-hover: oklch(0.5 0 0);
+
+    /* Shadows (더 강한 그림자) */
+    --shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.2);
+    --shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.3),
+                0 2px 4px -1px oklch(0 0 0 / 0.2);
+    --shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.3),
+                0 4px 6px -2px oklch(0 0 0 / 0.2);
+
+    /* Semantic (다크모드 변형) */
+    --color-success-bg: oklch(0.2 0.05 150);
+    --color-danger-bg: oklch(0.2 0.05 20);
+    --color-warning-bg: oklch(0.2 0.05 80);
+    --color-info-bg: oklch(0.2 0.05 240);
+  }
+}
+
+/* ============================================
+ * Brand Accent Customization
+ * ============================================ */
+
+/**
+ * 브랜드 색상 커스터마이징:
+ *
+ * .your-app {
+ *   --brand-accent: #10a37f;  // ChatGPT 녹색
+ * }
+ *
+ * 또는
+ *
+ * .your-app {
+ *   --brand-accent: oklch(0.55 0.15 160);  // OKLCH로 정의
+ * }
+ */
+
+/* ============================================
+ * Usage Examples
+ * ============================================ */
+
+/**
+ * Button:
+ * - Primary: 브랜드 액센트 배경 ✅
+ * - Secondary: 중립 회색 배경 ✅
+ * - Ghost: 투명 배경, hover시 중립 회색 ✅
+ *
+ * Icon:
+ * - 기본: 중립 회색
+ * - 액션 아이콘: 브랜드 액센트 ✅
+ *
+ * Text:
+ * - 항상 고정 색상 (primary/secondary) ✅
+ *
+ * Background:
+ * - 항상 고정 색상 (surface) ✅
+ * - Gradient 절대 사용 금지 🚫
+ */
+
+/* ============================================
+ * Accessibility Notes
+ * ============================================ */
+
+/**
+ * 모든 색상 조합은 WCAG 2.1 AA 기준 이상 대비율을 보장합니다:
+ *
+ * - 일반 텍스트: 최소 4.5:1
+ * - 큰 텍스트: 최소 3:1
+ * - UI 요소: 최소 3:1
+ *
+ * 브랜드 액센트를 커스터마이징할 때도 대비율을 확인하세요.
+ */
