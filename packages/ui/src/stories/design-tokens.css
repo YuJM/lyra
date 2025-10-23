@@ -3,6 +3,11 @@
 /*
  * Components Layer - 컴포넌트 레벨 스타일
  * 우선순위: reset < base < components < utilities
+ *
+ * OpenAI Apps SDK 가이드라인 준수:
+ * - Gradient 사용 금지
+ * - 단색 배경 사용
+ * - 필요시 border/shadow로 시각적 깊이감 표현
  */
 @layer utilities {
   /* 기본 레이아웃 */
@@ -25,7 +30,7 @@
     gap: 1.25rem;
     padding: 1rem;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, var(--color-gray-50), white);
+    background: var(--color-gray-50);
     border: 1px solid var(--color-gray-200);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -39,7 +44,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.5));
+    background: rgba(255, 255, 255, 0.5);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -75,7 +80,7 @@
     left: 10%;
     right: 10%;
     height: 30%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 0.5rem;
   }
 
@@ -113,7 +118,7 @@
     gap: 1.5rem;
     padding: 1.25rem;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, var(--color-gray-50), white);
+    background: var(--color-gray-50);
     border: 1px solid var(--color-gray-200);
     margin-bottom: 0.75rem;
     transition: all 0.3s ease;
@@ -126,11 +131,7 @@
   }
 
   .size-box {
-    background: linear-gradient(
-      135deg,
-      var(--color-blue-500),
-      var(--color-blue-600)
-    );
+    background: var(--color-blue-500);
     flex-shrink: 0;
     box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
     transition: transform 0.3s ease;
@@ -144,7 +145,7 @@
   .typography-demo {
     padding: 2rem;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, var(--color-gray-50), white);
+    background: var(--color-gray-50);
     border: 1px solid var(--color-gray-200);
     margin-bottom: 1.25rem;
     transition: all 0.3s ease;
@@ -180,7 +181,7 @@
     right: 0;
     bottom: 0;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.05));
+    background: rgba(59, 130, 246, 0.05);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -204,7 +205,7 @@
   .border-demo {
     width: 100%;
     height: 5rem;
-    background: linear-gradient(135deg, var(--color-gray-50), white);
+    background: var(--color-gray-50);
     border: var(--border-width-1) solid var(--color-gray-900);
     display: flex;
     align-items: center;
@@ -217,7 +218,7 @@
   }
 
   .border-demo:hover {
-    background: linear-gradient(135deg, white, var(--color-blue-50));
+    background: var(--color-blue-50);
     border-color: var(--color-blue-500);
     box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
   }
@@ -226,11 +227,7 @@
   .animation-demo {
     width: 5rem;
     height: 5rem;
-    background: linear-gradient(
-      135deg,
-      var(--color-blue-500),
-      var(--color-blue-600)
-    );
+    background: var(--color-blue-500);
     border-radius: 0.75rem;
     transition: transform var(--duration-base) var(--easing-easeInOut);
     cursor: pointer;
@@ -246,7 +243,7 @@
     left: 15%;
     right: 15%;
     height: 25%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent);
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 0.5rem;
   }
 
@@ -263,11 +260,7 @@
   .z-index-demo {
     position: relative;
     height: 14rem;
-    background: linear-gradient(
-      135deg,
-      var(--color-gray-100),
-      var(--color-gray-50)
-    );
+    background: var(--color-gray-100);
     border-radius: 0.75rem;
     overflow: hidden;
     margin: 1.5rem 0;
@@ -277,11 +270,7 @@
   .z-layer {
     position: absolute;
     padding: 1.25rem;
-    background: linear-gradient(
-      135deg,
-      var(--color-blue-500),
-      var(--color-blue-600)
-    );
+    background: var(--color-blue-500);
     color: white;
     border-radius: 0.75rem;
     font-family: var(--font-family-mono);
@@ -297,7 +286,7 @@
 
   /* 코드 블록 스타일 */
   .code-block {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: #1a1a2e;
     color: #e4e4e7;
     padding: 1.5rem;
     border-radius: 0.75rem;
@@ -321,22 +310,19 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(
-      90deg,
-      var(--color-blue-500),
-      var(--color-purple-500),
-      var(--color-blue-500)
-    );
-    background-size: 200% 100%;
+    background: var(--color-blue-500);
     animation: shimmer 3s linear infinite;
   }
 
   @keyframes shimmer {
     0% {
-      background-position: 200% 0;
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
     }
     100% {
-      background-position: -200% 0;
+      opacity: 0.5;
     }
   }
 
@@ -350,7 +336,7 @@
   /* 브레이크포인트 데모 스타일 */
   .breakpoint-demo {
     padding: 1.5rem;
-    background: linear-gradient(135deg, var(--color-gray-50), white);
+    background: var(--color-gray-50);
     border: 1px solid var(--color-gray-200);
     border-radius: 0.75rem;
     margin-bottom: 0.75rem;
@@ -361,7 +347,7 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     border-color: var(--color-blue-300);
-    background: linear-gradient(135deg, white, var(--color-blue-50));
+    background: var(--color-blue-50);
   }
 
   /* 반응형 디자인 */

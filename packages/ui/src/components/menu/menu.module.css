@@ -1,0 +1,331 @@
+/* ================================
+   Menu 컴포넌트 스타일
+   ================================ */
+
+/* Trigger - 메뉴를 트리거하는 요소 */
+.MenuTrigger {
+  cursor: pointer;
+}
+
+.MenuTrigger:focus-visible {
+  outline: 2px solid var(--color-focus-ring, #0066cc);
+  outline-offset: 2px;
+}
+
+/* Backdrop - 오버레이 배경 (선택적) */
+.MenuBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-overlay, rgba(0, 0, 0, 0.3));
+  z-index: var(--z-index-menu-backdrop, 999);
+
+  /* 애니메이션 */
+  opacity: 0;
+  transition: opacity var(--duration-normal, 200ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+.MenuBackdrop[data-open] {
+  opacity: 1;
+}
+
+.MenuBackdrop[data-ending-style] {
+  opacity: 0;
+}
+
+/* Positioner - 메뉴 위치 관리 */
+.MenuPositioner {
+  z-index: var(--z-index-menu, 1000);
+}
+
+/* Popup - 메뉴 내용 */
+.MenuPopup {
+  background-color: var(--color-bg-surface, #ffffff);
+  border: 1px solid var(--color-border-default, #e5e7eb);
+  border-radius: var(--border-radius-md, 8px);
+  box-shadow: var(--shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.15));
+
+  padding: var(--spacing-2, 8px);
+
+  min-width: 180px;
+  max-width: min(calc(100vw - var(--spacing-4, 16px)), 320px);
+  max-height: calc(100vh - var(--spacing-4, 16px));
+
+  overflow-y: auto;
+
+  /* 애니메이션 */
+  opacity: 0;
+  scale: 0.95;
+  transform-origin: var(--transform-origin);
+
+  transition:
+    opacity var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out),
+    scale var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+.MenuPopup[data-open] {
+  opacity: 1;
+  scale: 1;
+}
+
+.MenuPopup[data-ending-style] {
+  opacity: 0;
+  scale: 0.95;
+}
+
+/* Arrow - 메뉴 화살표 */
+.MenuArrow {
+  width: 12px;
+  height: 6px;
+  fill: var(--color-bg-surface, #ffffff);
+  filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.1));
+
+  /* Side별 위치 조정 */
+  &[data-side="top"] {
+    bottom: -5px;
+    transform: rotate(180deg);
+  }
+
+  &[data-side="bottom"] {
+    top: -5px;
+  }
+
+  &[data-side="left"] {
+    right: -11px;
+    transform: rotate(90deg);
+  }
+
+  &[data-side="right"] {
+    left: -11px;
+    transform: rotate(-90deg);
+  }
+}
+
+/* Item - 메뉴 아이템 */
+.MenuItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  border-radius: var(--border-radius-sm, 4px);
+
+  cursor: pointer;
+  user-select: none;
+
+  font-size: var(--font-size-sm, 14px);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-primary, #000000);
+
+  transition: background-color var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+.MenuItem:hover,
+.MenuItem[data-highlighted] {
+  background-color: var(--color-bg-hover, rgba(0, 0, 0, 0.05));
+}
+
+.MenuItem:active {
+  background-color: var(--color-bg-active, rgba(0, 0, 0, 0.1));
+}
+
+.MenuItem[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Separator - 구분선 */
+.MenuSeparator {
+  height: 1px;
+  margin: var(--spacing-2, 8px) 0;
+  background-color: var(--color-border-default, #e5e7eb);
+}
+
+/* Group - 메뉴 그룹 */
+.MenuGroup {
+  padding: var(--spacing-1, 4px) 0;
+}
+
+/* GroupLabel - 그룹 레이블 */
+.MenuGroupLabel {
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  font-size: var(--font-size-xs, 12px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-tertiary, #999999);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* RadioGroup - 라디오 그룹 */
+.MenuRadioGroup {
+  padding: var(--spacing-1, 4px) 0;
+}
+
+/* RadioItem - 라디오 아이템 */
+.MenuRadioItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  border-radius: var(--border-radius-sm, 4px);
+
+  cursor: pointer;
+  user-select: none;
+
+  font-size: var(--font-size-sm, 14px);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-primary, #000000);
+
+  transition: background-color var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+.MenuRadioItem:hover,
+.MenuRadioItem[data-highlighted] {
+  background-color: var(--color-bg-hover, rgba(0, 0, 0, 0.05));
+}
+
+.MenuRadioItem[data-checked] {
+  color: var(--color-primary, #0066cc);
+  font-weight: var(--font-weight-medium, 500);
+}
+
+/* RadioItemIndicator - 라디오 아이템 인디케이터 */
+.MenuRadioItemIndicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 16px;
+
+  color: var(--color-primary, #0066cc);
+}
+
+.MenuRadioItemIndicator::before {
+  content: "✓";
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* CheckboxItem - 체크박스 아이템 */
+.MenuCheckboxItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  border-radius: var(--border-radius-sm, 4px);
+
+  cursor: pointer;
+  user-select: none;
+
+  font-size: var(--font-size-sm, 14px);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-primary, #000000);
+
+  transition: background-color var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+.MenuCheckboxItem:hover,
+.MenuCheckboxItem[data-highlighted] {
+  background-color: var(--color-bg-hover, rgba(0, 0, 0, 0.05));
+}
+
+.MenuCheckboxItem[data-checked] {
+  color: var(--color-primary, #0066cc);
+}
+
+/* CheckboxItemIndicator - 체크박스 아이템 인디케이터 */
+.MenuCheckboxItemIndicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 16px;
+
+  color: var(--color-primary, #0066cc);
+}
+
+.MenuCheckboxItemIndicator::before {
+  content: "✓";
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* SubmenuTrigger - 서브메뉴 트리거 */
+.MenuSubmenuTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2, 8px);
+
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  border-radius: var(--border-radius-sm, 4px);
+
+  cursor: pointer;
+  user-select: none;
+
+  font-size: var(--font-size-sm, 14px);
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--color-text-primary, #000000);
+
+  transition: background-color var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+.MenuSubmenuTrigger:hover,
+.MenuSubmenuTrigger[data-highlighted] {
+  background-color: var(--color-bg-hover, rgba(0, 0, 0, 0.05));
+}
+
+.MenuSubmenuTrigger::after {
+  content: "›";
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-text-tertiary, #999999);
+}
+
+/* 반응형 - 모바일에서 조정 */
+@media (--sm-down) {
+  .MenuPopup {
+    min-width: 160px;
+    max-width: calc(100vw - var(--spacing-2, 8px));
+    padding: var(--spacing-1, 4px);
+  }
+
+  .MenuItem,
+  .MenuRadioItem,
+  .MenuCheckboxItem,
+  .MenuSubmenuTrigger {
+    padding: var(--spacing-2, 8px);
+    font-size: var(--font-size-xs, 12px);
+  }
+
+  .MenuGroupLabel {
+    padding: var(--spacing-1, 4px) var(--spacing-2, 8px);
+  }
+}
+
+/* 포커스 */
+.MenuPopup:focus {
+  outline: none;
+}
+
+/* 스크롤바 스타일링 */
+.MenuPopup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.MenuPopup::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.MenuPopup::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar, rgba(0, 0, 0, 0.2));
+  border-radius: 3px;
+}
+
+.MenuPopup::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-scrollbar-hover, rgba(0, 0, 0, 0.3));
+}

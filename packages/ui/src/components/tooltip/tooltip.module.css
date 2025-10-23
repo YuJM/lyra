@@ -2,23 +2,30 @@
    Tooltip 컴포넌트 스타일
    ================================ */
 
-/* Trigger */
+/* Trigger - 툴팁을 트리거하는 요소 */
 .TooltipTrigger {
   cursor: help;
 }
 
-/* Positioner */
-.TooltipPositioner {
-  z-index: var(--z-index-tooltip, 2000);
+.TooltipTrigger:focus-visible {
+  outline: 2px solid var(--color-focus-ring, #0066cc);
+  outline-offset: 2px;
 }
 
-/* Popup - 툴팁 컨테이너 */
+/* Positioner - 툴팁 위치 관리 */
+.TooltipPositioner {
+  z-index: var(--z-index-tooltip, 1002);
+}
+
+/* Popup - 툴팁 내용 */
 .TooltipPopup {
-  background-color: var(--color-bg-inverse, #1f2937);
-  color: var(--color-text-inverse, #ffffff);
+  background-color: var(--color-bg-tooltip, #1a1a1a);
+  color: var(--color-text-on-dark, #ffffff);
 
   padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+
   border-radius: var(--border-radius-sm, 4px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.15));
 
   font-size: var(--font-size-sm, 14px);
   line-height: var(--line-height-normal, 1.5);
@@ -26,14 +33,14 @@
   max-width: 300px;
   word-wrap: break-word;
 
-  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.15));
-
   /* 애니메이션 */
   opacity: 0;
   scale: 0.95;
+  transform-origin: var(--transform-origin);
+
   transition:
-    opacity 150ms ease-in-out,
-    scale 150ms ease-in-out;
+    opacity var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out),
+    scale var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
 }
 
 .TooltipPopup[data-open] {
@@ -46,28 +53,50 @@
   scale: 0.95;
 }
 
-/* Arrow - 화살표 */
+/* Arrow - 툴팁 화살표 */
 .TooltipArrow {
-  width: 10px;
-  height: 10px;
-  transform: rotate(45deg);
-  background-color: var(--color-bg-inverse, #1f2937);
-  z-index: -1;
+  width: 12px;
+  height: 6px;
+  fill: var(--color-bg-tooltip, #1a1a1a);
+
+  /* Side별 위치 조정 */
+  &[data-side="top"] {
+    bottom: -5px;
+    transform: rotate(180deg);
+  }
+
+  &[data-side="bottom"] {
+    top: -5px;
+  }
+
+  &[data-side="left"] {
+    right: -11px;
+    transform: rotate(90deg);
+  }
+
+  &[data-side="right"] {
+    left: -11px;
+    transform: rotate(-90deg);
+  }
 }
 
-/* Arrow 위치별 스타일 */
-.TooltipPopup[data-side="top"] .TooltipArrow {
-  bottom: -5px;
+/* 반응형 - 모바일에서 최대 너비 조정 */
+@media (--sm-down) {
+  .TooltipPopup {
+    max-width: calc(100vw - var(--spacing-4, 32px));
+    font-size: var(--font-size-xs, 12px);
+    padding: var(--spacing-1, 4px) var(--spacing-2, 8px);
+  }
 }
 
-.TooltipPopup[data-side="bottom"] .TooltipArrow {
-  top: -5px;
-}
+/* 다크모드 지원 (선택사항) */
+@media (prefers-color-scheme: dark) {
+  .TooltipPopup {
+    background-color: var(--color-bg-tooltip-dark, #2a2a2a);
+    box-shadow: var(--shadow-md-dark, 0 4px 12px rgba(0, 0, 0, 0.3));
+  }
 
-.TooltipPopup[data-side="left"] .TooltipArrow {
-  right: -5px;
-}
-
-.TooltipPopup[data-side="right"] .TooltipArrow {
-  left: -5px;
+  .TooltipArrow {
+    fill: var(--color-bg-tooltip-dark, #2a2a2a);
+  }
 }
