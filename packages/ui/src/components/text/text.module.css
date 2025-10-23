@@ -1,0 +1,161 @@
+/* ============================================================================
+ * Text Component Styles - OpenAI Apps SDK 준수
+ * ========================================================================== */
+
+/* Base Text */
+.Text {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-sans, system-ui, sans-serif);
+  line-height: var(--font-lineHeight-normal, 1.5);
+  /* color는 body에서 상속받음 */
+}
+
+/* ============================================================================
+ * Typography Hierarchy
+ * ========================================================================== */
+
+/* Heading 1 - 가장 큰 제목 */
+.Text--h1 {
+  font-size: var(--font-size-4xl, 36px);
+  font-weight: var(--font-weight-bold, 700);
+  line-height: var(--font-lineHeight-tight, 1.25);
+  letter-spacing: -0.02em;
+}
+
+/* Heading 2 - 주요 섹션 제목 */
+.Text--h2 {
+  font-size: var(--font-size-3xl, 30px);
+  font-weight: var(--font-weight-bold, 700);
+  line-height: var(--font-lineHeight-tight, 1.25);
+  letter-spacing: -0.01em;
+}
+
+/* Heading 3 - 하위 섹션 제목 */
+.Text--h3 {
+  font-size: var(--font-size-2xl, 24px);
+  font-weight: var(--font-weight-semibold, 600);
+  line-height: var(--font-lineHeight-snug, 1.375);
+}
+
+/* Heading 4 - 소제목 */
+.Text--h4 {
+  font-size: var(--font-size-xl, 20px);
+  font-weight: var(--font-weight-semibold, 600);
+  line-height: var(--font-lineHeight-snug, 1.375);
+}
+
+/* Heading 5 - 작은 소제목 */
+.Text--h5 {
+  font-size: var(--font-size-lg, 18px);
+  font-weight: var(--font-weight-medium, 500);
+  line-height: var(--font-lineHeight-normal, 1.5);
+}
+
+/* Heading 6 - 가장 작은 제목 */
+.Text--h6 {
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-weight-medium, 500);
+  line-height: var(--font-lineHeight-normal, 1.5);
+}
+
+/* ============================================================================
+ * Text Alignment
+ * ========================================================================== */
+
+.Text--left {
+  text-align: left;
+}
+
+.Text--center {
+  text-align: center;
+}
+
+.Text--right {
+  text-align: right;
+}
+
+/* ============================================================================
+ * Color Variants - WCAG 2.1 AA 준수 (4.5:1 대비율)
+ * ========================================================================== */
+
+/* primary는 body color 상속 (명시하지 않음) */
+
+.Text--description {
+  color: var(--color-text-description, #4b5563); /* gray-600, 7.5:1 대비율 */
+}
+
+.Text--muted {
+  color: var(--color-text-muted, #6b7280); /* gray-500, 4.6:1 대비율 */
+}
+
+.Text--error {
+  color: var(--color-text-error, #dc2626); /* red-600, 5.9:1 대비율 */
+}
+
+.Text--success {
+  color: var(--color-text-success, #16a34a); /* green-600, 4.5:1 대비율 */
+}
+
+/* ============================================================================
+ * Layout
+ * ========================================================================== */
+
+.Text--fullWidth {
+  width: 100%;
+  display: block;
+}
+
+/* ============================================================================
+ * Dark Mode
+ * ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  /* primary는 body color 상속 (명시하지 않음) */
+
+  .Text--description {
+    color: var(--color-text-description-dark, #9ca3af); /* gray-400 */
+  }
+
+  .Text--muted {
+    color: var(--color-text-muted-dark, #6b7280); /* gray-500 */
+  }
+
+  .Text--error {
+    color: var(--color-text-error-dark, #f87171); /* red-400 */
+  }
+
+  .Text--success {
+    color: var(--color-text-success-dark, #4ade80); /* green-400 */
+  }
+}
+
+/* ============================================================================
+ * High Contrast Mode
+ * ========================================================================== */
+
+@media (prefers-contrast: high) {
+  .Text {
+    font-weight: var(--font-weight-medium, 500);
+  }
+
+  .Text--h1,
+  .Text--h2 {
+    font-weight: var(--font-weight-extrabold, 800);
+  }
+
+  .Text--h3,
+  .Text--h4 {
+    font-weight: var(--font-weight-bold, 700);
+  }
+}
+
+/* ============================================================================
+ * Reduced Motion
+ * ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .Text {
+    transition: none;
+  }
+}

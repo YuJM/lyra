@@ -1,11 +1,14 @@
 # Lyra Design System
 
-Lyra는 접근성과 사용성을 최우선으로 하는 현대적인 React 기반 디자인 시스템입니다. Base UI Components를 기반으로 구축되었으며, 체계적인 디자인 토큰과 재사용 가능한 컴포넌트를 제공합니다.
+Lyra는 **OpenAI Apps SDK 디자인 가이드라인**을 준수하며, 접근성과 사용성을 최우선으로 하는 현대적인 React 기반 디자인 시스템입니다. Base UI Components를 기반으로 구축되었으며, 체계적인 디자인 토큰과 재사용 가능한 컴포넌트를 제공합니다.
+
+> **OpenAI Apps SDK 준수**: Lyra는 OpenAI의 디자인 가이드라인을 따라 일관되고 접근 가능한 사용자 경험을 제공합니다. 단색 배경, gradient 미사용, 명확한 계층 구조, 최소한의 액션 제한 등 OpenAI의 디자인 철학을 반영하였습니다.
 
 ## ✨ 주요 특징
 
+- 🤖 **OpenAI Apps SDK 준수**: OpenAI 디자인 가이드라인을 따른 일관된 UX
 - 🎨 **체계적인 디자인 토큰**: Style Dictionary 기반 토큰 시스템으로 일관된 디자인 언어 제공
-- ♿️ **접근성 우선**: Base UI Components 기반의 ARIA 표준 준수 컴포넌트
+- ♿️ **접근성 우선**: Base UI Components 기반의 WCAG 2.1 AA 준수 컴포넌트
 - 📱 **반응형 디자인**: Polaris 방식의 미디어 쿼리 시스템으로 모든 디바이스 지원
 - 🎭 **CSS Modules**: 스타일 충돌 없는 안전한 스코프 스타일링
 - 🧪 **완전한 테스트**: Vitest 기반 유닛 테스트 및 Storybook 인터랙션 테스트

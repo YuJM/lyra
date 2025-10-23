@@ -14,6 +14,8 @@ import "./components/collapsible/collapsible.module.css";
 import "./components/progress/progress.module.css";
 import "./components/avatar/avatar.module.css";
 import "./components/toast/toast.module.css";
+import "./components/card/card.module.css";
+import "./components/text/text.module.css";
 
 export { Button, type ButtonProps } from "./components/button/button";
 export {
@@ -137,3 +139,18 @@ export {
   type ToastProviderProps,
   type ToastOptions,
 } from "./components/toast/toast";
+export {
+  Card,
+  type CardRootProps,
+  type CardMediaProps,
+  type CardHeaderProps,
+  type CardTitleProps,
+  type CardMetadataProps,
+  type CardContentProps,
+  type CardActionsProps,
+} from "./components/card/card";
+export {
+  Text,
+  type TextProps,
+  type HeadingProps,
+} from "./components/text/text";

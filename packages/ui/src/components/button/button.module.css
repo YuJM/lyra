@@ -1,39 +1,291 @@
-/* Button Component Styles - CSS Module */
+/* ============================================================================
+ * Button Component Styles - OpenAI Apps SDK 준수
+ * ========================================================================== */
 
-@layer components {
-  .button {
-    font-family: var(--font-family-sans);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--font-lineHeight-normal);
-    margin: 0;
-    padding: var(--spacing-4) var(--spacing-8);
-    cursor: pointer;
-    border: var(--border-width-1) solid transparent;
-    border-radius: var(--border-radius-sm);
-    background-color: var(--color-bg-primary-default);
-    color: var(--color-text-inverse);
-    transition: all var(--duration-base) var(--easing-ease-in-out);
+/* Base Button */
+.Button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2, 8px);
+  font-family: var(--font-family-sans, system-ui, sans-serif);
+  font-weight: var(--font-weight-medium, 500);
+  line-height: var(--font-lineHeight-normal, 1.5);
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md, 8px);
+  transition: all var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+  white-space: nowrap;
+  user-select: none;
+}
 
-    /* Nesting: hover state */
-    &:hover {
-      background-color: var(--color-bg-primary-hover);
-    }
+.Button:focus-visible {
+  outline: 2px solid var(--color-border-focus, #3b82f6);
+  outline-offset: 2px;
+}
 
-    /* Mixin: focus-ring */
-    @mixin focus-ring;
+.Button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
-    /* Nesting: active state */
-    &:active {
-      background-color: var(--color-bg-primary-active);
-      transform: scale(0.98);
-    }
+/* ============================================================================
+ * Variants
+ * ========================================================================== */
 
-    /* Nesting: disabled state */
-    &:disabled {
-      background-color: var(--color-bg-primary-disabled);
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+/* Primary variant */
+.Button--primary {
+  background-color: var(--color-bg-primary-default, #3b82f6);
+  color: var(--color-text-inverse, #ffffff);
+}
+
+.Button--primary:hover:not(:disabled) {
+  background-color: var(--color-bg-primary-hover, #2563eb);
+}
+
+.Button--primary:active:not(:disabled) {
+  background-color: var(--color-bg-primary-active, #1d4ed8);
+  transform: scale(0.98);
+}
+
+/* Secondary variant */
+.Button--secondary {
+  background-color: var(--color-bg-secondary-default, #6b7280);
+  color: var(--color-text-inverse, #ffffff);
+}
+
+.Button--secondary:hover:not(:disabled) {
+  background-color: var(--color-bg-secondary-hover, #4b5563);
+}
+
+.Button--secondary:active:not(:disabled) {
+  background-color: var(--color-bg-secondary-active, #374151);
+  transform: scale(0.98);
+}
+
+/* Ghost variant */
+.Button--ghost {
+  background-color: transparent;
+  color: var(--color-text-primary, #111827);
+  border-color: var(--color-border-default, #e5e7eb);
+}
+
+.Button--ghost:hover:not(:disabled) {
+  background-color: var(--color-bg-surface-hover, #f3f4f6);
+  border-color: var(--color-border-hover, #d1d5db);
+}
+
+.Button--ghost:active:not(:disabled) {
+  background-color: var(--color-bg-surface-active, #e5e7eb);
+  transform: scale(0.98);
+}
+
+/* Text variant */
+.Button--text {
+  background-color: transparent;
+  color: var(--color-text-primary, #111827);
+  border-color: transparent;
+}
+
+.Button--text:hover:not(:disabled) {
+  background-color: var(--color-bg-surface-hover, #f3f4f6);
+}
+
+.Button--text:active:not(:disabled) {
+  background-color: var(--color-bg-surface-active, #e5e7eb);
+}
+
+/* ============================================================================
+ * Sizes
+ * ========================================================================== */
+
+.Button--sm {
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  font-size: var(--font-size-sm, 14px);
+  min-height: 32px;
+}
+
+.Button--md {
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  font-size: var(--font-size-base, 16px);
+  min-height: 40px;
+}
+
+.Button--lg {
+  padding: var(--spacing-4, 16px) var(--spacing-6, 24px);
+  font-size: var(--font-size-lg, 18px);
+  min-height: 48px;
+}
+
+/* ============================================================================
+ * States
+ * ========================================================================== */
+
+/* Full width */
+.Button--fullWidth {
+  width: 100%;
+}
+
+/* Loading */
+.Button--loading {
+  pointer-events: none;
+}
+
+/* ============================================================================
+ * Child Elements
+ * ========================================================================== */
+
+.ButtonContent {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ButtonIconLeft,
+.ButtonIconRight {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ButtonIconLeft {
+  margin-right: calc(var(--spacing-1, 4px) * -1);
+}
+
+.ButtonIconRight {
+  margin-left: calc(var(--spacing-1, 4px) * -1);
+}
+
+/* Loading spinner */
+.ButtonSpinner {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ButtonSpinnerSvg {
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+.ButtonSpinnerCircle {
+  fill: none;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 0;
+  animation: spinnerDash 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinnerDash {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  50% {
+    stroke-dashoffset: 12.5;
+  }
+  100% {
+    stroke-dashoffset: 50;
+  }
+}
+
+/* ============================================================================
+ * Dark Mode
+ * ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  .Button--primary {
+    background-color: var(--color-bg-primary-default-dark, #3b82f6);
+  }
+
+  .Button--primary:hover:not(:disabled) {
+    background-color: var(--color-bg-primary-hover-dark, #60a5fa);
+  }
+
+  .Button--primary:active:not(:disabled) {
+    background-color: var(--color-bg-primary-active-dark, #2563eb);
+  }
+
+  .Button--secondary {
+    background-color: var(--color-bg-secondary-default-dark, #6b7280);
+  }
+
+  .Button--secondary:hover:not(:disabled) {
+    background-color: var(--color-bg-secondary-hover-dark, #9ca3af);
+  }
+
+  .Button--secondary:active:not(:disabled) {
+    background-color: var(--color-bg-secondary-active-dark, #4b5563);
+  }
+
+  .Button--ghost {
+    color: var(--color-text-primary-dark, #f9fafb);
+    border-color: var(--color-border-default-dark, #374151);
+  }
+
+  .Button--ghost:hover:not(:disabled) {
+    background-color: var(--color-bg-surface-hover-dark, #374151);
+    border-color: var(--color-border-hover-dark, #4b5563);
+  }
+
+  .Button--ghost:active:not(:disabled) {
+    background-color: var(--color-bg-surface-active-dark, #4b5563);
+  }
+
+  .Button--text {
+    color: var(--color-text-primary-dark, #f9fafb);
+  }
+
+  .Button--text:hover:not(:disabled) {
+    background-color: var(--color-bg-surface-hover-dark, #374151);
+  }
+
+  .Button--text:active:not(:disabled) {
+    background-color: var(--color-bg-surface-active-dark, #4b5563);
+  }
+}
+
+/* ============================================================================
+ * High Contrast Mode
+ * ========================================================================== */
+
+@media (prefers-contrast: high) {
+  .Button {
+    border-width: 2px;
+  }
+
+  .Button:focus-visible {
+    outline-width: 3px;
+  }
+}
+
+/* ============================================================================
+ * Reduced Motion
+ * ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .Button {
+    transition: none;
+  }
+
+  .ButtonSpinnerSvg,
+  .ButtonSpinnerCircle {
+    animation: none;
+  }
+
+  .Button--primary:active:not(:disabled),
+  .Button--secondary:active:not(:disabled),
+  .Button--ghost:active:not(:disabled) {
+    transform: none;
   }
 }

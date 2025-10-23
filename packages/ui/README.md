@@ -1,11 +1,14 @@
 # @lyra/ui
 
-Lyra 디자인 시스템의 핵심 UI 컴포넌트 라이브러리입니다. Base UI Components를 기반으로 구축되었으며, 접근성과 사용성을 최우선으로 하는 현대적인 React 컴포넌트를 제공합니다.
+Lyra 디자인 시스템의 핵심 UI 컴포넌트 라이브러리입니다. **OpenAI Apps SDK 디자인 가이드라인을 준수**하며, Base UI Components를 기반으로 구축되었습니다. 접근성과 사용성을 최우선으로 하는 현대적인 React 컴포넌트를 제공합니다.
+
+> **OpenAI 가이드라인 준수**: 모든 컴포넌트는 OpenAI Apps SDK의 디자인 원칙을 따릅니다 - 단색 배경, 명확한 계층 구조, 접근성 최우선, 최소한의 인터랙션 등.
 
 ## 특징
 
+- 🤖 **OpenAI Apps SDK 준수**: OpenAI 디자인 가이드라인을 따른 일관된 사용자 경험
 - 🎨 **디자인 토큰 통합**: `@lyra/design-tokens`와 완벽하게 통합되어 일관된 디자인 시스템 제공
-- ♿️ **접근성 우선**: Base UI Components 기반으로 ARIA 표준을 준수
+- ♿️ **접근성 우선**: Base UI Components 기반으로 WCAG 2.1 AA 표준 준수
 - 📦 **트리 셰이킹 지원**: ESM과 CJS 모듈 모두 지원하여 최적화된 번들 크기
 - 🎭 **CSS Modules**: 스타일 충돌 없는 안전한 스코프 스타일링
 - 🧪 **완전한 테스트**: Vitest를 통한 유닛 테스트 커버리지

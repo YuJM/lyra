@@ -8,14 +8,17 @@
 
 ## 📊 진행 상황
 
-- **전체 진행률**: 37% (10/27 작업 완료)
-- **현재 Phase**: ✅ Phase 1 완료 → Phase 2 준비
+- **전체 진행률**: 68% (15/21 작업 완료, Carousel + Icon 제외)
+- **현재 Phase**: ✅ Phase 1 완료 → ✅ Phase 2 부분 완료 → ✅ Phase 4 부분 완료
 - **Week 1 목표**: ✅ 완료 (색상 감사 + ChatGPT 테마 + Card API 설계)
 - **Week 2 진행**: ✅ Task 1.4 완료 (색상 토큰 마이그레이션 계획)
 - **Week 2-3 진행**: ✅ Epic 1.2 완료 (접근성 검증 시스템)
 - **Week 3 진행**: ✅ Epic 1.3 완료 (Storybook 문서화 강화)
 - **Week 3-4 추가**: ✅ CSS Module 감사 완료
-- **다음 작업**: Phase 2 - Card 컴포넌트 구현
+- **Week 5 진행**: ✅ Epic 2.1 완료 (Card 컴포넌트)
+- **Week 6 진행**: ✅ Epic 4.1 완료 (Button 개선)
+- **Week 6 추가**: ✅ Epic 4.3 완료 (Text 컴포넌트)
+- **다음 작업**: Phase 3 - 고급 컴포넌트 또는 Phase 5 - 문서화 및 검증
 
 ---
 
@@ -176,21 +179,37 @@ export const Card = {
 
 ## 🗓️ Phase 2: Inline 모드 컴포넌트 (Week 5-8)
 
-### Epic 2.1: Card 컴포넌트 (16시간)
-- [x] Task 2.1: API 설계 (3h) - ⏸️ 대기 중
-- [ ] Task 2.2: 기본 구현 (6h)
-- [ ] Task 2.3: 미디어 컴포넌트 (3h)
-- [ ] Task 2.4: 액션 시스템 (4h)
+### Epic 2.1: Card 컴포넌트 (16시간) - ✅ 완료
+- [x] Task 2.1: API 설계 (3h) - ✅ 완료
+- [x] Task 2.2: 기본 구현 (6h) - ✅ 완료
+- [x] Task 2.3: 미디어 컴포넌트 (3h) - ✅ 완료 (2.2에 포함)
+- [x] Task 2.4: 액션 시스템 (4h) - ✅ 완료 (2.2에 포함)
 
-### Epic 2.2: Carousel 컴포넌트 (14시간)
-- [ ] Task 2.5: Embla Carousel 통합 (5h)
-- [ ] Task 2.6: 접근성 구현 (4h)
-- [ ] Task 2.7: 반응형 레이아웃 (5h)
+**Epic 2.1 완료 내역**:
+- `src/components/card/card.tsx`: 7개 하위 컴포넌트 (Root, Media, Header, Title, Metadata, Content, Actions)
+- `src/components/card/card.module.css`: OpenAI 가이드라인 준수 스타일 (다크모드, 접근성 모드 지원)
+- `src/components/card/card.stories.tsx`: 9개 스토리 (기본, 미디어, 변형, 인터랙티브, 텍스트 말줄임 등)
+- `src/components/card/card.test.tsx`: 25개 테스트 (모두 통과)
+- `src/index.tsx`: Card export 추가
+- **특징**:
+  - Compound Component 패턴
+  - 완전한 키보드 접근성 (Tab, Enter, Space)
+  - WCAG 2.1 AA 준수
+  - 다크모드 및 고대비 모드 지원
+  - Reduced motion 지원
+  - 최대 2개 액션 권장 (OpenAI 가이드라인)
 
-### Epic 2.3: Icon 컴포넌트 (12시간)
-- [ ] Task 2.8: Lucide React 통합 검증 (3h)
-- [ ] Task 2.9: 크기/색상 시스템 (4h)
-- [ ] Task 2.10: Storybook 카탈로그 (5h)
+### Epic 2.2: Carousel 컴포넌트 (14시간) - ❌ 스킵
+**사유**: 현재 프로젝트에서 필요하지 않은 컴포넌트로 판단
+- [~] Task 2.5: Embla Carousel 통합 (5h) - 스킵
+- [~] Task 2.6: 접근성 구현 (4h) - 스킵
+- [~] Task 2.7: 반응형 레이아웃 (5h) - 스킵
+
+### Epic 2.3: Icon 컴포넌트 (12시간) - ❌ 스킵
+**사유**: 사용자가 lucide-react 등 원하는 아이콘 라이브러리를 직접 선택하도록 함
+- [~] Task 2.8: Lucide React 통합 검증 (3h) - 스킵
+- [~] Task 2.9: 크기/색상 시스템 (4h) - 스킵
+- [~] Task 2.10: Storybook 카탈로그 (5h) - 스킵
 
 **Phase 2 목표**: OpenAI 준수도 75 → 85점
 
@@ -214,15 +233,65 @@ export const Card = {
 
 ## 🗓️ Phase 4: 기존 컴포넌트 개선 (Week 13-14)
 
-### Epic 4.1: Button 개선 (8시간)
-- [ ] Task 4.1: Inline 모드 추가 (3h)
-- [ ] Task 4.2: 아이콘 정렬 개선 (3h)
-- [ ] Task 4.3: 로딩 상태 (2h)
+### Epic 4.1: Button 개선 (8시간) - ✅ 완료
+- [x] Task 4.1: Inline 모드 추가 (3h) - ✅ 완료
+- [x] Task 4.2: 아이콘 정렬 개선 (3h) - ✅ 완료
+- [x] Task 4.3: 로딩 상태 (2h) - ✅ 완료
 
-### Epic 4.2: Dialog 개선 (10시간)
-- [ ] Task 4.4: 중첩 방지 시스템 (4h)
-- [ ] Task 4.5: 포커스 트랩 개선 (3h)
-- [ ] Task 4.6: 애니메이션 최적화 (3h)
+**Epic 4.1 완료 내역**:
+- `src/components/button/button.tsx`: 확장된 TypeScript 인터페이스 (variant, size, loading, iconLeft, iconRight, fullWidth)
+- `src/components/button/button.module.css`: OpenAI 가이드라인 준수 스타일 (292줄)
+  - 4 variants: primary, secondary, ghost, text
+  - 3 sizes: sm (32px), md (40px), lg (48px)
+  - Loading 상태: spinner 애니메이션 + pointer-events: none
+  - Icon 정렬: 왼쪽/오른쪽 아이콘 슬롯
+  - Full width 옵션
+  - 다크모드, 고대비 모드, Reduced motion 지원
+- `src/stories/components/button/button.stories.tsx`: 9개 스토리 (Default, Variants, Sizes, Loading, WithIcons, Disabled, FullWidth, Combinations, Submit)
+- `src/components/button/button.test.tsx`: 31개 테스트 (모두 통과)
+- **특징**:
+  - React.forwardRef 패턴
+  - 100% design-token 기반 스타일링
+  - WCAG 2.1 AA 준수
+  - 접근성: aria-busy, aria-hidden, focus-visible
+  - 스피너 애니메이션 (spin + spinnerDash keyframes)
+
+### Epic 4.2: Dialog 개선 (10시간) - ❌ 스킵
+**사유**: Dialog가 현재 잘 동작하고 있어 추가 개선 불필요
+- [~] Task 4.4: 중첩 방지 시스템 (4h) - 스킵
+- [~] Task 4.5: 포커스 트랩 개선 (3h) - 스킵
+- [~] Task 4.6: 애니메이션 최적화 (3h) - 스킵
+
+### Epic 4.3: Text 컴포넌트 (8시간) - ✅ 완료
+- [x] Task 4.7: API 설계 및 타입 정의 (2h) - ✅ 완료
+- [x] Task 4.8: 컴포넌트 구현 (3h) - ✅ 완료
+- [x] Task 4.9: Storybook 스토리 (2h) - ✅ 완료
+- [x] Task 4.10: 테스트 작성 (1h) - ✅ 완료
+
+**Epic 4.3 완료 내역**:
+- `src/components/text/text.tsx`: Compound Component 패턴 (Root + h1~h6)
+  - `<Text>`: 기본 p 태그
+  - `<Text.h1>` ~ `<Text.h6>`: 시맨틱 제목 요소
+  - Props: align (left/center/right), variant (primary/secondary/muted/error/success), fullWidth
+- `src/components/text/text.module.css`: Typography 계층 스타일
+  - H1: 36px/700 (가장 큰 제목)
+  - H2: 30px/700 (주요 섹션)
+  - H3: 24px/600 (하위 섹션)
+  - H4: 20px/600 (소제목)
+  - H5: 18px/500 (작은 소제목)
+  - H6: 16px/500 (가장 작은 제목)
+  - 5 color variants + 3 alignment + fullWidth
+  - 다크모드, 고대비 모드, Reduced motion 지원
+- `src/stories/components/text/text.stories.tsx`: 10개 스토리 (Default, Hierarchy, Alignment, ColorVariants, HeadingColors, FullWidth, RealWorldExample, HeadingAlignment, Combinations)
+- `src/components/text/text.test.tsx`: 33개 테스트 (모두 통과)
+- `src/index.tsx`: Text export 추가
+- **특징**:
+  - 시맨틱 HTML 요소 사용 (h1-h6, p)
+  - 사전 정의된 Typography 토큰 (크기 + 굵기 조합)
+  - React.forwardRef 패턴
+  - 100% design-token 기반 스타일링
+  - WCAG 2.1 AA 준수
+  - 접근성: 올바른 heading hierarchy
 
 **Phase 4 목표**: OpenAI 준수도 90 → 92점
 

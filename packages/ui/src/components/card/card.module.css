@@ -1,0 +1,267 @@
+/* ============================================================================
+ * Card Root
+ * ========================================================================== */
+
+.CardRoot {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all var(--duration-fast, 150ms) var(--easing-ease-in-out, ease-in-out);
+}
+
+/* Variant: default */
+.CardRoot--default {
+  background-color: var(--color-bg-surface-default, #ffffff);
+  border: 1px solid var(--color-border-default, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+}
+
+/* Variant: elevated */
+.CardRoot--elevated {
+  background-color: var(--color-bg-surface-elevated, #ffffff);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  border-radius: var(--radius-lg, 12px);
+}
+
+/* Variant: outlined */
+.CardRoot--outlined {
+  background-color: transparent;
+  border: 2px solid var(--color-border-default, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+}
+
+/* Interactive */
+.CardRoot--interactive {
+  cursor: pointer;
+}
+
+.CardRoot--interactive:hover {
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  border-color: var(--color-border-hover, #d1d5db);
+}
+
+.CardRoot--interactive:focus-visible {
+  outline: 2px solid var(--color-border-focus, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .CardRoot--default {
+    background-color: var(--color-bg-surface-default-dark, #1f2937);
+    border-color: var(--color-border-default-dark, #374151);
+  }
+
+  .CardRoot--elevated {
+    background-color: var(--color-bg-surface-elevated-dark, #1f2937);
+  }
+
+  .CardRoot--outlined {
+    border-color: var(--color-border-default-dark, #374151);
+  }
+
+  .CardRoot--interactive:hover {
+    border-color: var(--color-border-hover-dark, #4b5563);
+  }
+
+  .CardRoot--interactive:focus-visible {
+    outline-color: var(--color-border-focus-dark, #60a5fa);
+  }
+}
+
+/* Accessibility: High contrast mode */
+@media (prefers-contrast: high) {
+  .CardRoot--default,
+  .CardRoot--elevated,
+  .CardRoot--outlined {
+    border-width: 2px;
+  }
+
+  .CardRoot--interactive:focus-visible {
+    outline-width: 3px;
+  }
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .CardRoot {
+    transition: none;
+  }
+}
+
+/* ============================================================================
+ * Card Media
+ * ========================================================================== */
+
+.CardMedia {
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg, 12px) var(--radius-lg, 12px) 0 0;
+  display: block;
+}
+
+/* ============================================================================
+ * Card Header
+ * ========================================================================== */
+
+.CardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2, 8px);
+  padding: var(--spacing-4, 16px);
+}
+
+/* ============================================================================
+ * Card Title
+ * ========================================================================== */
+
+.CardTitle {
+  font-size: var(--font-size-lg, 18px);
+  font-weight: var(--font-weight-semibold, 600);
+  line-height: var(--line-height-tight, 1.25);
+  color: var(--color-text-primary, #111827);
+  margin: 0;
+}
+
+.CardTitle--clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.CardTitle--clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.CardTitle--clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .CardTitle {
+    color: var(--color-text-primary-dark, #f9fafb);
+  }
+}
+
+/* ============================================================================
+ * Card Metadata
+ * ========================================================================== */
+
+.CardMetadata {
+  font-size: var(--font-size-sm, 14px);
+  color: var(--color-text-secondary, #6b7280);
+  line-height: var(--line-height-relaxed, 1.625);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2, 8px);
+  align-items: center;
+}
+
+.CardMetadataSeparator {
+  color: var(--color-text-tertiary, #9ca3af);
+}
+
+.CardMetadata--max-lines-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.CardMetadata--max-lines-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.CardMetadata--max-lines-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .CardMetadata {
+    color: var(--color-text-secondary-dark, #9ca3af);
+  }
+
+  .CardMetadataSeparator {
+    color: var(--color-text-tertiary-dark, #6b7280);
+  }
+}
+
+/* ============================================================================
+ * Card Content
+ * ========================================================================== */
+
+.CardContent {
+  padding: var(--spacing-4, 16px);
+  padding-top: 0;
+  font-size: var(--font-size-base, 16px);
+  line-height: var(--line-height-relaxed, 1.625);
+  color: var(--color-text-primary, #111827);
+}
+
+.CardContent--clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--clamp);
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .CardContent {
+    color: var(--color-text-primary-dark, #f9fafb);
+  }
+}
+
+/* ============================================================================
+ * Card Actions
+ * ========================================================================== */
+
+.CardActions {
+  display: flex;
+  gap: var(--spacing-3, 12px);
+  padding: var(--spacing-4, 16px);
+  padding-top: 0;
+  border-top: 1px solid var(--color-border-default, #e5e7eb);
+  margin-top: auto;
+}
+
+.CardActions--align-start {
+  justify-content: flex-start;
+}
+
+.CardActions--align-end {
+  justify-content: flex-end;
+}
+
+.CardActions--align-center {
+  justify-content: center;
+}
+
+.CardActions--align-between {
+  justify-content: space-between;
+}
+
+@media (prefers-color-scheme: dark) {
+  .CardActions {
+    border-top-color: var(--color-border-default-dark, #374151);
+  }
+}
+
+/* Accessibility: High contrast mode */
+@media (prefers-contrast: high) {
+  .CardActions {
+    border-top-width: 2px;
+  }
+}
