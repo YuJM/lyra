@@ -8,12 +8,13 @@
 
 ## 📊 진행 상황
 
-- **전체 진행률**: 22% (6/27 작업 완료)
+- **전체 진행률**: 33% (9/27 작업 완료)
 - **현재 Phase**: Phase 1 - 기반 강화
 - **Week 1 목표**: ✅ 완료 (색상 감사 + ChatGPT 테마 + Card API 설계)
 - **Week 2 진행**: ✅ Task 1.4 완료 (색상 토큰 마이그레이션 계획)
 - **Week 2-3 진행**: ✅ Epic 1.2 완료 (접근성 검증 시스템)
-- **다음 작업**: Epic 1.3 Storybook 문서화 강화
+- **Week 3 진행**: ✅ Epic 1.3 완료 (Storybook 문서화 강화)
+- **다음 작업**: Phase 2 - Inline 모드 컴포넌트
 
 ---
 
@@ -148,9 +149,15 @@ export const Card = {
 - `package.json`: `pnpm test:a11y` 스크립트 추가
 
 ### Epic 1.3: Storybook 문서화 강화 (8시간)
-- [ ] Task 1.8: OpenAI 가이드라인 문서 링크 (2h)
-- [ ] Task 1.9: 사용/금지 예제 추가 (4h)
-- [ ] Task 1.10: 접근성 체크리스트 (2h)
+- [x] Task 1.8: OpenAI 가이드라인 문서 링크 (2h) - ✅ 완료
+- [x] Task 1.9: 사용/금지 예제 추가 (4h) - ✅ 완료
+- [x] Task 1.10: 접근성 가이드 문서 추가 (2h) - ✅ 완료
+
+**Epic 1.3 완료 내역**:
+- `src/stories/Introduction.mdx`: Storybook 홈페이지
+- `src/stories/guidelines/OpenAI.mdx`: OpenAI 가이드라인 상세
+- `src/stories/guidelines/Accessibility.mdx`: 접근성 가이드 상세
+- `src/stories/guidelines/Examples.mdx`: Do/Don't 예제 모음
 
 **Phase 1 목표**: OpenAI 준수도 65 → 75점
 
