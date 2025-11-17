@@ -1,4 +1,4 @@
-# @lyra/ui
+# @comneed/lyra-ui
 
 Lyra 디자인 시스템의 핵심 UI 컴포넌트 라이브러리입니다. **OpenAI Apps SDK 디자인 가이드라인을 준수**하며, Base UI Components를 기반으로 구축되었습니다. 접근성과 사용성을 최우선으로 하는 현대적인 React 컴포넌트를 제공합니다.
 
@@ -7,7 +7,7 @@ Lyra 디자인 시스템의 핵심 UI 컴포넌트 라이브러리입니다. **O
 ## 특징
 
 - 🤖 **OpenAI Apps SDK 준수**: OpenAI 디자인 가이드라인을 따른 일관된 사용자 경험
-- 🎨 **디자인 토큰 통합**: `@lyra/design-tokens`와 완벽하게 통합되어 일관된 디자인 시스템 제공
+- 🎨 **디자인 토큰 통합**: `@comneed/lyra-design-tokens`와 완벽하게 통합되어 일관된 디자인 시스템 제공
 - ♿️ **접근성 우선**: Base UI Components 기반으로 WCAG 2.1 AA 표준 준수
 - 📦 **트리 셰이킹 지원**: ESM과 CJS 모듈 모두 지원하여 최적화된 번들 크기
 - 🎭 **CSS Modules**: 스타일 충돌 없는 안전한 스코프 스타일링
@@ -18,7 +18,14 @@ Lyra 디자인 시스템의 핵심 UI 컴포넌트 라이브러리입니다. **O
 ## 설치
 
 ```bash
-pnpm add @lyra/ui
+# pnpm
+pnpm add @comneed/lyra-ui
+
+# npm
+npm install @comneed/lyra-ui
+
+# yarn
+yarn add @comneed/lyra-ui
 ```
 
 ## 사용법
@@ -26,8 +33,8 @@ pnpm add @lyra/ui
 ### 기본 사용
 
 ```tsx
-import { Button, Checkbox, Field } from '@lyra/ui';
-import '@lyra/ui/styles';
+import { Button, Checkbox, Field } from '@comneed/lyra-ui';
+import '@comneed/lyra-ui/styles';
 
 function App() {
   return (
@@ -51,7 +58,7 @@ function App() {
 CSS는 별도로 임포트해야 합니다:
 
 ```tsx
-import '@lyra/ui/styles';
+import '@comneed/lyra-ui/styles';
 ```
 
 ## 제공 컴포넌트
@@ -62,7 +69,7 @@ import '@lyra/ui/styles';
 기본적인 버튼 컴포넌트로 다양한 variant를 지원합니다.
 
 ```tsx
-import { Button } from '@lyra/ui';
+import { Button } from '@comneed/lyra-ui';
 
 <Button variant="primary">Primary Button</Button>
 <Button variant="secondary">Secondary Button</Button>
@@ -73,7 +80,7 @@ import { Button } from '@lyra/ui';
 단일 체크박스와 체크박스 그룹을 제공합니다.
 
 ```tsx
-import { Checkbox, CheckboxGroup } from '@lyra/ui';
+import { Checkbox, CheckboxGroup } from '@comneed/lyra-ui';
 
 <Checkbox defaultChecked>단일 체크박스</Checkbox>
 
@@ -87,7 +94,7 @@ import { Checkbox, CheckboxGroup } from '@lyra/ui';
 라디오 버튼과 라디오 그룹을 제공합니다.
 
 ```tsx
-import { Radio, RadioGroup } from '@lyra/ui';
+import { Radio, RadioGroup } from '@comneed/lyra-ui';
 
 <RadioGroup>
   <Radio value="option1">옵션 1</Radio>
@@ -99,7 +106,7 @@ import { Radio, RadioGroup } from '@lyra/ui';
 토글 스위치 컴포넌트입니다.
 
 ```tsx
-import { Switch } from '@lyra/ui';
+import { Switch } from '@comneed/lyra-ui';
 
 <Switch defaultChecked>알림 활성화</Switch>
 ```
@@ -108,7 +115,7 @@ import { Switch } from '@lyra/ui';
 폼 필드를 구성하는 컴포넌트 그룹입니다.
 
 ```tsx
-import { Field } from '@lyra/ui';
+import { Field } from '@comneed/lyra-ui';
 
 <Field.Root>
   <Field.Label>이름</Field.Label>
@@ -122,7 +129,7 @@ import { Field } from '@lyra/ui';
 드롭다운 선택 컴포넌트입니다.
 
 ```tsx
-import { Select } from '@lyra/ui';
+import { Select } from '@comneed/lyra-ui';
 
 <Select.Root>
   <Select.Trigger>
@@ -152,7 +159,7 @@ import { Select } from '@lyra/ui';
 모달 다이얼로그 컴포넌트입니다.
 
 ```tsx
-import { Dialog } from '@lyra/ui';
+import { Dialog } from '@comneed/lyra-ui';
 
 <Dialog.Root>
   <Dialog.Trigger>다이얼로그 열기</Dialog.Trigger>
@@ -171,7 +178,7 @@ import { Dialog } from '@lyra/ui';
 툴팁 컴포넌트입니다.
 
 ```tsx
-import { Tooltip } from '@lyra/ui';
+import { Tooltip } from '@comneed/lyra-ui';
 
 <Tooltip.Provider>
   <Tooltip.Root>
@@ -330,7 +337,7 @@ export function MyComponent({
 
 ```css
 /* src/components/my-component/my-component.module.css */
-@import '@lyra/design-tokens';
+@import '@comneed/lyra-design-tokens';
 
 .root {
   /* 기본 스타일 */

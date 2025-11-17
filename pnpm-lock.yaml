@@ -64,7 +64,7 @@ importers:
       '@base-ui-components/react':
         specifier: 1.0.0-beta.4
         version: 1.0.0-beta.4(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@lyra/design-tokens':
+      '@comneed/lyra-design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
       class-variance-authority:

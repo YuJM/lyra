@@ -1,7 +1,17 @@
 {
-  "name": "@lyra/design-tokens",
-  "version": "0.0.0",
+  "name": "@comneed/lyra-design-tokens",
+  "version": "0.1.0",
+  "description": "Lyra Design Tokens",
   "license": "MIT",
+  "author": "Yujm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comneed/lyra.git",
+    "directory": "packages/design-tokens"
+  },
+  "bugs": "https://github.com/comneed/lyra/issues",
+  "homepage": "https://github.com/comneed/lyra#readme",
+  "keywords": ["design-tokens", "css-variables", "design-system"],
   "type": "module",
   "exports": {
     "./css": "./dist/css/tokens.css",
@@ -10,7 +20,8 @@
     "./json": "./dist/json/tokens.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
   "scripts": {
     "build": "node build.js",

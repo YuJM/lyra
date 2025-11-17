@@ -9,14 +9,14 @@ module.exports = [
   require('postcss-import')({
     // workspace 패키지 exports 필드 지원을 위한 커스텀 resolver
     resolve: (id, basedir, importOptions) => {
-      // @lyra/* workspace 패키지 처리
-      if (id.startsWith('@lyra/design-tokens')) {
+      // @comneed/lyra-* workspace 패키지 처리
+      if (id.startsWith('@comneed/lyra-design-tokens')) {
         try {
           const pkgDir = path.join(__dirname, '../../design-tokens');
           const pkg = require(path.join(pkgDir, 'package.json'));
 
           // package.json exports 필드에서 경로 찾기
-          let exportPath = id.replace('@lyra/design-tokens', '');
+          let exportPath = id.replace('@comneed/lyra-design-tokens', '');
           // /css -> ./css로 정규화
           if (exportPath.startsWith('/')) {
             exportPath = '.' + exportPath;

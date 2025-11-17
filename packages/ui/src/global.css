@@ -5,7 +5,7 @@
 @import "modern-normalize/modern-normalize.css" layer(reset);
 
 /* Design Tokens */
-@import "@lyra/design-tokens/css" layer(base);
+@import "@comneed/lyra-design-tokens/css" layer(base);
 
 /* Base Layer - CSS Variables & Reset */
 @layer base {
